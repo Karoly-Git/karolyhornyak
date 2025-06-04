@@ -1,0 +1,174 @@
+#resume {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#resume strong {
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0);
+}
+#resume #resume-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  padding: 3rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+#resume #resume-content .summary,
+#resume #resume-content .non-it {
+  display: none;
+}
+#resume #resume-content .intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+#resume #resume-content .columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4rem;
+}
+#resume #resume-content .columns .column-left,
+#resume #resume-content .columns .column-right {
+  flex: 1;
+  min-width: 280px;
+}
+#resume #resume-content .columns .column-left article,
+#resume #resume-content .columns .column-right article {
+  margin-bottom: 2rem;
+  text-align: left;
+  position: relative;
+}
+#resume #resume-content .columns .column-left article h3,
+#resume #resume-content .columns .column-right article h3 {
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #45505B;
+  font-weight: bold;
+  display: inline-block;
+}
+#resume #resume-content .columns .column-left article h4,
+#resume #resume-content .columns .column-right article h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #45505B;
+}
+#resume #resume-content .columns .column-left article p,
+#resume #resume-content .columns .column-right article p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+#resume #resume-content .columns .column-left article ul,
+#resume #resume-content .columns .column-right article ul {
+  padding: 0;
+  padding-left: 1rem;
+}
+#resume #resume-content .columns .column-left article ul li,
+#resume #resume-content .columns .column-right article ul li {
+  margin-bottom: 0.5rem;
+}
+#resume #resume-content .columns .column-left .summary .name,
+#resume #resume-content .columns .column-right .summary .name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #45505B;
+}
+#resume #resume-content .columns .column-left .summary .description,
+#resume #resume-content .columns .column-right .summary .description {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+#resume #resume-content .columns .column-left .summary .contact-info,
+#resume #resume-content .columns .column-right .summary .contact-info {
+  font-size: 0.9rem;
+  color: #45505B;
+}
+#resume #resume-content .columns .column-left .summary .contact-info li,
+#resume #resume-content .columns .column-right .summary .contact-info li {
+  margin-bottom: 5px;
+}
+#resume #resume-content .columns .column-left .summary .info,
+#resume #resume-content .columns .column-left .summary .degree,
+#resume #resume-content .columns .column-left .summary .job,
+#resume #resume-content .columns .column-left .education .info,
+#resume #resume-content .columns .column-left .education .degree,
+#resume #resume-content .columns .column-left .education .job,
+#resume #resume-content .columns .column-left .experience .info,
+#resume #resume-content .columns .column-left .experience .degree,
+#resume #resume-content .columns .column-left .experience .job,
+#resume #resume-content .columns .column-right .summary .info,
+#resume #resume-content .columns .column-right .summary .degree,
+#resume #resume-content .columns .column-right .summary .job,
+#resume #resume-content .columns .column-right .education .info,
+#resume #resume-content .columns .column-right .education .degree,
+#resume #resume-content .columns .column-right .education .job,
+#resume #resume-content .columns .column-right .experience .info,
+#resume #resume-content .columns .column-right .experience .degree,
+#resume #resume-content .columns .column-right .experience .job {
+  padding-bottom: 1.5rem;
+  border-left: 2px solid #0056b3;
+  padding-left: 1rem;
+  position: relative;
+}
+#resume #resume-content .columns .column-left .summary .info p,
+#resume #resume-content .columns .column-left .summary .degree p,
+#resume #resume-content .columns .column-left .summary .job p,
+#resume #resume-content .columns .column-left .education .info p,
+#resume #resume-content .columns .column-left .education .degree p,
+#resume #resume-content .columns .column-left .education .job p,
+#resume #resume-content .columns .column-left .experience .info p,
+#resume #resume-content .columns .column-left .experience .degree p,
+#resume #resume-content .columns .column-left .experience .job p,
+#resume #resume-content .columns .column-right .summary .info p,
+#resume #resume-content .columns .column-right .summary .degree p,
+#resume #resume-content .columns .column-right .summary .job p,
+#resume #resume-content .columns .column-right .education .info p,
+#resume #resume-content .columns .column-right .education .degree p,
+#resume #resume-content .columns .column-right .education .job p,
+#resume #resume-content .columns .column-right .experience .info p,
+#resume #resume-content .columns .column-right .experience .degree p,
+#resume #resume-content .columns .column-right .experience .job p {
+  margin: 0.5rem 0;
+}
+#resume #resume-content .columns .column-left .summary .info::before,
+#resume #resume-content .columns .column-left .summary .degree::before,
+#resume #resume-content .columns .column-left .summary .job::before,
+#resume #resume-content .columns .column-left .education .info::before,
+#resume #resume-content .columns .column-left .education .degree::before,
+#resume #resume-content .columns .column-left .education .job::before,
+#resume #resume-content .columns .column-left .experience .info::before,
+#resume #resume-content .columns .column-left .experience .degree::before,
+#resume #resume-content .columns .column-left .experience .job::before,
+#resume #resume-content .columns .column-right .summary .info::before,
+#resume #resume-content .columns .column-right .summary .degree::before,
+#resume #resume-content .columns .column-right .summary .job::before,
+#resume #resume-content .columns .column-right .education .info::before,
+#resume #resume-content .columns .column-right .education .degree::before,
+#resume #resume-content .columns .column-right .education .job::before,
+#resume #resume-content .columns .column-right .experience .info::before,
+#resume #resume-content .columns .column-right .experience .degree::before,
+#resume #resume-content .columns .column-right .experience .job::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: -11px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0056b3;
+}
+
+@media (max-width: 800px) {
+  #resume #resume-content {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  #resume #resume-content .columns {
+    gap: 1rem;
+  }
+}/*# sourceMappingURL=resume.css.map */

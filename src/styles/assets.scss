@@ -1,0 +1,57 @@
+$primary-color: #007bff;
+$secondary-color: #0056b3;
+$body-background-color: #fff;
+$primary-foreground-color: #fff;
+$secondary-foreground-color: #45505B;
+$header-background: rgba(0, 0, 0, 0.6);
+$footer-background: rgba(0, 0, 0, 1);
+$bright-color: #ffc42e;
+$shadow-color: rgba(0, 0, 50, 0.5);
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+.scroll-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 2.2rem;
+    height: 2.2rem;
+    bottom: 8rem;
+    right: 2rem;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    transition: all 350ms ease-in-out;
+    cursor: pointer;
+    z-index: 10000;
+
+    .icon {
+        color: white;
+    }
+
+    &:hover {
+        background-color: $primary-color;
+    }
+}
+
+@media (hover: none),
+(pointer: coarse) {
+    .scroll-up {
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+}

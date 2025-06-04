@@ -1,0 +1,74 @@
+#reviews {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+#reviews .slick-slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+#reviews .slick-slider p {
+  padding: 0 20%;
+  width: 100%;
+}
+#reviews .slick-slider .slide-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  display: none;
+}
+#reviews .slick-slider .slide-btn .icon {
+  font-size: 2.5rem;
+  border: 2px solid rgb(180, 180, 180);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+#reviews .slick-slider .slide-btn .icon:hover {
+  background-color: rgb(120, 120, 120);
+  color: white;
+}
+#reviews .slick-slider #previous-button .icon {
+  transform: rotate(180deg);
+}
+#reviews .slick-slider .content {
+  height: 100%;
+  display: flex;
+}
+#reviews .slick-slider .content p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.75rem;
+}
+#reviews .slick-slider .content p i {
+  margin: unset;
+  font-style: italic;
+}
+#reviews .slick-slider .content p i .icon {
+  margin: 0 1.5rem;
+  font-size: 1.35rem;
+  color: #007bff;
+}
+#reviews .slick-slider .content h3 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+#reviews .slick-slider .content h5 {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  #reviews .slick-slider p {
+    padding: 0 1rem;
+  }
+}/*# sourceMappingURL=reviews.css.map */

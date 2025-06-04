@@ -1,0 +1,39 @@
+.social-links {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.social-links .icon {
+  font-size: 1.75rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.social-links .icon:hover {
+  color: #ffc42e;
+}
+
+.nav-links {
+  list-style: none;
+  display: inline-flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.nav-links li a:hover {
+  color: #ffc42e;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .social-links .icon:hover {
+    color: #fff;
+  }
+  .nav-links li a:hover {
+    color: #fff;
+  }
+}/*# sourceMappingURL=links.css.map */
