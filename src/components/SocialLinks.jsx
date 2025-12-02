@@ -15,9 +15,9 @@ export default function SocialLinks() {
                 <Github className='icon' />
             </a>
 
-            <a href="https://www.facebook.com/profile.php?id=61572746828032" target="_blank" rel="noopener noreferrer">
+            {/*<a href="https://www.facebook.com/profile.php?id=61572746828032" target="_blank" rel="noopener noreferrer">
                 <Facebook className='icon' />
-            </a>
+            </a>*/}
 
             {/*<a href="https://www.youtube.com/channel/UC_NS9-02WvPjZpvKqkJf4vQ" target="_blank" rel="noopener noreferrer">
                 <Youtube className='icon' />
