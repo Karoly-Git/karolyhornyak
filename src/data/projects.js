@@ -127,8 +127,8 @@ export const projects = [
         alt: "Bank Holiday",
         description: "Short description of the project.",
         stack: "HTML, CSS, JS, ReactJS",
-        liveDemoUrl: "https://karoly-git.github.io/bank-holiday-uk/",
-        gitHubUrl: "https://github.com/Karoly-Git/bank-holiday-uk"
+        liveDemoUrl: "https://karoly-git.github.io/bank-holidays-uk/",
+        gitHubUrl: "https://github.com/Karoly-Git/bank-holidays-uk"
     },
     {
         name: "Map",
