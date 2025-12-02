@@ -48,7 +48,7 @@ export default function Projects({ projectsRef }) {
                 animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.9, delay: 0.15 }}
             >
-                A curated selection of my best work — crafted with precision, usability, and performance in mind.
+                A curated selection of my work — crafted with precision, usability, and performance in mind.
             </m.p>
 
             <m.div
