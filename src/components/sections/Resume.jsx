@@ -62,8 +62,14 @@ export default function Resume({ resumeRef }) {
 
             <div id='resume-content'>
 
-                <m.p className="intro-text" ref={pRef} initial="initial" animate={hasAnimated.p ? "animate" : "initial"} variants={contentVariants}>
-                    Full-Stack Web Developer with a solid foundation in front-end and back-end technologies, focused on building reliable, high-quality web applications.
+                <m.p
+                    className="intro-text"
+                    ref={pRef}
+                    initial="initial"
+                    animate={hasAnimated.p ? "animate" : "initial"}
+                    variants={contentVariants}
+                >
+                    Full-Stack Web Developer with a solid foundation in front-end (HTML, CSS, SASS, Bootstrap, JavaScript, jQuery, React) and back-end technologies (Node.js, Express.js, PHP, Python, REST APIs, SQL, MongoDB). Skilled with tools such as Git, GitHub, Firebase, Heroku, VPS, and Hostinger, and focused on building reliable, high-quality web applications.
                 </m.p>
 
                 <div className="columns">

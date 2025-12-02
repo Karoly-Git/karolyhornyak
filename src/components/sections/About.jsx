@@ -81,7 +81,7 @@ export default function About({ aboutRef }) {
                         animate={hasAnimated.h2 ? "animate" : "initial"}
                         variants={contentVariants}
                     >
-                        Hi, I’m Karoly — a Full-Stack Web Developer who enjoys building things from the ground up. I like breaking down complex problems, experimenting, and iterating until I find solutions that truly work. I’m fast-learning and comfortable working across the full development lifecycle, creating practical and reliable systems that solve real business needs.
+                        Hi, I’m Karoly — a Full-Stack Web Developer who enjoys turning ideas into real, usable products. I love breaking down complex problems, experimenting with solutions, and iterating until everything works seamlessly. I learn quickly and feel comfortable working across the entire development lifecycle, building practical and reliable systems that address real business needs.
                     </m.p>
                     <m.div ref={divRef} className='img-container' initial="initial" animate={hasAnimated.div ? "animate" : "initial"} variants={contentVariants}>
                         <div className='intro-container'>
@@ -91,7 +91,7 @@ export default function About({ aboutRef }) {
                         </div>
                     </m.div>
                     <m.p ref={p3Ref} initial="initial" animate={hasAnimated.p3 ? "animate" : "initial"} variants={contentVariants}>
-                        Seamless and User-friendly digital experiences.
+                        I’m exploring new roles as a Full Stack, Frontend, or Backend Developer. I’m open to on-site or hybrid opportunities in London, and remote roles across England. I can start immediately and am seeking full-time, part-time, contract, or temporary positions.
                     </m.p>
                     <m.div ref={linksRef} initial="initial" animate={hasAnimated.links ? "animate" : "initial"} variants={contentVariants}>
                         <SocialLinks />

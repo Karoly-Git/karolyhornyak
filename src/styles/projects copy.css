@@ -1,0 +1,146 @@
+#pro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#pro .project-filter {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+#pro .project-filter li p {
+  cursor: pointer;
+  transition: all 0.3s;
+  text-underline-offset: 2px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #45505B;
+}
+#pro .project-filter li p:hover {
+  color: #ffc42e;
+}
+#pro .project-filter li .active-selector {
+  text-decoration: underline;
+}
+#pro .slick-slider {
+  width: 95%;
+  display: flex;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div {
+  display: flex;
+  gap: 1rem;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card .img-container {
+  display: flex;
+  flex-direction: column;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card .img-container img {
+  width: 200px;
+  height: 100px;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card .img-container h5 {
+  display: flex;
+  align-items: flex-start;
+  height: 2rem;
+  position: relative;
+  z-index: 100;
+  opacity: 40%;
+  text-transform: uppercase;
+  padding-top: 0.5rem;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #45505B;
+  text-align: left;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card p {
+  text-align: left;
+  margin: 0.75rem 0;
+  color: #45505B;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card .button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#pro .slick-slider .slick-list .slick-track .slick-slide > div .project-card .button-container .btn {
+  margin-bottom: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#pro .slick-slider .slick-dots li button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease-in-out;
+}
+#pro .slick-slider .slick-dots li.slick-active {
+  background-color: black;
+  color: white;
+  scale: 1.3;
+}
+#pro .slick-slider .slick-dots li:hover:not(.slick-active) {
+  background-color: darkcyan;
+}
+#pro .slick-slider .slide-btn {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+#pro .slick-slider .slide-btn svg {
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #45505B;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+#pro .slick-slider .slide-btn svg:hover {
+  scale: 1.4;
+}
+#pro .slick-slider #previous-button svg {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 500px) {
+  #pro .project-card {
+    width: unset !important;
+  }
+  #pro .project-card img,
+  #pro .project-card h5 {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  #pro .slick-slider .slick-dots {
+    display: none;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  #pro .project-filter li p:hover {
+    color: #45505B;
+  }
+}/*# sourceMappingURL=projects copy.css.map */
