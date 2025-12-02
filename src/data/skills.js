@@ -22,69 +22,86 @@ export const skills = [
     {
         name: "HTML",
         icon: <HTML className="icon" />,
+        isActive: true,
     },
     {
         name: "CSS",
         icon: <CSS className="icon" />,
+        isActive: true,
     },
     {
         name: "SASS",
         icon: <SASS className="icon" />,
+        isActive: true,
     },
     {
         name: "BootStrap",
         icon: <BootStrap className="icon" />,
+        isActive: true,
     },
     {
         name: "JavaScript",
         icon: <JS className="icon" />,
+        isActive: true,
     },
     {
         name: "jQuery",
         icon: <JQuery className="icon" />,
+        isActive: true,
     },
     {
         name: "React",
         icon: <React className="icon" />,
+        isActive: true,
     },
     {
         name: "Redux",
         icon: <Redux className="icon" />,
+        isActive: false,
     },
     {
         name: "NodeJS",
         icon: <NodeJs className="icon" />,
+        isActive: true,
     },
     {
         name: "ExpressJS",
         icon: <ExpressJS className="icon" />,
-    },
-    {
-        name: "Python",
-        icon: <Python className="icon" />,
-    },
-    {
-        name: "MongoDB",
-        icon: <MongoDb className="icon" />,
-    },
-    {
-        name: "Postgres",
-        icon: <Postgres className="icon" />,
-    },
-    {
-        name: "MySql",
-        icon: <MySql className="icon" />,
+        isActive: true,
     },
     {
         name: "PHP",
         icon: <PHP className="icon" />,
+        isActive: true,
+    },
+    {
+        name: "Python",
+        icon: <Python className="icon" />,
+        isActive: true,
+    },
+    {
+        name: "MongoDB",
+        icon: <MongoDb className="icon" />,
+        isActive: true,
+    },
+    {
+        name: "Postgres",
+        icon: <Postgres className="icon" />,
+        isActive: true,
+    },
+    {
+        name: "MySql",
+        icon: <MySql className="icon" />,
+        isActive: true,
     },
     {
         name: "Git",
         icon: <Git className="icon" />,
+        isActive: true,
     },
     {
         name: "GitHub",
         icon: <GitHub className="icon" />,
+        isActive: true,
     },
 ];

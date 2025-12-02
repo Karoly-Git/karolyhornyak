@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { skills } from '../../data/skills';
 import { motion as m, useInView } from 'framer-motion';
 
@@ -54,6 +54,7 @@ export default function Skills({ skillsRef }) {
                 </h2>
                 <div className="tools" ref={divRef}>
                     {skills.map((skill, index) => (
+                        skill.isActive &&
                         <m.span
                             key={index}
                             custom={index}

@@ -63,7 +63,7 @@ export default function Resume({ resumeRef }) {
             <div id='resume-content'>
 
                 <m.p className="intro-text" ref={pRef} initial="initial" animate={hasAnimated.p ? "animate" : "initial"} variants={contentVariants}>
-                    Full-Stack Web Developer with a strong foundation in both front-end and back-end technologies, committed to delivering high-quality web solutions.
+                    Full-Stack Web Developer with a solid foundation in front-end and back-end technologies, focused on building reliable, high-quality web applications.
                 </m.p>
 
                 <div className="columns">
@@ -115,22 +115,22 @@ export default function Resume({ resumeRef }) {
                             <h3>Professional Experience</h3>
                             <div className="job">
                                 <p>
-                                    As a <strong>passionate Web Developer</strong>, I have gained extensive experience in overseeing the entire process of creating websites to fulfill client requirements.
+                                    As a <strong>Full-Stack Web Developer</strong>, I manage the entire lifecycle of building web applications and websites—from initial planning to deployment and long-term support.
                                 </p>
                                 <ul>
-                                    <li>Conduct detailed interviews with clients to map out their <strong>requirements</strong> and <strong>goals</strong>.</li>
-                                    <li>Handle the registration of <strong>domains</strong> and <strong>web storage</strong>, along with managing <strong>hosting services</strong> to ensure seamless website performance.</li>
-                                    <li>Work on both <strong>front-end</strong> and <strong>back-end programming</strong>, developing and implementing <strong>responsive website layouts</strong> that are visually appealing and highly functional.</li>
-                                    <li>Design <strong>user interfaces</strong> with a keen eye for detail and <strong>user experience</strong>, ensuring websites are easy to navigate and engage with.</li>
-                                    <li>Integrate <strong>APIs</strong> and third-party services to enhance functionality.</li>
-                                    <li>Ensure <strong>website optimization</strong> and <strong>performance</strong>.</li>
-                                    <li>Perform regular <strong>updates</strong> and <strong>maintenance</strong> to keep sites running smoothly.</li>
-                                    <li>Provide <strong>technical support</strong> and <strong>troubleshooting</strong>, addressing any issues promptly.</li>
-                                    <li>Develop custom <strong>web applications</strong> tailored to client specifications using modern frameworks like <strong>React</strong> and <strong>Node.js</strong>.</li>
-                                    <li>Utilize <strong>version control systems</strong> like <strong>Git</strong> for efficient project management and collaboration.</li>
-                                    <li>Stay updated with the latest <strong>industry trends</strong> and <strong>technologies</strong> to continuously improve development practices.</li>
-                                </ul>                            </div>
-
+                                    <li>Collaborate with clients to define clear <strong>requirements</strong> and translate their goals into technical solutions.</li>
+                                    <li>Set up and manage <strong>domains</strong>, <strong>hosting</strong>, and <strong>server environments</strong> to ensure stable, secure performance.</li>
+                                    <li>Build <strong>responsive, mobile-first interfaces</strong> and implement <strong>front-end</strong> and <strong>back-end</strong> functionality using modern technologies.</li>
+                                    <li>Design intuitive <strong>user interfaces</strong> with a strong focus on <strong>usability</strong> and <strong>accessibility</strong>.</li>
+                                    <li>Integrate <strong>APIs</strong> and third-party services to extend features and improve workflow efficiency.</li>
+                                    <li>Optimize websites for <strong>speed</strong>, <strong>SEO</strong>, and overall <strong>performance</strong>.</li>
+                                    <li>Handle ongoing <strong>updates</strong>, <strong>maintenance</strong>, and feature improvements.</li>
+                                    <li>Provide reliable <strong>technical support</strong> and resolve issues quickly.</li>
+                                    <li>Develop custom <strong>web applications</strong> with frameworks such as <strong>React</strong>, <strong>Node.js</strong>, and <strong>Express</strong>.</li>
+                                    <li>Use <strong>Git</strong> and <strong>GitHub</strong> for version control, collaboration, and project management.</li>
+                                    <li>Continuously learn and adopt new <strong>tools</strong> and <strong>technologies</strong> to improve development workflows.</li>
+                                </ul>
+                            </div>
                             <div className="job non-it">
                                 <h4>Production Supervisor</h4>
                                 <p>2018 - Present</p>
