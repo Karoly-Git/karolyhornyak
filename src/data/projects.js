@@ -1,20 +1,20 @@
-import dmf from "../img/projects/dmf.png";
-import spw from "../img/projects/spw.png";
-import mary from "../img/projects/mary.png";
-import talpak from "../img/projects/talpak.png";
+import dmf from "../img/projects/dmf.webp";
+import spw from "../img/projects/spw.webp";
+import mary from "../img/projects/mary.webp";
+import talpak from "../img/projects/talpak.webp";
 import tsmrf from "../img/projects/tsmrf.png";
 import webdev from "../img/projects/webdev.png";
 import mapapp from "../img/projects/mapapp.png";
 import dog from "../img/projects/dog.png";
-import namedayapi from "../img/projects/namedayapi.png";
+import namedayapi from "../img/projects/namedayapi.webp";
 import weather from "../img/projects/weather.png";
-import gomoku from "../img/projects/gomoku.png";
+import gomoku from "../img/projects/gomoku.webp";
 import carousel from "../img/projects/carousel.png";
-import bankholiday from "../img/projects/bankholiday.png";
+import bankholiday from "../img/projects/bankholiday.webp";
 import exchange from "../img/projects/exchange.png";
 import review from "../img/projects/review.png";
 import cd from "../img/projects/cd.png";
-import fsn from "../img/projects/fsn.png";
+import fsn from "../img/projects/fsn.webp";
 
 export const projects = [
     {
