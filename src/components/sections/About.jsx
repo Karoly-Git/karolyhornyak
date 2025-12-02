@@ -75,8 +75,13 @@ export default function About({ aboutRef }) {
                 </m.h2>
 
                 <div className="about-content">
-                    <m.p ref={p1Ref} initial="initial" animate={hasAnimated.h2 ? "animate" : "initial"} variants={contentVariants}>
-                        Passionate Full-Stack Web Developer dedicated to building dynamic and responsive Web Applications.
+                    <m.p
+                        ref={p1Ref}
+                        initial="initial"
+                        animate={hasAnimated.h2 ? "animate" : "initial"}
+                        variants={contentVariants}
+                    >
+                        Hi, I’m Karoly — a Full-Stack Web Developer who enjoys building things from the ground up. I like breaking down complex problems, experimenting, and iterating until I find solutions that truly work. I’m fast-learning and comfortable working across the full development lifecycle, creating practical and reliable systems that solve real business needs.
                     </m.p>
                     <m.div ref={divRef} className='img-container' initial="initial" animate={hasAnimated.div ? "animate" : "initial"} variants={contentVariants}>
                         <div className='intro-container'>
