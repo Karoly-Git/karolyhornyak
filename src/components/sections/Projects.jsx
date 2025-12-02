@@ -1,146 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import Slider from "react-slick";
-
-import ProjectCard from '../ProjectCard';
-
+import React, { useState, useEffect } from "react";
+import { motion as m, useInView } from "framer-motion";
+import ProjectCard from "../ProjectCard";
 import { projects } from "../../data/projects";
-import { MdOutlineNavigateNext as Arrow } from 'react-icons/md';
-import { motion as m, useInView } from 'framer-motion';
 
-const sectionVariants = {
-    initial: { opacity: 0, y: 180 },
-    animate: { opacity: 1, y: 0, transition: { duration: 1 } }
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.12,
+            delayChildren: 0.2,
+        },
+    },
 };
 
-function PreviousArrow(props) {
-    const { onClick } = props;
-    return (
-        <div
-            id="previous-button"
-            className="slide-btn"
-            onClick={onClick}
-        >
-            <Arrow className="icon" />
-        </div>
-    );
-}
-
-function NextArrow(props) {
-    const { onClick } = props;
-    return (
-        <div
-            className="slide-btn"
-            onClick={onClick}
-        >
-            <Arrow className="icon" />
-        </div>
-    );
-}
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
+    },
+};
 
 export default function Projects({ projectsRef }) {
-    const [hasAnimated, setHasAnimated] = useState(false);
-    const sectionInView = useInView(projectsRef, { triggerOnce: true, threshold: 0.1 });
+    const sectionInView = useInView(projectsRef, {
+        triggerOnce: true,
+        threshold: 0.1,
+    });
 
-    useEffect(() => {
-        if (sectionInView && !hasAnimated) {
-            setHasAnimated(true);
-        }
-    }, [sectionInView, hasAnimated]);
-
-    const [projectsList, setProjectsList] = useState([...projects.filter(project => project.group === "website")]);
-    const [activeIndex, setActiveIndex] = useState(0);
-    const groups = ["website", "web-app", "api"];
-
-    const filteredProjects = (group) => {
-        const filteredProjects = projects.filter(project => project.group === group);
-        setProjectsList(filteredProjects);
-    };
-
-    const handleClick = (index, group) => {
-        setActiveIndex(index);
-        filteredProjects(group);
-    };
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 1300,
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 0,
-        nextArrow: <NextArrow />,
-        prevArrow: <PreviousArrow />,
-        customPaging: (i) => (
-            <div>
-                {i + 1}
-            </div>
-        ),
-        appendDots: (dots) => (
-            <ul>{dots}</ul>
-        ),
-        responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 950,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            }
-        ]
-    };
+    const activeProjects = projects.filter((p) => p.isActive);
 
     return (
-        <section id='pro' ref={projectsRef}>
-            {false && <m.h2 initial="initial" animate={hasAnimated ? "animate" : "initial"} variants={sectionVariants}>
-                Projects
-            </m.h2>}
+        <section id="pro" ref={projectsRef}>
+            <m.h2
+                className="projects-title"
+                initial={{ opacity: 0, y: 40 }}
+                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.9 }}
+            >
+                Featured Projects
+            </m.h2>
 
-            <h2>
-                Projects
-            </h2>
+            <m.p
+                className="projects-subtitle"
+                initial={{ opacity: 0, y: 20 }}
+                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.9, delay: 0.15 }}
+            >
+                A curated selection of my best work — crafted with precision, usability, and performance in mind.
+            </m.p>
 
-            <m.ul className='project-filter' initial="initial" animate={hasAnimated ? "animate" : "initial"} variants={sectionVariants}>
-                {groups.map((group, index) => (
-                    <li key={group}>
-                        <p
-                            className={`selector ${activeIndex === index ? 'active-selector' : ''}`}
-                            onClick={() => handleClick(index, group)}
-                        >
-                            {group.toUpperCase()} ({projects.filter(project => project.group === group && project.isActive).length})
-                        </p>
-                    </li>
+            <m.div
+                className="project-grid premium-grid"
+                variants={containerVariants}
+                initial="hidden"
+                animate={sectionInView ? "show" : ""}
+            >
+                {activeProjects.map((project, index) => (
+                    <m.div key={index} variants={itemVariants}>
+                        <ProjectCard {...project} />
+                    </m.div>
                 ))}
-            </m.ul>
-
-            <Slider {...settings}>
-                {projectsList.map((project, index) => (
-                    project.isActive && <div key={project.alt + index}>
-                        <ProjectCard
-                            name={project.name}
-                            group={project.group}
-                            category={project.category}
-                            src={project.src}
-                            alt={project.alt}
-                            description={project.description}
-                            stack={project.stack}
-                            liveDemoUrl={project.liveDemoUrl}
-                            gitHubUrl={project.gitHubUrl}
-                            isRepoPrivate={project.isRepoPrivate}
-                        />
-                    </div>
-                ))}
-            </Slider>
+            </m.div>
         </section>
     );
 }

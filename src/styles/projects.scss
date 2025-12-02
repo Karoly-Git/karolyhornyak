@@ -1,234 +1,138 @@
-$primary-color: #007bff;
-$secondary-color: #0056b3;
-$body-background-color: #fff;
-$primary-foreground-color: #fff;
-$secondary-foreground-color: #45505B;
-$header-background: rgba(0, 0, 0, 0.6);
-$footer-background: rgba(0, 0, 0, 1);
-$bright-color: #ffc42e;
-$shadow-color: rgba(0, 0, 50, 0.5);
-
 #pro {
-    //background-color: darkgreen;
+    padding: 6rem 0 8rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #fafafa;
 
-    .project-filter {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        gap: 1rem;
-        margin-bottom: 2rem;
-
-        li {
-
-            p {
-                cursor: pointer;
-                transition: all .3s;
-                text-underline-offset: 2px;
-                user-select: none;
-                color: $secondary-foreground-color;
-
-                &:hover {
-                    color: $bright-color;
-                }
-            }
-
-            .active-selector {
-                text-decoration: underline;
-            }
-        }
+    .projects-title {
+        font-size: 2.8rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
     }
 
-    .slick-slider {
-        // Styles for the main slider container
+    .projects-subtitle {
+        font-size: 1.15rem;
+        color: #555;
+        max-width: 650px;
+        text-align: center;
+        margin-bottom: 4rem;
+        margin-top: 2rem;
+        line-height: 1.6;
+    }
+
+    /* --- PREMIUM GRID --- */
+    .premium-grid {
         width: 95%;
-        display: flex;
-        margin-bottom: 2rem;
-        max-width: 1200px;
+        max-width: 1300px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem 2.2rem;
+        padding: 0 1rem;
+    }
 
-        .slick-list {
-            // Styles for the visible portion of the slider
-            //background-color: black;
+    /* --- PREMIUM CARD LOOK --- */
+    .project-card {
+        background: white;
+        border-radius: 14px;
+        padding: 1.8rem;
+        box-shadow:
+            0 12px 28px rgba(0, 0, 0, 0.06),
+            0 8px 18px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
+        transform: translateY(0);
+        position: relative;
+        overflow: hidden;
 
-            .slick-track {
-                // Styles for the track that contains the slides
-                //background-color: red;
-
-                .slick-slide {
-                    // Styles for individual slides
-                    background-color: white;
-                    //border: 10px solid black;
-                    display: flex;
-                    justify-content: center;
-
-                    >div {
-                        display: flex;
-                        gap: 1rem;
-                        //border: 5px solid red;
-
-                        .project-card {
-                            display: flex;
-                            flex-direction: column;
-                            padding: 1.5rem;
-                            transition: transform 0.3s;
-                            width: 400px;
-                            margin-left: auto;
-                            margin-right: auto;
-                            //border: 1px solid blue;
-
-                            .img-container {
-                                display: flex;
-                                flex-direction: column;
-
-                                img {
-                                    width: 200px;
-                                    height: 100px;
-                                }
-
-                                h5 {
-                                    display: flex;
-                                    //justify-content: flex-end;
-                                    align-items: flex-start;
-                                    height: 2rem;
-                                    position: relative;
-                                    z-index: 100;
-                                    opacity: 40%;
-                                    text-transform: uppercase;
-                                    padding-top: 0.5rem;
-                                }
-                            }
-
-                            h3 {
-                                margin-top: 10px;
-                                font-size: 1.5rem;
-                                color: $secondary-foreground-color;
-                                text-align: left;
-                            }
-
-                            p {
-                                text-align: left;
-                                margin: 0.75rem 0;
-                                color: $secondary-foreground-color;
-                            }
-
-                            .button-container {
-                                display: flex;
-                                justify-content: space-between;
-                                margin-top: auto;
-                                margin-bottom: 0;
-                                flex-direction: column;
-                                gap: 0.5rem;
-
-                                .btn {
-                                    margin-bottom: 0;
-                                    user-select: none;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow:
+                0 22px 40px rgba(0, 0, 0, 0.12),
+                0 12px 24px rgba(0, 0, 0, 0.05);
         }
 
-        .slick-dots {
-            // Styles for the navigation dots
-            //background-color: yellow;
-            //bottom: -30px;
-
-            li {
-                // Styles for individual dot items
-                //border: 2px solid blue;
-
-                button {
-                    // Styles for dot buttons
-                    //border: 2px solid red;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: all 300ms ease-in-out;
-
-                }
-
-                &.slick-active {
-                    // Styles for active dot item
-                    background-color: black;
-                    color: white;
-                    scale: 1.3;
-                }
-
-                &:hover:not(.slick-active) {
-                    background-color: darkcyan;
-                }
-            }
+        /* Accent glow on hover */
+        &:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: 0 0 0 2px rgba(0, 110, 255, 0.25);
+            transition: opacity 0.3s;
         }
 
-        .slide-btn {
-            // Styles for the previous arrow button
-            color: white;
+        &:hover:after {
+            opacity: 1;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #222;
+        }
+
+        p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
+        }
+
+        .button-container {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
+            gap: 0.8rem;
 
-            svg {
-                height: 2.5rem;
-                width: 2.5rem;
-                color: #45505B;
-                cursor: pointer;
-                transition: all 150ms ease-in-out;
-
-                &:hover {
-                    scale: 1.4;
-                }
+            .btn {
+                padding: 0.55rem 1.1rem;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                transition: 0.25s;
             }
-        }
 
-        #previous-button {
-            // Styles for the next arrow button
-            //background-color: orange;
-
-            svg {
-                transform: rotate(180deg);
+            .btn:hover {
+                transform: translateY(-2px);
             }
         }
     }
 }
 
-@media screen and (max-width: 500px) {
-    #pro {
-
-        .project-card {
-            width: unset !important;
-
-            img,
-            h5 {
-                display: none !important;
-            }
-        }
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    #pro .premium-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media (max-width: 650px) {
     #pro {
-        .slick-slider {
-            .slick-dots {
-                display: none;
-            }
-        }
-    }
-}
+        padding-top: 4rem;
 
-@media (hover: none),
-(pointer: coarse) {
-    #pro {
-        .project-filter {
-            li {
-                p {
-                    &:hover {
-                        color: $secondary-foreground-color;
-                    }
-                }
-            }
+        .projects-title {
+            font-size: 2.2rem;
+        }
+
+        .projects-subtitle {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .premium-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
     }
 }
