@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ProjectCard({ name, src, alt, category, stack, liveDemoUrl, gitHubUrl, isRepoPrivate, key }) {
+export default function ProjectCard({ name, src, alt, description, category, stack, liveDemoUrl, gitHubUrl, isRepoPrivate, key }) {
     return (
         <div className="project-card" key={key}>
             <div className='img-container'>
@@ -9,6 +9,7 @@ export default function ProjectCard({ name, src, alt, category, stack, liveDemoU
             </div>
             <h3>{name}</h3>
             <p>{stack}</p>
+            <p>{description}</p>
             <div className='button-container'>
                 <a href={liveDemoUrl} target='_blank' rel="noopener noreferrer" className="demo-btn btn">Live Demo</a>
                 {isRepoPrivate ? (
