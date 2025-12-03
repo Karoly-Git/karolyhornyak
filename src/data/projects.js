@@ -50,7 +50,7 @@ export const projects = [
         category: 'website',
         src: mary,
         alt: "Mary",
-        description: "A multilingual tailoring Progressive Web App built with React, Node.JavaScript, and Sass, featuring service pages, portfolio galleries, and a clean responsive layout, with seamless language switching for English and Hungarian visitors.",
+        description: "A multilingual tailoring Progressive Web App built with React, Node.JavaScript, and Sass, featuring service pages, and a clean responsive layout, with seamless language switching for English and Hungarian visitors.",
         stack: "React, Vite, JavaScript, Sass, Node.js",
         liveDemoUrl: "https://www.maryvarrodaja.hu/",
         gitHubUrl: "https://github.com/Karoly-Git/mary-varrodaja",
