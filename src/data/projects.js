@@ -4,7 +4,7 @@ import mary from "../img/projects/mary.webp";
 import talpak from "../img/projects/talpak.webp";
 import tsmrf from "../img/projects/tsmrf.png";
 import webdev from "../img/projects/webdev.png";
-import mapapp from "../img/projects/mapapp.png";
+import gazetteer from "../img/projects/gazetteer.webp";
 import dog from "../img/projects/dog.png";
 import namedayapi from "../img/projects/namedayapi.webp";
 import weather from "../img/projects/weather.png";
@@ -17,6 +17,55 @@ import cd from "../img/projects/cd.png";
 import fsn from "../img/projects/fsn.webp";
 
 export const projects = [
+    {
+        name: "Gazetteer",
+        isActive: true,
+        group: "api",
+        category: "front-end app",
+        src: gazetteer,       // or whatever your imported image variable is
+        alt: "Gazetteer App",
+        description:
+            "An interactive world explorer that lets users view real-time country data—including weather, news, borders, population, photos, and currency—powered by multiple public APIs and an interactive Leaflet map.",
+        stack: "HTML, CSS, JavaScript, PHP, Leaflet.js, APIs",
+        liveDemoUrl: "https://transferstation.co.uk/gazetteer/",
+        gitHubUrl: "https://github.com/Karoly-Git/gazetteer"
+    },
+    {
+        name: "Form Submit Now",
+        isActive: true,
+        group: "api",
+        category: "API",
+        src: fsn,
+        alt: "Name day",
+        description: "A plug-and-play contact form API that lets developers send form submissions directly to email—no backend or database required.",
+        stack: "HTML, CSS, JavaScript, Node.js",
+        liveDemoUrl: "https://karoly-git.github.io/form-submit-now/",
+        gitHubUrl: "https://github.com/Karoly-Git/form-submit-now"
+    },
+    {
+        name: "Name Day",
+        isActive: true,
+        group: "api",
+        category: "API",
+        src: namedayapi,
+        alt: "Name day",
+        description: "A simple REST API that returns Hungarian and Polish name day data by month, date, or country in clean JSON format.",
+        stack: "HTML, CSS, JavaScript, Node.js",
+        liveDemoUrl: "https://karoly-git.github.io/name-day/",
+        gitHubUrl: "https://github.com/Karoly-Git/name-day"
+    },
+    {
+        name: "Bank Holiday",
+        isActive: true,
+        group: "web-app",
+        category: 'web-app',
+        src: bankholiday,
+        alt: "Bank Holiday",
+        description: "A fast React + Vite app that fetches official UK bank-holiday data from the GOV.UK endpoint https://www.gov.uk/bank-holidays.json. Select a region and year to view accurate holiday dates in a clear, responsive interface.",
+        stack: "React, Vite, JavaScript, CSS",
+        liveDemoUrl: "https://karoly-git.github.io/bank-holidays-uk/",
+        gitHubUrl: "https://github.com/Karoly-Git/bank-holidays-uk"
+    },
     {
         name: "Photography Studio",
         isActive: true,
@@ -83,30 +132,6 @@ export const projects = [
         gitHubUrl: "https://github.com/Karoly-Git/portfolio"
     },
     {
-        name: "Form Submit Now",
-        isActive: true,
-        group: "api",
-        category: "cdn",
-        src: fsn,
-        alt: "Name day",
-        description: "A plug-and-play contact form API that lets developers send form submissions directly to email—no backend or database required.",
-        stack: "HTML, CSS, JavaScript, Node.js",
-        liveDemoUrl: "https://karoly-git.github.io/form-submit-now/",
-        gitHubUrl: "https://github.com/Karoly-Git/form-submit-now"
-    },
-    {
-        name: "Name Day",
-        isActive: true,
-        group: "api",
-        category: "api",
-        src: namedayapi,
-        alt: "Name day",
-        description: "A simple REST API that returns Hungarian and Polish name day data by month, date, or country in clean JSON format.",
-        stack: "HTML, CSS, JavaScript, Node.js",
-        liveDemoUrl: "https://karoly-git.github.io/name-day/",
-        gitHubUrl: "https://github.com/Karoly-Git/name-day"
-    },
-    {
         name: "Gomoku",
         isActive: false,
         group: "web-app",
@@ -119,23 +144,11 @@ export const projects = [
         gitHubUrl: "https://github.com/Karoly-Git/gomoku"
     },
     {
-        name: "Bank Holiday",
-        isActive: true,
-        group: "web-app",
-        category: 'web-app',
-        src: bankholiday,
-        alt: "Bank Holiday",
-        description: "A simple holiday viewer that pulls real-time UK bank-holiday data from the GOV.UK API.",
-        stack: "React, Vite, JavaScript, CSS",
-        liveDemoUrl: "https://karoly-git.github.io/bank-holidays-uk/",
-        gitHubUrl: "https://github.com/Karoly-Git/bank-holidays-uk"
-    },
-    {
         name: "Map",
         isActive: false,
         group: "web-app",
         category: 'web-app',
-        src: mapapp,
+        src: "",
         alt: "Map App",
         description: "Short description of the project.",
         stack: "HTML, jQuery, CSS, PHP",

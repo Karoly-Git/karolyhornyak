@@ -72,6 +72,9 @@
   margin-bottom: 0.6rem;
   color: #222;
 }
+#pro .project-card h5 {
+  text-transform: uppercase;
+}
 #pro .project-card p {
   color: #666;
   font-size: 0.95rem;
