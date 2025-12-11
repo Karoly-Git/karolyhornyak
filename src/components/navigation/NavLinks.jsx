@@ -23,7 +23,19 @@ export default function NavLinks({ aboutRef, skillsRef, resumeRef, projectsRef, 
             <li><a onClick={() => handleScroll(resumeRef)}>E&E</a></li>
             <li><a onClick={() => handleScroll(projectsRef)}>Projects</a></li>
             <li><a onClick={() => handleScroll(contactRef)}>Contact</a></li>
-            <li><Link to="/blog">Blog</Link></li>
+            <li>
+                <Link
+                    to="/blog"
+                    onClick={() => {
+                        // smooth scroll after route change
+                        setTimeout(() => {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        }, 0);
+                    }}
+                >
+                    Blog
+                </Link>
+            </li>
         </ul>
     );
 }

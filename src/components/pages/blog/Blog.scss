@@ -1,8 +1,156 @@
-.blog {
-    h1 {
+#blog {
+    padding: 6rem 0 8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+
+    .blog-title-main {
+        font-size: 2.8rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
+    }
+
+    .blog-subtitle {
+        font-size: 1.15rem;
+        color: #555;
+        max-width: 650px;
         text-align: center;
-        margin-top: 5rem;
-        margin-bottom: 3rem;
-        font-size: 2rem;
+        margin-bottom: 4rem;
+        margin-top: 2rem;
+        line-height: 1.6;
+        padding: 0 2rem;
+    }
+
+    /* --- BLOG GRID (same as premium-grid) --- */
+    .blog-grid {
+        width: 95%;
+        max-width: 1300px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem 2.2rem;
+        padding: 0 1rem;
+    }
+
+    /* --- BLOG CARD (premium style) --- */
+    .blog-card {
+        background: white;
+        border-radius: 14px;
+        padding: 1.8rem;
+        box-shadow:
+            0 12px 28px rgba(0, 0, 0, 0.06),
+            0 8px 18px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
+        transform: translateY(0);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow:
+                0 22px 40px rgba(0, 0, 0, 0.12),
+                0 12px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Accent blue glow */
+        &:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: 0 0 0 2px rgba(0, 110, 255, 0.25);
+            transition: opacity 0.3s;
+        }
+
+        &:hover:after {
+            opacity: 1;
+        }
+
+        /* BLOG IMAGE */
+        .blog-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+        }
+
+        /* META */
+        .blog-meta {
+            font-size: 0.85rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+        }
+
+        /* TITLE */
+        .blog-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #222;
+        }
+
+        /* EXCERPT */
+        .blog-excerpt {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            margin-bottom: 1.6rem;
+            flex: 1;
+        }
+
+        /* READ MORE BUTTON */
+        .blog-read-btn {
+            align-self: flex-start;
+            padding: 0.55rem 1.1rem;
+            background: #006eff;
+            color: white;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .blog-read-btn:hover {
+            transform: translateY(-2px);
+            background: #0054c7;
+        }
+    }
+}
+
+/* RESPONSIVE BREAKPOINTS (same as projects) */
+@media (max-width: 1100px) {
+    #blog .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 650px) {
+    #blog {
+        padding-top: 4rem;
+
+        .blog-title-main {
+            font-size: 2.2rem;
+        }
+
+        .blog-subtitle {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
     }
 }
