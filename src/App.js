@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion as m, AnimatePresence } from 'framer-motion';
 
 import 'slick-carousel/slick/slick.css';
@@ -22,7 +23,9 @@ import Contact from './components/sections/Contact';
 import Resume from './components/sections/Resume';
 import Reviews from './components/sections/Reviews';
 import Projects from './components/sections/Projects';
+
 import ScrollUp from './components/ScrollUp';
+import Blog from './components/pages/blog/Blog';
 
 const contentVariants = {
   initial: { opacity: 0 },
@@ -42,117 +45,84 @@ export default function App() {
   const contactRef = useRef(null);
 
   useLayoutEffect(() => {
-    // This will run after the component and its children are fully rendered
     setIsLoading(false);
-  }, []); // Empty dependency array means it runs only after the initial render
-
-
-  /*useEffect(() => {
-    const handlePageLoad = () => {
-      setIsLoading(false);
-      console.log('All loaded');
-    };
-
-    window.addEventListener('load', handlePageLoad);
-
-    return () => window.removeEventListener('load', handlePageLoad);
-  }, []);*/
-
-  /*useEffect(() => {
-    const checkPageLoad = () => {
-      if (document.readyState === 'complete') {
-        setIsLoading(false);
-      }
-    };
-
-    checkPageLoad();
-
-    document.addEventListener('readystatechange', checkPageLoad);
-
-    return () => document.removeEventListener('readystatechange', checkPageLoad);
-  }, []);*/
-
-  /*useEffect(() => {
-    // Wait for the next frame after all rendering
-    requestAnimationFrame(() => {
-      console.log("App and children are rendered");
-      setIsLoading(false);
-    });
-  }, []);*/
-
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      if (prevScrollPos > currentScrollPos) {
-        //console.log('Scrolling Up');
-        setIsScrollingUp(true);
-      } else if (prevScrollPos < currentScrollPos) {
-        //console.log('Scrolling Down');
-        setIsScrollingUp(false);
-      }
+      setIsScrollingUp(prevScrollPos > currentScrollPos);
       setPrevScrollPos(currentScrollPos);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
 
   return (
-    <div className="App">
-      <AnimatePresence>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <m.div
-            key="content"
-            variants={contentVariants}
-            initial="initial"
-            animate="animate"
-          >
-            <ScrollUp />
-            <header className={isScrollingUp ? 'header-show' : 'header-hide'}>
-              <nav>
-                <NavLinks
-                  aboutRef={aboutRef}
-                  skillsRef={skillsRef}
-                  resumeRef={resumeRef}
-                  projectsRef={projectsRef}
-                  contactRef={contactRef}
-                />
-              </nav>
-            </header>
+    <Router>
+      <div className="App">
+        <AnimatePresence>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <m.div
+              key="content"
+              variants={contentVariants}
+              initial="initial"
+              animate="animate"
+            >
+              <ScrollUp />
 
-            <main>
-              <Hero />
-              <About aboutRef={aboutRef} />
-              <Reviews />
-              <Skills skillsRef={skillsRef} />
-              <Resume resumeRef={resumeRef} />
-              <Projects projectsRef={projectsRef} />
-              <Contact contactRef={contactRef} />
-            </main>
-            <footer>
-              <nav>
-                <NavLinks
-                  aboutRef={aboutRef}
-                  skillsRef={skillsRef}
-                  resumeRef={resumeRef}
-                  projectsRef={projectsRef}
-                  contactRef={contactRef}
+              <header className={isScrollingUp ? 'header-show' : 'header-hide'}>
+                <nav>
+                  <NavLinks
+                    aboutRef={aboutRef}
+                    skillsRef={skillsRef}
+                    resumeRef={resumeRef}
+                    projectsRef={projectsRef}
+                    contactRef={contactRef}
+                  />
+                </nav>
+              </header>
+
+              {/* ROUTES MUST WRAP THE PAGE CONTENT */}
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <main>
+                      <Hero />
+                      <About aboutRef={aboutRef} />
+                      <Reviews />
+                      <Skills skillsRef={skillsRef} />
+                      <Resume resumeRef={resumeRef} />
+                      <Projects projectsRef={projectsRef} />
+                      <Contact contactRef={contactRef} />
+                    </main>
+                  }
                 />
-                <SocialLinks />
-              </nav>
-              <p>
-                &copy; 2020 – {new Date().getFullYear()} Karoly Hornyak
-              </p>
-            </footer>
-          </m.div>
-        )}
-      </AnimatePresence>
-    </div>
+
+                <Route path="/blog" element={<Blog />} />
+              </Routes>
+
+              <footer>
+                <nav>
+                  <NavLinks
+                    aboutRef={aboutRef}
+                    skillsRef={skillsRef}
+                    resumeRef={resumeRef}
+                    projectsRef={projectsRef}
+                    contactRef={contactRef}
+                  />
+                  <SocialLinks />
+                </nav>
+                <p>&copy; 2020 – {new Date().getFullYear()} Karoly Hornyak</p>
+              </footer>
+            </m.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </Router>
   );
 }
