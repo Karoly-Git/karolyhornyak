@@ -10,7 +10,6 @@ export const blogs = [
         alt: "React portfolio screenshot",
         excerpt: "A deep dive into how I built and optimized my personal portfolio...",
         date: "Feb 2025",
-        readTime: 6,
         isActive: true
     },
     {
@@ -21,7 +20,6 @@ export const blogs = [
         alt: "UI example",
         excerpt: "Simple design rules that instantly improve your UI...",
         date: "Jan 2025",
-        readTime: 4,
         isActive: true
     }
 ];

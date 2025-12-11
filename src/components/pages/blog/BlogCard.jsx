@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function BlogCard({ title, cover, alt, excerpt, date, readTime, slug }) {
+export default function BlogCard({ title, cover, alt, excerpt, date, slug }) {
     return (
         <div className="blog-card">
             <div className="blog-img">
@@ -10,7 +10,7 @@ export default function BlogCard({ title, cover, alt, excerpt, date, readTime, s
 
             <div className="blog-content">
                 <p className="blog-meta">
-                    <span>{date}</span> • <span>{readTime} min read</span>
+                    <span>{date}</span>
                 </p>
 
                 <h3 className="blog-title">{title}</h3>
