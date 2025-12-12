@@ -163,7 +163,7 @@ export default function HowIStartedProgramming() {
                         it was a direction that finally felt right.
                     </p>
                     <p>
-                        This is where Part 1 ends. Part 2 is where things start getting very real.
+                        This is where Part 1 ends. Part 2 is comig soon where things start getting very real.
                     </p>
                 </section>
 
