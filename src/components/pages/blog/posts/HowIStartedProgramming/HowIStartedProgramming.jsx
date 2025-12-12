@@ -139,15 +139,15 @@ export default function HowIStartedProgramming() {
                         That’s when I realised frontend alone wasn’t enough — everything eventually needs a backend.
                     </p>
                     <p>
-                        I enrolled in a one-year full-stack programme at{" "}
+                        I completed a one-year full-stack development programme at{" "}
                         <a
                             href="https://itcareerswitch.co.uk/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             IT Career Switch
-                        </a>{" "}
-                        and completed that as well.
+                        </a>,
+                        where I gained in-depth experience with both front-end and back-end technologies, including React, Redux, Bootstrap, PHP, Python, Node.js, REST API, PostgreSQL, MariaDB, Git & GitHub, Jest, Mocha, and jQuery.
                     </p>
                 </section>
 
