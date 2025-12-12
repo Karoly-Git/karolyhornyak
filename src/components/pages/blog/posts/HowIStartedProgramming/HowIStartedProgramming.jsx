@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import PostNavigation from "../postnavigation/PostNavigation";
 
 export default function HowIStartedProgramming() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             {/* SEO / Social Sharing */}
