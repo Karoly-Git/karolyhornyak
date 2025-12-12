@@ -74,7 +74,7 @@ export default function HowIStartedProgramming() {
                         programming career. My professional journey took me across several different fields.
                     </p>
                     <p>
-                        Those one and a half decades were full of adventures, changes, and life happening. But let’s fast-forward to 2018,
+                        That decade and a half were full of adventures, changes, and life happening. But let’s fast-forward to 2018,
                         when I had already been living in the UK for three years and, after holding various positions, had
                         just started working as a production supervisor.
                     </p>
