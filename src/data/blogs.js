@@ -10,7 +10,7 @@ export const blogs = [
         cover: "/images/blog/how-i-started-programming.jpg",
         alt: "Early journey into programming and automation",
         excerpt: "An honest story about automation, a 20-year detour, rediscovering programming, and the moment I realised this was what I wanted to do for the rest of my life.",
-        date: "Nov 2025",
+        date: "Dec 2025",
         isActive: true
     },
     {
