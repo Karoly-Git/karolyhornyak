@@ -124,6 +124,27 @@
             transform: translateY(-2px);
             background: #0054c7;
         }
+
+        /* CATEGORIES */
+        .blog-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .blog-category {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.55rem;
+            border-radius: 6px;
+            background: rgba(0, 110, 255, 0.08);
+            color: #006eff;
+            line-height: 1;
+        }
+
     }
 }
 

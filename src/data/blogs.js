@@ -1,16 +1,20 @@
 import HowIStartedProgramming from "../components/pages/blog/posts/HowIStartedProgramming/HowIStartedProgramming";
+
 import PortfolioReact from "../components/pages/blog/posts/PortfolioReact";
 import DesignTips from "../components/pages/blog/posts/DesignTips";
+
+import how_i_started_programming from "../components/pages/blog/posts/HowIStartedProgramming/how-i-started-programming.jpg";
 
 export const blogs = [
     {
         title: "How I Started Programming",
         slug: "how-i-started-programming",
         component: HowIStartedProgramming,
-        cover: "/images/blog/how-i-started-programming.jpg",
-        alt: "Early journey into programming and automation",
-        excerpt: "An honest story about automation, a 20-year detour, rediscovering programming, and the moment I realised this was what I wanted to do for the rest of my life.",
+        cover: how_i_started_programming,
+        alt: "Journey into programming and automation",
+        excerpt: "An honest story about automation, a 20-year detour, rediscovering programming, and becoming a full-stack develop...",
         date: "Dec 2025",
+        categories: ["sparks", "career"],
         isActive: true
     },
     {
@@ -21,6 +25,7 @@ export const blogs = [
         alt: "React portfolio screenshot",
         excerpt: "A deep dive into how I built and optimized my personal portfolio...",
         date: "Feb 2025",
+        categories: ["react", "tutorial", "frontend"],
         isActive: false
     },
     {
@@ -31,6 +36,7 @@ export const blogs = [
         alt: "UI example",
         excerpt: "Simple design rules that instantly improve your UI...",
         date: "Jan 2025",
+        categories: ["design", "ui"],
         isActive: false
     }
 ];
