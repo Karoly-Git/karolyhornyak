@@ -133,7 +133,7 @@ export default function App() {
                   />
                   <SocialLinks />
                 </nav>
-                <p>&copy; 2020 – {new Date().getFullYear()} Karoly Hornyak</p>
+                <p>&copy; Karoly Hornyak</p>
               </footer>
             </m.div>
           )}
