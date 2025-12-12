@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 import './PostNavigation.css';
 
@@ -22,13 +23,16 @@ export default function PostNavigation({ title }) {
             </button>
 
             <div className="share-buttons">
+                <span className="share-label">Share</span>
+
                 <a
                     href={facebookShareUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on Facebook"
+                    title="Share on Facebook"
                 >
-                    Facebook
+                    <FaFacebookF />
                 </a>
 
                 <a
@@ -36,8 +40,9 @@ export default function PostNavigation({ title }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on LinkedIn"
+                    title="Share on LinkedIn"
                 >
-                    LinkedIn
+                    <FaLinkedinIn />
                 </a>
             </div>
         </div>

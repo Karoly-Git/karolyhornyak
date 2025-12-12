@@ -12,7 +12,7 @@ export const blogs = [
         component: HowIStartedProgramming,
         cover: how_i_started_programming,
         alt: "Journey into programming and automation",
-        excerpt: "An honest story about automation, a 20-year detour, rediscovering programming, and becoming a full-stack develop...",
+        excerpt: "An honest story about automation, a 20-year detour, rediscovering programming, and becoming a full-stack developer...",
         date: "Dec 2025",
         categories: ["sparks", "career"],
         isActive: true

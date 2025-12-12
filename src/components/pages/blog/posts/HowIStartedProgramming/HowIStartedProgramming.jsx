@@ -20,7 +20,7 @@ export default function HowIStartedProgramming() {
                 />
                 <meta
                     property="og:image"
-                    content="https://karolyhornyak.com/images/how-i-started-programming.jpg"
+                    content="https://karolyhornyak.com/static/media/how-i-started-programming.bd3eaf90d0fb9f12e886.jpg"
                 />
 
                 {/* Optional but recommended */}

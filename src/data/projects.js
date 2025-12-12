@@ -152,7 +152,7 @@ export const projects = [
         alt: "Map App",
         description: "Short description of the project.",
         stack: "HTML, jQuery, CSS, PHP",
-        liveDemoUrl: "https://karolyhornyak.co.uk/gazetteer/",
+        liveDemoUrl: "https://karolyhornyak.com/gazetteer/",
         gitHubUrl: "https://github.com/Karoly-Git/karolyHornyak/tree/main/project1"
     },
     {
@@ -164,7 +164,7 @@ export const projects = [
         alt: "Company Directory",
         description: "Short description of the project.",
         stack: "HTML, jQuery, CSS, PHP",
-        liveDemoUrl: "https://karolyhornyak.co.uk/company-directory/",
+        liveDemoUrl: "https://karolyhornyak.com/company-directory/",
         gitHubUrl: "https://github.com/Karoly-Git/karolyHornyak/tree/main/project2"
     },
     {

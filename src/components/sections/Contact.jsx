@@ -69,7 +69,7 @@ export default function Contact({ contactRef }) {
 
         // Automatically detect if running locally
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const baseUrl = isLocal ? 'http://localhost/karolyhornyak.co.uk/' : 'http://karolyhornyak.co.uk/';
+        const baseUrl = isLocal ? 'http://localhost/karolyhornyak.com/' : 'http://karolyhornyak.com/';
 
         try {
             const response = await fetch(baseUrl + 'backend/php/send-form.php', {

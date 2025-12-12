@@ -61,7 +61,7 @@ export default function Contact({ contactRef }) {
         setIsSending(true);
 
         const isLocal = false;
-        const baseUrl = isLocal ? 'http://localhost/karolyhornyak.co.uk/' : 'http://karolyhornyak.co.uk/';
+        const baseUrl = isLocal ? 'http://localhost/karolyhornyak.com/' : 'http://karolyhornyak.com/';
 
         try {
             const response = await fetch(baseUrl + 'backend/php/send-form.php', {
