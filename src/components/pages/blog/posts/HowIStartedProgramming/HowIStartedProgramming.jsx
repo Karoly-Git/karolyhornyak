@@ -70,11 +70,11 @@ export default function HowIStartedProgramming() {
                 <section>
                     <h2>A Very Long Detour</h2>
                     <p>
-                        That happened back in the early 2000s — and then, for the next twenty years, I didn’t think about a
+                        For the next fifteen years, I didn’t think about a
                         programming career. My professional journey took me across several different fields.
                     </p>
                     <p>
-                        Those two decades were full of adventures, changes, and life happening. But let’s fast-forward to 2018,
+                        Those one and a half decades were full of adventures, changes, and life happening. But let’s fast-forward to 2018,
                         when I had already been living in the UK for three years and, after holding various positions, had
                         just started working as a production supervisor.
                     </p>
