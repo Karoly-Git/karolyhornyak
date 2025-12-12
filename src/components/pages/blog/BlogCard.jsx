@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export default function BlogCard({ title, cover, alt, excerpt, date, slug }) {
     return (
         <div className="blog-card">
-            <div className="blog-img">
+            {/*<div className="blog-img">
                 <img src={cover} alt={alt} />
-            </div>
+            </div>*/}
 
             <div className="blog-content">
                 <p className="blog-meta">
