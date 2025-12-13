@@ -1,5 +1,6 @@
 import { motion as m, useInView } from "framer-motion";
 import { useRef } from "react";
+
 import BlogCard from "./BlogCard";
 import { blogs } from "../../../data/blogs.js";
 

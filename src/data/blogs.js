@@ -1,8 +1,8 @@
 import HowIStartedProgramming from "../components/pages/blog/posts/HowIStartedProgramming/HowIStartedProgramming";
-import how_i_started_programming from "../components/pages/blog/posts/HowIStartedProgramming/how-i-started-programming.jpg";
+import how_i_started_programming from "../components/pages/blog/posts/HowIStartedProgramming/how-i-started-programming.webp";
 
-import ReactTheoreticalInterviewQuestions from "../components/pages/blog/posts/ReactTheoreticalInterviewQuestions/ReactTheoreticalInterviewQuestions";
-import react_theoretical_interview_questions from "../components/pages/blog/posts/ReactTheoreticalInterviewQuestions/react-theoretical-interview-questions.jpg";
+import React_QandA_2025_12_13 from "../components/pages/blog/posts/React_QandA_2025_12_13/React_QandA_2025_12_13";
+import react_QandA_2025_12_13 from "../components/pages/blog/posts/React_QandA_2025_12_13/react_QandA_2025_12_13.webp";
 
 export const blogs = [
     {
@@ -12,19 +12,19 @@ export const blogs = [
         cover: how_i_started_programming,
         alt: "Journey into programming and automation",
         excerpt: "An honest story about automation, a 15-year detour, rediscovering programming, and becoming a full-stack developer.",
-        date: "Nov 2025",
+        date: "4th November 2025",
         categories: ["sparks", "career"],
         isActive: true
     },
     {
-        title: "10 Most Common React Theoretical Interview Questions",
-        slug: "10-most-common-react-theoretical-interview-questions",
-        component: ReactTheoreticalInterviewQuestions,
-        cover: react_theoretical_interview_questions,
-        alt: "Common React theoretical interview questions explained",
-        excerpt: "A curated list of the 10 most common React theoretical interview questions, with clear explanations to help you master core concepts and ace frontend interviews.",
-        date: "Dec 2025",
-        categories: ["react", "frontend", "interviews"],
+        title: "20 Common React Theoretical Questions",
+        slug: "20-common-react-theoretical-questions-2025-12-13",
+        component: React_QandA_2025_12_13,
+        cover: react_QandA_2025_12_13,
+        alt: "20 Common React theoretical questions explained",
+        excerpt: "A curated list of 20 common React theoretical questions with explanations to help you master core concepts.",
+        date: "13th December 2025",
+        categories: ["react", "frontend", "Q&A"],
         isActive: true
     }
 ];
