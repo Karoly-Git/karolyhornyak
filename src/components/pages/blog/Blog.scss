@@ -5,6 +5,10 @@
     align-items: center;
     background: #fafafa;
 
+    @media(max-width: 420px) {
+        padding-top: 8rem !important;
+    }
+
     .blog-title-main {
         font-size: 2.8rem;
         font-weight: 600;
