@@ -12,7 +12,7 @@ export default function HowIBecameAFullStackDeveloper() {
             {/* SEO / Social Sharing */}
             <Helmet>
                 <title>How I Became a Full-Stack Developer</title>
-
+                <meta property="og:locale" content="en_GB" />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content="How I Became a Full-Stack Developer" />
                 <meta
@@ -21,15 +21,14 @@ export default function HowIBecameAFullStackDeveloper() {
                 />
                 <meta
                     property="og:url"
-                    content="https://karolyhornyak.com/blog/how-i-started-programming"
+                    content="https://karolyhornyak.com/blog/how-i-became-a-full-stack-developer"
                 />
                 <meta
                     property="og:image"
-                    content="https://karolyhornyak.com/static/media/how-i-started-programming.bd3eaf90d0fb9f12e886.jpg"
+                    content="https://karolyhornyak.com/static/media/how_i_became_a_full_stack_developer.5968537a064932e38844.webp"
                 />
-
-                {/* Optional but recommended */}
-                <meta property="og:site_name" content="Your Site Name" />
+                <meta property="og:site_name" content="Karoly Hornyak" />
+                <meta name="description" content="An unexpected journey into programming, a 15-year detour, and becoming a full-stack developer." />
             </Helmet>
 
             <article className="blog-post">
@@ -102,8 +101,8 @@ export default function HowIBecameAFullStackDeveloper() {
                 <section>
                     <h2>Learning to Code — For Real</h2>
                     <p>
-                        During my search, I quickly realized that there was no ready-to-use tool; the only solution was
-                        programming, so I dived into it. What I learned was mostly self-taught; however, to deepen my
+                        During my search, I quickly realized there was no ready-to-use tool.
+                        The only real solution was programming — so I dived into it. What I learned was mostly self-taught; however, to deepen my
                         knowledge, I searched for training opportunities and came across a company called{" "}
                         <a
                             href="https://programozaskarrier.hu/"
@@ -162,7 +161,7 @@ export default function HowIBecameAFullStackDeveloper() {
                         This is where Part 1 ends. I’ll share Part 2 soon, where things will start getting very real.                    </p>
                 </section>
 
-                <PostNavigation title="How I Started Programming" />
+                <PostNavigation title="How I Became a Full-Stack Developer" />
             </article>
         </>
     );
