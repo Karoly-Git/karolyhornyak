@@ -1,15 +1,15 @@
-import HowIBecomeAFullStackDeveloper from "../components/pages/blog/posts/HowIBecomeAFullStackDeveloper/HowIBecomeAFullStackDeveloper";
-import how_i_become_a_full_stack_developer from "../components/pages/blog/posts/HowIBecomeAFullStackDeveloper/how_i_become_a_full_stack_developer.webp";
+import HowIBecameAFullStackDeveloper from "../components/pages/blog/posts/HowIBecameAFullStackDeveloper/HowIBecameAFullStackDeveloper";
+import how_i_became_a_full_stack_developer from "../components/pages/blog/posts/HowIBecameAFullStackDeveloper/how_i_became_a_full_stack_developer.webp";
 
 import React_QandA_2025_12_13 from "../components/pages/blog/posts/React_QandA_2025_12_13/React_QandA_2025_12_13";
 import react_QandA_2025_12_13 from "../components/pages/blog/posts/React_QandA_2025_12_13/react_QandA_2025_12_13.webp";
 
 export const blogs = [
     {
-        title: "How I Become a Full-Stack Developer",
-        slug: "how-i-become-a-full-stack-developer",
-        component: HowIBecomeAFullStackDeveloper,
-        cover: how_i_become_a_full_stack_developer,
+        title: "How I Became a Full-Stack Developer",
+        slug: "how-i-became-a-full-stack-developer",
+        component: HowIBecameAFullStackDeveloper,
+        cover: how_i_became_a_full_stack_developer,
         alt: "Journey into programming and becoming a full-stack developer",
         excerpt:
             "A surprising story about early years, a 15-year detour, rediscovering programming, and becoming a full-stack developer.",

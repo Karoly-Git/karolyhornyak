@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import PostNavigation from "../../postnavigation/PostNavigation";
 
-export default function HowIBecomeAFullStackDeveloper() {
+export default function HowIBecameAFullStackDeveloper() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -11,10 +11,10 @@ export default function HowIBecomeAFullStackDeveloper() {
         <>
             {/* SEO / Social Sharing */}
             <Helmet>
-                <title>How I Become a Full-Stack Developer</title>
+                <title>How I Became a Full-Stack Developer</title>
 
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content="How I Become a Full-Stack Developer" />
+                <meta property="og:title" content="How I Became a Full-Stack Developer" />
                 <meta
                     property="og:description"
                     content="A surprising story about early years and a 15-year detour, rediscovering programming, and becoming a full-stack developer."
@@ -33,10 +33,10 @@ export default function HowIBecomeAFullStackDeveloper() {
             </Helmet>
 
             <article className="blog-post">
-                <h1 className="blog-title">How I Become a Full-Stack Developer</h1>
+                <h1 className="blog-title">How I Became a Full-Stack Developer</h1>
 
                 <p className="blog-meta">
-                    An unexpected journey into programming, detour, rediscovery, and finding my real path.
+                    An unexpected journey into programming, a detour, rediscovery, and finding my real path.
                 </p>
 
                 <section>
@@ -68,13 +68,11 @@ export default function HowIBecomeAFullStackDeveloper() {
                 </section>
 
                 <section>
-                    <h2>A Very Long Detour</h2>
+                    <h2>A Long Detour</h2>
                     <p>
                         For the next fifteen years, I didn’t think about a
-                        programming career. My professional journey took me across several different fields.
-                    </p>
-                    <p>
-                        That decade and a half was full of adventures, changes, and life happening. But let’s fast-forward to 2018,
+                        programming career. My professional journey took me across several different fields. That
+                        decade and a half was full of adventures, changes, and life happening. But let’s fast-forward to 2018,
                         when I had already been living in the UK for three years and, after holding various positions, had
                         just started working as a production supervisor.
                     </p>
@@ -92,10 +90,8 @@ export default function HowIBecomeAFullStackDeveloper() {
                     <h2>Hitting the Limits of Excel</h2>
                     <p>
                         I started creating Excel macros to make my own job easier, and for a while, that helped.
-                        But very quickly I reached the limits of what spreadsheets could realistically do.
-                    </p>
-                    <p>
-                        I needed something more flexible, more reliable, and more professional.
+                        But very quickly I reached the limits of what spreadsheets could realistically do. I
+                        needed something more flexible, more reliable, and more professional.
                     </p>
                     <p>
                         That was the point where I started looking for better tools — not just to save time, but to
@@ -106,8 +102,9 @@ export default function HowIBecomeAFullStackDeveloper() {
                 <section>
                     <h2>Learning to Code — For Real</h2>
                     <p>
-                        During my search, I quickly realised that I needed to dive into programming, and I came
-                        across a company called{" "}
+                        During my search, I quickly realized that there was no ready-to-use tool; the only solution was
+                        programming, so I dived into it. What I learned was mostly self-taught; however, to deepen my
+                        knowledge, I searched for training opportunities and came across a company called{" "}
                         <a
                             href="https://programozaskarrier.hu/"
                             target="_blank"
@@ -115,14 +112,12 @@ export default function HowIBecomeAFullStackDeveloper() {
                         >
                             Programming & Career
                         </a>.
-                        They offered a one-year frontend web developer training programme, and it immediately felt like the right choice.
+                        They offered a one-year frontend web developer training programme, and it immediately felt like
+                        the right choice. I enrolled, committed fully, and successfully completed the programme.
+                        That year became one of the most intense learning periods of my life.
                     </p>
                     <p>
-                        I enrolled, committed fully, and successfully completed the programme. That year became one
-                        of the most intense learning periods of my life.
-                    </p>
-                    <p>
-                        I learned the fundamentals of Python, Django, JavaScript, HTML, CSS, SQL, Git, GitHub, React
+                        I learned the fundamentals of Python, Django, JavaScript, HTML, CSS, SQL, Git, GitHub, React,
                         and a bit of Node.js with Express.
                     </p>
                     <p>
@@ -137,14 +132,14 @@ export default function HowIBecomeAFullStackDeveloper() {
                         the applications I could build to make everyday work easier.
                     </p>
                     <p>
-                        Unlike many other professions, making mistakes didn’t hurt anyone physically or financially.
-                        If I broke something, I could simply delete the code and try again.
+                        Another fantastic thing was that, unlike many other professions, making mistakes didn’t hurt
+                        anyone physically or financially. If I broke something, I could simply delete the code and try
+                        again. I did this several times, and failing and trying again was an excellent way to learn how to code.
                     </p>
                     <p>
-                        That’s when I realised frontend alone wasn’t enough — everything eventually needs a backend.
-                    </p>
-                    <p>
-                        I completed a one-year full-stack development programme at{" "}
+                        As I started building more and more complex applications, I realized that frontend development alone wasn’t
+                        enough — everything eventually needs a backend. So I searched for another training program and
+                        enrolled in, and completed, a one-year full-stack development program at{" "}
                         <a
                             href="https://itcareerswitch.co.uk/"
                             target="_blank"
@@ -152,19 +147,19 @@ export default function HowIBecomeAFullStackDeveloper() {
                         >
                             IT Career Switch
                         </a>,
-                        where I gained in-depth experience with both front-end and back-end technologies, including React, Redux, Bootstrap, PHP, Python, Node.js, REST API, PostgreSQL, MariaDB, Git & GitHub, Jest, Mocha, and jQuery.
+                        where I gained in-depth experience with both front-end and back-end technologies, including React, Redux,
+                        Bootstrap, PHP, Python, Node.js, REST API, PostgreSQL, MariaDB, Git & GitHub, Jest, Mocha, and jQuery.
                     </p>
                 </section>
 
                 <section>
                     <h2>All In</h2>
                     <p>
-                        By the end of that journey, there was no doubt left. This wasn’t just a career change —
-                        it was a direction that finally felt right.
+                        After all this, there was no doubt left. This wasn’t just a hobby; it was a career change — a
+                        direction that finally felt right.
                     </p>
                     <p>
-                        This is where Part 1 ends. Part 2 is comig soon where things start getting very real.
-                    </p>
+                        This is where Part 1 ends. I’ll share Part 2 soon, where things will start getting very real.                    </p>
                 </section>
 
                 <PostNavigation title="How I Started Programming" />
