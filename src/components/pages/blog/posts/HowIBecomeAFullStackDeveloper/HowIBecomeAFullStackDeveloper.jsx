@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import PostNavigation from "../../postnavigation/PostNavigation";
 
-export default function HowIStartedProgramming() {
+export default function HowIBecomeAFullStackDeveloper() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -11,13 +11,13 @@ export default function HowIStartedProgramming() {
         <>
             {/* SEO / Social Sharing */}
             <Helmet>
-                <title>How I Started Programming</title>
+                <title>How I Become a Full-Stack Developer</title>
 
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content="How I Started Programming" />
+                <meta property="og:title" content="How I Become a Full-Stack Developer" />
                 <meta
                     property="og:description"
-                    content="An honest story about automation, a 20-year detour, rediscovering programming, and becoming a full-stack developer."
+                    content="A surprising story about early years and a 15-year detour, rediscovering programming, and becoming a full-stack developer."
                 />
                 <meta
                     property="og:url"
@@ -33,10 +33,10 @@ export default function HowIStartedProgramming() {
             </Helmet>
 
             <article className="blog-post">
-                <h1 className="blog-title">How I Started Programming</h1>
+                <h1 className="blog-title">How I Become a Full-Stack Developer</h1>
 
                 <p className="blog-meta">
-                    An unexpected journey into automation, rediscovery, and finding my real path.
+                    An unexpected journey into programming, detour, rediscovery, and finding my real path.
                 </p>
 
                 <section>
