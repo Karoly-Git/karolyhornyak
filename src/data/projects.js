@@ -28,7 +28,8 @@ export const projects = [
             "An interactive world explorer that lets users view real-time country data—including weather, news, borders, population, photos, and currency—powered by multiple public APIs and an interactive Leaflet map.",
         stack: "HTML, CSS, JavaScript, PHP, Leaflet.js, APIs",
         liveDemoUrl: "https://transferstation.co.uk/gazetteer/",
-        gitHubUrl: "https://github.com/Karoly-Git/gazetteer"
+        gitHubUrl: "https://github.com/Karoly-Git/gazetteer",
+        isRepoPrivate: false
     },
     {
         name: "Form Submit Now",
@@ -40,7 +41,8 @@ export const projects = [
         description: "A plug-and-play contact form API that lets developers send form submissions directly to email—no backend or database required.",
         stack: "HTML, CSS, JavaScript, Node.js",
         liveDemoUrl: "https://karoly-git.github.io/form-submit-now/",
-        gitHubUrl: "https://github.com/Karoly-Git/form-submit-now"
+        gitHubUrl: "https://github.com/Karoly-Git/form-submit-now",
+        isRepoPrivate: false
     },
     {
         name: "Name Day",
@@ -52,7 +54,8 @@ export const projects = [
         description: "A simple REST API that returns Hungarian and Polish name day data by month, date, or country in clean JSON format.",
         stack: "HTML, CSS, JavaScript, Node.js",
         liveDemoUrl: "https://karoly-git.github.io/name-day/",
-        gitHubUrl: "https://github.com/Karoly-Git/name-day"
+        gitHubUrl: "https://github.com/Karoly-Git/name-day",
+        isRepoPrivate: false
     },
     {
         name: "Bank Holiday",
@@ -64,7 +67,8 @@ export const projects = [
         description: "A fast React + Vite app that fetches official UK bank-holiday data from the GOV.UK endpoint https://www.gov.uk/bank-holidays.json. Select a region and year to view accurate holiday dates in a clear, responsive interface.",
         stack: "React, Vite, JavaScript, CSS",
         liveDemoUrl: "https://karoly-git.github.io/bank-holidays-uk/",
-        gitHubUrl: "https://github.com/Karoly-Git/bank-holidays-uk"
+        gitHubUrl: "https://github.com/Karoly-Git/bank-holidays-uk",
+        isRepoPrivate: false
     },
     {
         name: "Photography Studio",
@@ -77,7 +81,7 @@ export const projects = [
         stack: "React, Vite, JavaScript, Sass, Node.js",
         liveDemoUrl: "https://www.sparklingwillowphotography.co.uk/",
         gitHubUrl: "https://github.com/Karoly-Git/sparkling-willow-photography",
-        isRepoPrivate: true
+        isRepoPrivate: false
     },
     {
         name: "Plumbing & Heating",
@@ -90,7 +94,7 @@ export const projects = [
         stack: "React, Vite, JavaScript, Sass, Node.js",
         liveDemoUrl: "https://dmfplumbingandheating.com/",
         gitHubUrl: "https://github.com/Karoly-Git/dmf-plumbing",
-        isRepoPrivate: true
+        isRepoPrivate: false
     },
     {
         name: "Sewing Workshop",
@@ -102,8 +106,8 @@ export const projects = [
         description: "A multilingual tailoring Progressive Web App built with React, Node.JavaScript, and Sass, featuring service pages, and a clean responsive layout, with seamless language switching for English and Hungarian visitors.",
         stack: "React, Vite, JavaScript, Sass, Node.js",
         liveDemoUrl: "https://www.maryvarrodaja.hu/",
-        gitHubUrl: "https://github.com/Karoly-Git/mary-varrodaja",
-        isRepoPrivate: true
+        gitHubUrl: "https://github.com/Karoly-Git/mary-varrodaja-vite",
+        isRepoPrivate: false
     },
     {
         name: "Massage Salon",
