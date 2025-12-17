@@ -26,11 +26,11 @@ export default function BuildingALorryTrackingSystemStart() {
                 />
                 <meta
                     property="og:url"
-                    content="https://karolyhornyak.co.uk/blog/new-project-begins-real-time-lorry-tracking-system"
+                    content="https://karolyhornyak.co.uk/blog/building-a-lorry-tracking-system-start"
                 />
                 <meta
                     property="og:image"
-                    content="https://karolyhornyak.co.uk/static/media/new_project_begins_real_time_lorry_tracking_system.webp"
+                    content="https://karolyhornyak.co.uk/static/media/building_a_lorry_tracking_system_start.94a468f8b0afaf889e0a.webp"
                 />
                 <meta property="og:site_name" content="Karoly Hornyak" />
                 <meta
