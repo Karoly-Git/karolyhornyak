@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import PostNavigation from "../../postnavigation/PostNavigation";
 
-export default function React_QandA_2025_12_13() {
+export default function React_QandA() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -24,11 +24,11 @@ export default function React_QandA_2025_12_13() {
                 />
                 <meta
                     property="og:url"
-                    content="https://karolyhornyak.com/blog/20-common-react-theoretical-questions-2025-12-13"
+                    content="https://karolyhornyak.com/blog/20-common-react-theoretical-questions"
                 />
                 <meta
                     property="og:image"
-                    content="https://karolyhornyak.com/static/media/react_QandA_2025_12_13.jpg"
+                    content="https://karolyhornyak.com/static/media/React_QandA.jpg"
                 />
                 <meta property="og:site_name" content="karolyhornyak.com" />
             </Helmet>
