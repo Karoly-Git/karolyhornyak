@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import myCV from "../../documents/myCV_v7.docx";
+import myCV from "../../documents/myCV_v8.docx";
 import { motion as m, useInView } from 'framer-motion';
 
 const contentVariants = {
