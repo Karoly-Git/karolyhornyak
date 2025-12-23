@@ -25,7 +25,7 @@ export const projects = [
         src: namedayapi,
         alt: "Name day",
         description: "A simple REST API that returns Hungarian and Polish name day data by month, date, or country in clean JSON format.",
-        stack: "HTML, CSS, JavaScript, Node.js",
+        stack: "Node.js, Express.js, JSON, GitHub, Heroku",
         liveDemoUrl: "https://karoly-git.github.io/name-day-frontend/",
         gitHubUrl: "https://github.com/Karoly-Git/name-day-backend",
         isRepoPrivate: false
