@@ -18,6 +18,19 @@ import fsn from "../img/projects/fsn.webp";
 
 export const projects = [
     {
+        name: "Name Day",
+        isActive: true,
+        group: "api",
+        category: "API",
+        src: namedayapi,
+        alt: "Name day",
+        description: "A simple REST API that returns Hungarian and Polish name day data by month, date, or country in clean JSON format.",
+        stack: "HTML, CSS, JavaScript, Node.js",
+        liveDemoUrl: "https://karoly-git.github.io/name-day-frontend/",
+        gitHubUrl: "https://github.com/Karoly-Git/name-day-backend",
+        isRepoPrivate: false
+    },
+    {
         name: "Gazetteer",
         isActive: true,
         group: "api",
@@ -42,19 +55,6 @@ export const projects = [
         stack: "HTML, CSS, JavaScript, Node.js",
         liveDemoUrl: "https://karoly-git.github.io/form-submit-now/",
         gitHubUrl: "https://github.com/Karoly-Git/form-submit-now",
-        isRepoPrivate: false
-    },
-    {
-        name: "Name Day",
-        isActive: true,
-        group: "api",
-        category: "API",
-        src: namedayapi,
-        alt: "Name day",
-        description: "A simple REST API that returns Hungarian and Polish name day data by month, date, or country in clean JSON format.",
-        stack: "HTML, CSS, JavaScript, Node.js",
-        liveDemoUrl: "https://karoly-git.github.io/name-day-frontend/",
-        gitHubUrl: "https://github.com/Karoly-Git/name-day-backend",
         isRepoPrivate: false
     },
     {
