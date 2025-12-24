@@ -18,7 +18,7 @@ import fsn from "../img/projects/fsn.webp";
 
 export const projects = [
     {
-        name: "Name Day",
+        name: "Name Day Backend API",
         isActive: true,
         group: "api",
         category: "API",
