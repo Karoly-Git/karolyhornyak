@@ -18,13 +18,13 @@ import fsn from "../img/projects/fsn.webp";
 
 export const projects = [
     {
-        name: "Name Day Backend API",
+        name: "Name Day API",
         isActive: true,
         group: "api",
         category: "API",
         src: namedayapi,
         alt: "Name day",
-        description: "A simple REST API that returns Hungarian and Polish name day data by month, date, or country in clean JSON format.",
+        description: "A simple REST API that provides name day information for the entire year, with filtering options by month, date, and country.",
         stack: "Node.js, Express.js, JSON, Swagger, GitHub, Heroku",
         liveDemoUrl: "https://karoly-git.github.io/name-day-frontend/",
         gitHubUrl: "https://github.com/Karoly-Git/name-day-backend",
