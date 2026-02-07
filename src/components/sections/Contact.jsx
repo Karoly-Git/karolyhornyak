@@ -179,7 +179,7 @@ export default function Contact({ contactRef }) {
                                     formRef.current.reportValidity();
                                 }
                             }}>
-                            Send Message
+                            Get in touch
                         </button>
                     </m.form>
                 </div>

@@ -108,30 +108,41 @@ header {
 }
 
 #hero {
-    background: url("../img/hero-bg2.webp") no-repeat center center/cover;
-    height: calc(100vh);
+    //background: url("../img/hero-bg2.webp") no-repeat center center/cover;
+    background: url("../img/me4.webp") no-repeat top right/cover;
+    height: 500px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    //justify-content: flex-end;
+    align-items: flex-end;
     text-align: center;
     color: $primary-foreground-color;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
 
     .hero-content {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        padding: 2rem;
+        padding: 0 2rem;
+        background-color: rgba(0, 0, 50, 0.5);
 
         h1 {
             text-align: left;
             padding: 0.5rem 1rem;
-            font-size: 3rem;
+            font-size: 2rem;
             text-shadow:
                 -1px 0 0 #2f2e2e,
                 1px 0 0 #2f2e2e,
                 0 -1px 0 #2f2e2e,
                 0 1px 0 #2f2e2e;
+        }
+
+        h4 {
+            padding-left: 1rem;
         }
 
         p {
@@ -179,6 +190,8 @@ header {
             background: url("../img/me4.webp") no-repeat top right/cover;
             height: 600px;
 
+            display: none;
+
             .intro-container {
                 display: flex;
                 padding: 3rem 0;
@@ -192,9 +205,9 @@ header {
         }
 
         p {
-            max-width: 1200px;
+            max-width: 800px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             padding-left: 2rem;
             padding-right: 2rem;
         }

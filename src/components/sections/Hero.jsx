@@ -10,7 +10,12 @@ export default function Hero() {
     const contentRef = useRef(null);
     const contentInView = useInView(contentRef, { triggerOnce: true, threshold: 0.1 });
 
-    const words = ["Full-Stack Web Developer", "Crafting Web Experiences"];
+    const words = [
+        "I build reliable systems that solve real problems.",
+        "Focused on practical, production-ready software.",
+        "Turning complex ideas into scalable web applications.",
+        "From frontend polish to backend reliability."
+    ];
     const [title, setTitle] = useState("");
     const [isTyping, setIsTyping] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
@@ -57,6 +62,7 @@ export default function Hero() {
         <section id='hero'>
             <m.div className='hero-content' ref={contentRef} initial="initial" animate={hasAnimated ? "animate" : "initial"} variants={contentVariants}>
                 <h1>Karoly Hornyak</h1>
+                <h4>Full-Stack Engineer</h4>
                 <p>
                     <span>
                         {title}

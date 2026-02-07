@@ -34,7 +34,6 @@ export default function Projects({ projectsRef }) {
     return (
         <section id="pro" ref={projectsRef}>
             <m.h2
-                className="projects-title"
                 initial={{ opacity: 0, y: 40 }}
                 animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.9 }}
@@ -48,7 +47,7 @@ export default function Projects({ projectsRef }) {
                 animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.9, delay: 0.15 }}
             >
-                A curated selection of my work — crafted with precision, usability, and performance in mind.
+                A selection of my work, built with precision, usability, and performance in mind
             </m.p>
 
             <m.div

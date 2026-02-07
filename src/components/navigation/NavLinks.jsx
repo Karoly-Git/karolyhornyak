@@ -20,9 +20,8 @@ export default function NavLinks({ aboutRef, skillsRef, resumeRef, projectsRef, 
         <ul className='nav-links'>
             <li><a onClick={() => handleScroll(aboutRef)}>About</a></li>
             <li><a onClick={() => handleScroll(skillsRef)}>Skills</a></li>
-            <li><a onClick={() => handleScroll(resumeRef)}>E&E</a></li>
+            <li><a onClick={() => handleScroll(resumeRef)}>Experience</a></li>
             <li><a onClick={() => handleScroll(projectsRef)}>Projects</a></li>
-            <li><a onClick={() => handleScroll(contactRef)}>Contact</a></li>
             <li>
                 <Link
                     to="/blog"
@@ -36,6 +35,7 @@ export default function NavLinks({ aboutRef, skillsRef, resumeRef, projectsRef, 
                     Blog
                 </Link>
             </li>
+            <li><a onClick={() => handleScroll(contactRef)}>Contact</a></li>
         </ul>
     );
 }

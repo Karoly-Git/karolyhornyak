@@ -81,8 +81,9 @@ export default function About({ aboutRef }) {
                         animate={hasAnimated.h2 ? "animate" : "initial"}
                         variants={contentVariants}
                     >
-                        Hi, I’m Karoly — a Full-Stack Web Developer who enjoys turning ideas into real, usable products. I love breaking down complex problems, experimenting with solutions, and iterating until everything works seamlessly. I learn quickly and feel comfortable working across the entire development lifecycle, building practical and reliable systems that address real business needs.
-                    </m.p>
+                        Hi, I’m Karoly — a full-stack engineer focused on turning ideas into reliable,
+                        production-ready software. I work comfortably across the entire development lifecycle,
+                        breaking down complex problems and delivering practical solutions that address real business needs.                    </m.p>
                     <m.div ref={divRef} className='img-container' initial="initial" animate={hasAnimated.div ? "animate" : "initial"} variants={contentVariants}>
                         <div className='intro-container'>
                             <m.p ref={p2Ref} initial="initial" animate={hasAnimated.p2 ? "animate" : "initial"} variants={contentVariants}>
@@ -91,8 +92,7 @@ export default function About({ aboutRef }) {
                         </div>
                     </m.div>
                     <m.p ref={p3Ref} initial="initial" animate={hasAnimated.p3 ? "animate" : "initial"} variants={contentVariants}>
-                        I’m exploring new roles as a Full Stack, Frontend, or Backend Developer. I’m open to on-site or hybrid opportunities in London, and remote roles across England. I can start immediately and am seeking full-time, part-time, contract, or temporary positions.
-                    </m.p>
+                        I’m currently exploring opportunities as a full-stack, frontend, or backend developer. I’m open to on-site or hybrid roles in London, as well as remote positions across England. Available immediately                    </m.p>
                     <m.div ref={linksRef} initial="initial" animate={hasAnimated.links ? "animate" : "initial"} variants={contentVariants}>
                         <SocialLinks />
                     </m.div >

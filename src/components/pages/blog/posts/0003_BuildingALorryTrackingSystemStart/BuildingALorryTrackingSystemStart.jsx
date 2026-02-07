@@ -63,9 +63,9 @@ export default function BuildingALorryTrackingSystemStart() {
                         check-in.
                     </p>
                     <p>
-                        At the same time, it’s essential to closely monitor each
+                        At the same time, it's essential to closely monitor each
                         collection — where a lorry is on site, what stage of
-                        loading it’s at, and how long it has been there — due to
+                        loading it's at, and how long it has been there — due to
                         limited space and tight turnaround times.
                     </p>
                 </section>
@@ -73,7 +73,7 @@ export default function BuildingALorryTrackingSystemStart() {
                 <section>
                     <h2>Handwritten Notes and Constant Interruptions</h2>
                     <p>
-                        Right now, status updates are handwritten (if they’re
+                        Right now, status updates are handwritten (if they're
                         recorded at all). On such a fast-paced site, these
                         updates are often missed, incomplete, or outdated.
                     </p>
@@ -87,22 +87,22 @@ export default function BuildingALorryTrackingSystemStart() {
                 <section>
                     <h2>Why This Becomes a Bigger Issue</h2>
                     <p>
-                        Without a reliable tracking system, it’s difficult to
+                        Without a reliable tracking system, it's difficult to
                         monitor loading times, spot delays, or consistently
                         ensure compliance with the required two-hour turnaround
                         window.
                     </p>
                     <p>
-                        There’s no clear visibility, no accurate timestamps, and
+                        There's no clear visibility, no accurate timestamps, and
                         no dependable historical data. Decisions are often made
                         based on assumptions rather than facts.
                     </p>
                 </section>
 
                 <section>
-                    <h2>What I’m Building</h2>
+                    <h2>What I'm Building</h2>
                     <p>
-                        I’m building a full-stack web application that provides
+                        I'm building a full-stack web application that provides
                         real-time visibility by tracking each vehicle from
                         check-in through loading to check-out.
                     </p>
@@ -122,7 +122,7 @@ export default function BuildingALorryTrackingSystemStart() {
                 <section>
                     <h2>More Than Just an App</h2>
                     <p>
-                        The goal isn’t just to build an app. It’s about reducing
+                        The goal isn't just to build an app. It's about reducing
                         interruptions and manual guesswork, improving
                         transparency, and creating reliable data for better
                         operational decision-making.
@@ -135,9 +135,9 @@ export default function BuildingALorryTrackingSystemStart() {
                 </section>
 
                 <section>
-                    <h2>What’s Next</h2>
+                    <h2>What's Next</h2>
                     <p>
-                        The project is currently under active development. I’ll
+                        The project is currently under active development. I'll
                         be sharing progress, design decisions, and lessons
                         learned as it evolves.
                     </p>
