@@ -403,11 +403,6 @@ footer p {
     height: 400px;
   }
 }
-@media screen and (max-width: 450px) {
-  #hero {
-    background: url("../img/hero-bg2-small.webp") no-repeat center center/cover;
-  }
-}
 @media (hover: none), (pointer: coarse) {
   #about .social-links .icon:hover {
     color: #45505B;
