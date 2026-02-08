@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import "../src/styles/styles.css";
-import "../src/styles/links.css";
 import "../src/styles/assets.css";
 import "../src/styles/reviews.css";
 import "../src/styles/resume.css";
@@ -14,8 +13,6 @@ import "../src/styles/projects.css";
 import "../src/styles/modal.css";
 
 import Loader from "./components/Loader";
-import SocialLinks from "./components/SocialLinks";
-import NavLinks from "./components/navigation/NavLinks";
 
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
@@ -29,6 +26,7 @@ import ScrollUp from "./components/ScrollUp";
 
 import Blog from "./components/pages/blog/Blog";
 import { blogs } from "./data/blogs"; // ← IMPORT BLOG DATA
+import Navigation from "./components/navigation/Navigation";
 
 const contentVariants = {
   initial: { opacity: 0 },
@@ -79,15 +77,13 @@ export default function App() {
 
               {/* HEADER */}
               <header className={isScrollingUp ? "header-show" : "header-hide"}>
-                <nav>
-                  <NavLinks
-                    aboutRef={aboutRef}
-                    skillsRef={skillsRef}
-                    resumeRef={resumeRef}
-                    projectsRef={projectsRef}
-                    contactRef={contactRef}
-                  />
-                </nav>
+                <Navigation
+                  aboutRef={aboutRef}
+                  skillsRef={skillsRef}
+                  resumeRef={resumeRef}
+                  projectsRef={projectsRef}
+                  contactRef={contactRef}
+                />
               </header>
 
               {/* ROUTES */}
@@ -123,16 +119,14 @@ export default function App() {
 
               {/* FOOTER */}
               <footer>
-                <nav>
-                  <NavLinks
-                    aboutRef={aboutRef}
-                    skillsRef={skillsRef}
-                    resumeRef={resumeRef}
-                    projectsRef={projectsRef}
-                    contactRef={contactRef}
-                  />
-                  <SocialLinks />
-                </nav>
+                <Navigation
+                  aboutRef={aboutRef}
+                  skillsRef={skillsRef}
+                  resumeRef={resumeRef}
+                  projectsRef={projectsRef}
+                  contactRef={contactRef}
+                  disableMobileCollapse={true}
+                />
                 <p>&copy; Karoly Hornyak</p>
               </footer>
             </m.div>

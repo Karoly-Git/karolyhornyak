@@ -2,17 +2,20 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import './Nav.css';
 
-export default function NavLinks({
+export default function MobileNav({
     aboutRef,
     skillsRef,
     resumeRef,
     projectsRef,
     contactRef,
+    onNavigate,
 }) {
     const location = useLocation();
     const navigate = useNavigate();
 
     function handleScroll(ref) {
+        onNavigate?.();
+
         if (location.pathname !== "/") {
             navigate("/");
             setTimeout(() => {
@@ -24,16 +27,25 @@ export default function NavLinks({
     }
 
     return (
-        <ul className="nav-links">
-            <li><a onClick={() => handleScroll(aboutRef)}>About</a></li>
-            <li><a onClick={() => handleScroll(skillsRef)}>Skills</a></li>
-            <li><a onClick={() => handleScroll(resumeRef)}>Experience</a></li>
-            <li><a onClick={() => handleScroll(projectsRef)}>Projects</a></li>
+        <ul className="nav-links mobile">
+            <li>
+                <a onClick={() => handleScroll(aboutRef)}>About</a>
+            </li>
+            <li>
+                <a onClick={() => handleScroll(skillsRef)}>Skills</a>
+            </li>
+            <li>
+                <a onClick={() => handleScroll(resumeRef)}>Experience</a>
+            </li>
+            <li>
+                <a onClick={() => handleScroll(projectsRef)}>Projects</a>
+            </li>
 
             <li>
                 <Link
                     to="/blog"
                     onClick={() => {
+                        onNavigate?.();
                         setTimeout(() => {
                             window.scrollTo({ top: 0, behavior: "smooth" });
                         }, 0);
@@ -43,7 +55,9 @@ export default function NavLinks({
                 </Link>
             </li>
 
-            <li><a onClick={() => handleScroll(contactRef)}>Contact</a></li>
+            <li>
+                <a onClick={() => handleScroll(contactRef)}>Contact</a>
+            </li>
         </ul>
     );
 }
