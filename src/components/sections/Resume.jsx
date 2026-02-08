@@ -42,16 +42,16 @@ export default function Resume({ resumeRef }) {
 
     return (
         <section id="resume" ref={resumeRef}>
-            <m.h2
-                ref={h2Ref}
-                initial="initial"
-                animate={hasAnimated.h2 ? "animate" : "initial"}
-                variants={contentVariants}
-            >
-                Experience
-            </m.h2>
-
             <div id="resume-content">
+                <m.h2
+                    ref={h2Ref}
+                    initial="initial"
+                    animate={hasAnimated.h2 ? "animate" : "initial"}
+                    variants={contentVariants}
+                >
+                    Experience
+                </m.h2>
+
                 <m.p
                     className="intro-text"
                     ref={introRef}
