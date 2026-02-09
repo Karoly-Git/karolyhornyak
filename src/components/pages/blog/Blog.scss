@@ -10,7 +10,7 @@
     }
 
     .blog-subtitle {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         color: #555;
         max-width: 650px;
         text-align: center;
@@ -155,10 +155,6 @@
 @media (max-width: 650px) {
     #blog {
         padding-top: 4rem;
-
-        .blog-title-main {
-            font-size: 2.2rem;
-        }
 
         .blog-subtitle {
             font-size: 1rem;
