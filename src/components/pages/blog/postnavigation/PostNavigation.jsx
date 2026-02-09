@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
-import './PostNavigation.css';
+import './PostNavigation.scss';
 
 export default function PostNavigation({ title }) {
     const navigate = useNavigate();

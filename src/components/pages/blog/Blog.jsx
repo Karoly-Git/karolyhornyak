@@ -4,8 +4,8 @@ import { useRef } from "react";
 import BlogCard from "./BlogCard";
 import { blogs } from "../../../data/blogs.js";
 
-import './Blog.css';
-import './BlogPost.css';
+import './Blog.scss';
+import './BlogPost.scss';
 
 const containerVariants = {
     hidden: { opacity: 0 },

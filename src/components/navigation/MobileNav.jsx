@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import './Nav.css';
+import './Nav.scss';
 
 export default function MobileNav({
     aboutRef,

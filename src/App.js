@@ -5,12 +5,12 @@ import { motion as m, AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import "../src/styles/styles.css";
-import "../src/styles/assets.css";
-import "../src/styles/reviews.css";
-import "../src/styles/resume.css";
-import "../src/styles/projects.css";
-import "../src/styles/modal.css";
+import "../src/styles/styles.scss";
+import "../src/styles/assets.scss";
+import "../src/styles/reviews.scss";
+import "../src/styles/resume.scss";
+import "../src/styles/projects.scss";
+import "../src/styles/modal.scss";
 
 import Loader from "./components/Loader";
 
