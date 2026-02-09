@@ -30,7 +30,7 @@ export const blogs = [
             "A curated list of 20 common React theoretical questions with explanations to help you master core concepts.",
         date: "13th December 2025",
         categories: ["react", "frontend", "Q&A"],
-        isActive: true
+        isActive: false
     },
     {
         title: "New project: Building a Lorry Tracking System",
