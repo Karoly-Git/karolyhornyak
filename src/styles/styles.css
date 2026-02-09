@@ -316,8 +316,13 @@ header {
   gap: 2rem;
 }
 #skills .tools .icon {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #45505B;
+}
+@media (max-width: 800px) {
+  #skills .tools .icon {
+    font-size: 2.5rem;
+  }
 }
 
 /* ================= CONTACT ================= */

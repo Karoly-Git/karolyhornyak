@@ -363,8 +363,12 @@ header {
         gap: 2rem;
 
         .icon {
-            font-size: 5rem;
+            font-size: 4rem;
             color: $secondary-foreground-color;
+
+            @media (max-width: 800px) {
+                font-size: 2.5rem;
+            }
         }
     }
 }
