@@ -51,6 +51,12 @@ export default function App() {
   // Show/hide header on scroll
   useEffect(() => {
     const handleScroll = () => {
+      // 👇 disable hide/show on small screens
+      if (window.innerWidth <= 800) {
+        setIsScrollingUp(true);
+        return;
+      }
+
       const currentScroll = window.scrollY;
       setIsScrollingUp(prevScrollPos > currentScroll);
       setPrevScrollPos(currentScroll);

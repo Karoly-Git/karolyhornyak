@@ -111,6 +111,14 @@ header {
     background-color: $header-background;
     transition: all 300ms ease-in-out;
     z-index: 1000;
+
+    @media (max-width: 800px) {
+        background-color: black;
+        width: auto;
+        margin-left: auto;
+        margin-right: 0;
+        right: 0;
+    }
 }
 
 .header-show {
@@ -124,13 +132,18 @@ header {
 /* ================= HERO ================= */
 #hero {
     background: url("../img/me4.webp") no-repeat top right / cover;
-    height: 500px;
+    height: 530px;
     display: flex;
     align-items: flex-end;
     color: $primary-foreground-color;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 0;
+
+    @media (max-width: 800px) {
+        background: url("../img/me4a.webp") no-repeat top center / cover;
+        height: 400px;
+    }
 
     @media (max-width: 550px) {
         background: url("../img/me4-small.webp") no-repeat top center / cover;
