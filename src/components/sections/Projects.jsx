@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion as m, useInView } from "framer-motion";
 import ProjectCard from "../ProjectCard";
 import { projects } from "../../data/projects";
@@ -31,6 +31,31 @@ export default function Projects({ projectsRef }) {
 
     const activeProjects = projects.filter((p) => p.isActive);
 
+    const [visibleCount, setVisibleCount] = useState(3);
+    const gridRef = useRef(null);
+
+    const allVisible = visibleCount >= activeProjects.length;
+
+    const handleToggle = () => {
+        if (allVisible) {
+            setVisibleCount(3);
+            projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            const nextCount = visibleCount + 3;
+            setVisibleCount(nextCount);
+
+            setTimeout(() => {
+                const grid = gridRef.current;
+                if (grid?.children[visibleCount]) {
+                    grid.children[visibleCount].scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            }, 150);
+        }
+    };
+
     return (
         <section id="pro" ref={projectsRef}>
             <m.h2
@@ -51,16 +76,28 @@ export default function Projects({ projectsRef }) {
             </m.p>
 
             <m.div
+                ref={gridRef}
                 className="project-grid premium-grid"
                 variants={containerVariants}
                 initial="hidden"
                 animate={sectionInView ? "show" : ""}
             >
-                {activeProjects.map((project, index) => (
+                {activeProjects.slice(0, visibleCount).map((project, index) => (
                     <m.div key={index} variants={itemVariants}>
                         <ProjectCard {...project} />
                     </m.div>
                 ))}
+            </m.div>
+
+            <m.div
+                className="show-more-wrapper"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+            >
+                <button className="show-more-btn" onClick={handleToggle}>
+                    {allVisible ? "Show less" : "Show more"}
+                </button>
             </m.div>
         </section>
     );
