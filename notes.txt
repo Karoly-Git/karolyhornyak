@@ -1,0 +1,79 @@
+src
+│
+├── assets
+│   ├── images
+│   │   ├── common
+│   │   ├── hero
+│   │   ├── projects
+│   │   └── blog
+│   │
+│   └── documents
+│       └── cv
+│
+├── features
+│   ├── navigation
+│   │   ├── components
+│   │   │   ├── Navigation.tsx
+│   │   │   ├── NavLinks.tsx
+│   │   │   └── MobileNav.tsx
+│   │   ├── navigation.styles.scss
+│   │   └── index.ts
+│   │
+│   ├── portfolio
+│   │   ├── sections
+│   │   │   ├── Hero.tsx
+│   │   │   ├── About.tsx
+│   │   │   ├── Skills.tsx
+│   │   │   ├── Projects.tsx
+│   │   │   ├── Resume.tsx
+│   │   │   ├── Reviews.tsx
+│   │   │   └── Contact.tsx
+│   │   │
+│   │   ├── components
+│   │   │   └── ProjectCard.tsx
+│   │   ├── portfolio.styles.scss
+│   │   └── index.ts
+│   │
+│   ├── blog
+│   │   ├── pages
+│   │   │   └── Blog.tsx
+│   │   ├── components
+│   │   │   ├── BlogCard.tsx
+│   │   │   └── PostNavigation.tsx
+│   │   ├── posts
+│   │   │   └── 0001-how-i-became-a-full-stack-developer
+│   │   │       ├── index.tsx
+│   │   │       └── assets
+│   │   ├── blog.styles.scss
+│   │   └── index.ts
+│   │
+│   └── email
+│       ├── components
+│       │   └── EmailStatusModal.tsx
+│       ├── email.styles.scss
+│       └── index.ts
+│
+├── shared
+│   ├── components
+│   │   ├── Loader.tsx
+│   │   ├── ScrollUp.tsx
+│   │   └── SocialLinks.tsx
+│   │
+│   ├── hooks
+│   │   └── useTypewriter.ts
+│   │
+│   ├── styles
+│   │   ├── globals.scss
+│   │   └── modal.scss
+│   │
+│   └── utils
+│       └── animations.ts
+│
+├── data
+│   ├── blogs.ts
+│   ├── projects.ts
+│   ├── reviews.ts
+│   └── skills.ts
+│
+└── styles
+    └── legacy.scss   (temporary during migration)
