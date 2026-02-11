@@ -1,5 +1,8 @@
 src
 │
+├── app
+│   └── App.tsx
+│
 ├── assets
 │   ├── images
 │   │   ├── common
