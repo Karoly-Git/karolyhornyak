@@ -93,10 +93,8 @@ $shadow-color: rgba(0, 0, 50, 0.5);
         }
 
     }
-}
 
-@media screen and (max-width: 600px) {
-    #reviews {
+    @media screen and (max-width: 600px) {
         .slick-slider {
             p {
                 padding: 0 1rem;
