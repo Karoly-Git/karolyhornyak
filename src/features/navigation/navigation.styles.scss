@@ -1,17 +1,22 @@
 $hover-highlight: #ffc42e;
 
+/* ========================= */
+/* BASE NAVIGATION STYLES */
+/* ========================= */
+
 .navigation {
+    position: relative;
+
     ul {
-        display: flex;
-        justify-content: flex-end;
         list-style: none;
-        gap: 1rem;
+        padding: 0;
+        margin: 0;
 
         li {
             color: white;
             cursor: pointer;
-            transition: color .3s;
             letter-spacing: 1px;
+            transition: color 0.3s ease;
 
             &:hover {
                 color: $hover-highlight;
@@ -20,12 +25,94 @@ $hover-highlight: #ffc42e;
             a {
                 text-decoration: none;
                 color: white;
-                transition: color .3s;
+                transition: color 0.3s ease;
 
                 &:hover {
                     color: $hover-highlight;
                 }
             }
         }
+    }
+}
+
+/* ========================= */
+/* DESKTOP NAVIGATION */
+/* ========================= */
+
+.desktop-navigation {
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+}
+
+/* ========================= */
+/* MOBILE NAVIGATION */
+/* ========================= */
+
+.mobile-navigation {
+    position: relative;
+
+    .mobile-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        //padding: 1rem;
+        position: relative;
+        z-index: 1003;
+    }
+
+    .mobile-toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        .open-icon {
+            color: #45505B;
+        }
+
+        .close-icon {
+            color: white;
+        }
+    }
+
+    /* FULL SCREEN SLIDE MENU */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        background: #000;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 4rem;
+        gap: 1.5rem;
+
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+
+        z-index: 1002;
+    }
+
+    .mobile-menu.open {
+        transform: translateY(0);
+    }
+}
+
+/* Hide mobile nav on desktop */
+@media (min-width: 601px) {
+    .mobile-navigation {
+        display: none;
+    }
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 600px) {
+    .desktop-navigation {
+        display: none;
     }
 }

@@ -1,11 +1,13 @@
-import Navigation from "@/features/navigation/components/Navigation";
 
 import "@/app/layout/layout.styles.scss";
+import DesktopNavigation from "@/features/navigation/components/DesktopNavigation";
+import MobileNavigation from "@/features/navigation/components/MobileNavigation";
 
 export default function Header() {
     return (
         <header>
-            <Navigation />
+            <DesktopNavigation />
+            <MobileNavigation />
         </header>
     );
 }

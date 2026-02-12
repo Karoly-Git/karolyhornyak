@@ -3,6 +3,8 @@ section {
     justify-content: center;
     padding: 2rem;
 
+    scroll-margin-top: 50px;
+
     .container {
         h2 {
             text-align: center;
@@ -421,5 +423,9 @@ section {
                 color: white;
             }
         }
+    }
+
+    @media(max-width: 600px) {
+        scroll-margin-top: 0px;
     }
 }
