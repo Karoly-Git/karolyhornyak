@@ -229,8 +229,10 @@ section {
             width: 90%;
             max-width: 1200px;
             margin: 1.5rem auto;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+            background-color: white;
+            box-shadow: 0 0 10px black;
 
             .intro-text {
                 line-height: 1.6;
