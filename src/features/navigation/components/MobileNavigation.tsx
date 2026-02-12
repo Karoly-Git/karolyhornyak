@@ -40,6 +40,7 @@ export default function MobileNavigation() {
             </div>
 
             <ul className={`mobile-menu ${isOpen ? "open" : ""}`}>
+                <li onClick={() => scrollTo("hero")}>Home</li>
                 <li onClick={() => scrollTo("about")}>About</li>
                 <li onClick={() => scrollTo("skills")}>Skills</li>
                 <li onClick={() => scrollTo("resume")}>Resume</li>

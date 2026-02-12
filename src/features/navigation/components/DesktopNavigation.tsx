@@ -26,6 +26,7 @@ export default function DesktopNavigation() {
     return (
         <nav className="navigation desktop-navigation">
             <ul>
+                <li onClick={() => scrollTo("hero")}>Home</li>
                 <li onClick={() => scrollTo("about")}>About</li>
                 <li onClick={() => scrollTo("skills")}>Skills</li>
                 <li onClick={() => scrollTo("resume")}>Resume</li>
