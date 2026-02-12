@@ -143,10 +143,8 @@ $shadow-color: rgba(0, 0, 50, 0.5);
             }
         }
     }
-}
 
-@media (max-width: 800px) {
-    #resume {
+    @media (max-width: 800px) {
         #resume-content {
             width: 100%;
             margin: 1.5rem 0;

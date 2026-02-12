@@ -11,16 +11,14 @@ import "@/features/portfolio/portfolio.styles.scss";
 export default function Main() {
     return (
         <main>
+            <Hero />
             <About />
+            <Reviews />
+            <Skills />
+            <Resume />
+            {/*<Projects />*/}
             <Contact />
         </main>
     )
 }
 
-/**            <Hero />
- <About />
- <Reviews />
- <Skills />
- <Projects />
- <Resume />
- */

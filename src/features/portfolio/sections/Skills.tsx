@@ -92,21 +92,23 @@ export default function Skills() {
                     Skills
                 </m.h2>
 
-                <div className="tools" ref={divRef}>
-                    {skills
-                        .filter((skill) => skill.isActive)
-                        .map((skill, index) => (
-                            <m.span
-                                key={skill.name}
-                                custom={index}
-                                initial="initial"
-                                animate={hasAnimated.div ? "animate" : "initial"}
-                                variants={spanVariants}
-                                title={skill.name}
-                            >
-                                {skill.icon}
-                            </m.span>
-                        ))}
+                <div className="content">
+                    <div className="tools" ref={divRef}>
+                        {skills
+                            .filter((skill) => skill.isActive)
+                            .map((skill, index) => (
+                                <m.span
+                                    key={skill.name}
+                                    custom={index}
+                                    initial="initial"
+                                    animate={hasAnimated.div ? "animate" : "initial"}
+                                    variants={spanVariants}
+                                    title={skill.name}
+                                >
+                                    {skill.icon}
+                                </m.span>
+                            ))}
+                    </div>
                 </div>
             </div>
         </section>

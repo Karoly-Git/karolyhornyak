@@ -10,16 +10,12 @@ const contentVariants = {
 export default function About() {
     const h2Ref = useRef<HTMLHeadingElement | null>(null);
     const p1Ref = useRef<HTMLParagraphElement | null>(null);
-    const p2Ref = useRef<HTMLParagraphElement | null>(null);
     const p3Ref = useRef<HTMLParagraphElement | null>(null);
-    const divRef = useRef<HTMLDivElement | null>(null);
     const linksRef = useRef<HTMLDivElement | null>(null);
 
     const h2InView = useInView(h2Ref, { once: true, amount: 0.1 });
     const p1InView = useInView(p1Ref, { once: true, amount: 0.1 });
-    const p2InView = useInView(p2Ref, { once: true, amount: 0.1 });
     const p3InView = useInView(p3Ref, { once: true, amount: 0.1 });
-    const divInView = useInView(divRef, { once: true, amount: 0.1 });
     const linksInView = useInView(linksRef, { once: true, amount: 0.1 });
 
     return (
