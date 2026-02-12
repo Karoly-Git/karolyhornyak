@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -9,22 +9,37 @@ export default function MobileNavigation() {
     const location = useLocation();
     const navigate = useNavigate();
 
+    // 🔒 Lock / unlock body scroll
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+
+        return () => {
+            document.body.classList.remove("no-scroll");
+        };
+    }, [isOpen]);
+
     const scrollTo = (id: string) => {
         setIsOpen(false);
 
-        if (location.pathname !== "/") {
-            navigate("/");
-            setTimeout(() => {
-                document.getElementById(id)?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            }, 100);
-        } else {
+        const executeScroll = () => {
             document.getElementById(id)?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
+        };
+
+        if (location.pathname !== "/") {
+            navigate("/");
+
+            // wait for route change + render
+            setTimeout(executeScroll, 150);
+        } else {
+            // wait for menu close animation (0.4s)
+            setTimeout(executeScroll, 350);
         }
     };
 
@@ -35,7 +50,11 @@ export default function MobileNavigation() {
                     className="mobile-toggle"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    {isOpen ? <FaTimes className="close-icon" /> : <FaBars className="open-icon" />}
+                    {isOpen ? (
+                        <FaTimes className="close-icon" />
+                    ) : (
+                        <FaBars className="open-icon" />
+                    )}
                 </div>
             </div>
 

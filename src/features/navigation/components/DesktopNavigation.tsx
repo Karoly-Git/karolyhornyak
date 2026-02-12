@@ -7,19 +7,18 @@ export default function DesktopNavigation() {
     const navigate = useNavigate();
 
     const scrollTo = (id: string) => {
-        if (location.pathname !== "/") {
-            navigate("/");
-            setTimeout(() => {
-                document.getElementById(id)?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            }, 100);
-        } else {
+        const executeScroll = () => {
             document.getElementById(id)?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
+        };
+
+        if (location.pathname !== "/") {
+            navigate("/");
+            setTimeout(executeScroll, 150);
+        } else {
+            executeScroll();
         }
     };
 
