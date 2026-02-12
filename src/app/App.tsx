@@ -1,7 +1,7 @@
-
 import Header from "./layout/Header/Header";
 import Footer from "./layout/Footer/Footer";
 import AppRoutes from "./AppRoutes";
+import ScrollUp from "@/shared/components/ScrollUp";
 
 export default function App() {
   return (
@@ -9,6 +9,8 @@ export default function App() {
       <Header />
       <AppRoutes />
       <Footer />
+
+      <ScrollUp />
     </div>
   );
 }

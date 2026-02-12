@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion as m, useInView } from "framer-motion";
 import { useTypewriter } from "@/shared/hooks/useTypewriter";
 
+import "@/features/portfolio/portfolio.styles.scss"
+
 const contentVariants = {
     initial: { opacity: 0, y: 180 },
     animate: {
@@ -38,25 +40,28 @@ export default function Hero() {
 
     return (
         <section id="hero">
-            <m.div
-                className="hero-content"
-                ref={contentRef}
-                initial="initial"
-                animate={hasAnimated ? "animate" : "initial"}
-                variants={contentVariants}
-            >
-                <h1>Karoly Hornyak</h1>
-                <h4>Full-Stack Engineer</h4>
-                <p>
-                    <span>
-                        {text}
-                        <span
-                            className={`blinking ${isTyping ? "stop-blinking" : ""
-                                }`}
-                        />
-                    </span>
-                </p>
-            </m.div>
+            <div className="container">
+
+                <m.div
+                    className="content"
+                    ref={contentRef}
+                    initial="initial"
+                    animate={hasAnimated ? "animate" : "initial"}
+                    variants={contentVariants}
+                >
+                    <h1>Karoly Hornyak</h1>
+                    <h4>Full-Stack Engineer</h4>
+                    <p>
+                        <span>
+                            {text}
+                            <span
+                                className={`blinking ${isTyping ? "stop-blinking" : ""
+                                    }`}
+                            />
+                        </span>
+                    </p>
+                </m.div>
+            </div>
         </section>
     );
 }
