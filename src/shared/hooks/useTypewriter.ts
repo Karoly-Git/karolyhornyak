@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type UseTypewriterOptions = {
     words: string[];
@@ -6,6 +6,7 @@ type UseTypewriterOptions = {
     deletingSpeed?: number;
     pauseDuration?: number;
     startDelay?: number;
+    enabled?: boolean;
 };
 
 export function useTypewriter({
@@ -14,59 +15,88 @@ export function useTypewriter({
     deletingSpeed = 60,
     pauseDuration = 3000,
     startDelay = 2000,
+    enabled = true,
 }: UseTypewriterOptions) {
     const [text, setText] = useState<string>("");
     const [isTyping, setIsTyping] = useState<boolean>(false);
 
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const wordIndexRef = useRef(0);
+    const charIndexRef = useRef(0);
+    const isDeletingRef = useRef(false);
+
+    // 🔥 Keep latest speed values (avoids stale closure problem)
+    const typingSpeedRef = useRef(typingSpeed);
+    const deletingSpeedRef = useRef(deletingSpeed);
+    const pauseDurationRef = useRef(pauseDuration);
+
     useEffect(() => {
-        if (!words.length) return;
+        typingSpeedRef.current = typingSpeed;
+        deletingSpeedRef.current = deletingSpeed;
+        pauseDurationRef.current = pauseDuration;
+    }, [typingSpeed, deletingSpeed, pauseDuration]);
 
-        let currentWordIndex = 0;
-        let timeoutId: ReturnType<typeof setTimeout>;
+    useEffect(() => {
+        if (!enabled || !words.length) return;
 
-        const typeAndDelete = (
-            word: string,
-            isDeleting = false,
-            charIndex = 0
-        ): void => {
+        const tick = () => {
+            const currentWord = words[wordIndexRef.current];
+
             setIsTyping(true);
 
-            if (isDeleting) {
-                if (charIndex >= 0) {
-                    setText(word.slice(0, charIndex));
-                    timeoutId = setTimeout(
-                        () => typeAndDelete(word, true, charIndex - 1),
-                        deletingSpeed
+            if (!isDeletingRef.current) {
+                // Typing forward
+                if (charIndexRef.current < currentWord.length) {
+                    charIndexRef.current++;
+                    setText(currentWord.slice(0, charIndexRef.current));
+
+                    timeoutRef.current = setTimeout(
+                        tick,
+                        typingSpeedRef.current
                     );
                 } else {
-                    currentWordIndex = (currentWordIndex + 1) % words.length;
-                    timeoutId = setTimeout(
-                        () => typeAndDelete(words[currentWordIndex]),
-                        typingSpeed
+                    // Pause before deleting
+                    setIsTyping(false);
+                    isDeletingRef.current = true;
+
+                    timeoutRef.current = setTimeout(
+                        tick,
+                        pauseDurationRef.current
                     );
                 }
             } else {
-                if (charIndex < word.length) {
-                    setText(word.slice(0, charIndex + 1));
-                    timeoutId = setTimeout(
-                        () => typeAndDelete(word, false, charIndex + 1),
-                        typingSpeed
+                // Deleting
+                if (charIndexRef.current > 0) {
+                    charIndexRef.current--;
+                    setText(currentWord.slice(0, charIndexRef.current));
+
+                    timeoutRef.current = setTimeout(
+                        tick,
+                        deletingSpeedRef.current
                     );
                 } else {
-                    timeoutId = setTimeout(() => {
-                        setIsTyping(false);
-                        typeAndDelete(word, true, charIndex - 1);
-                    }, pauseDuration);
+                    // Move to next word
+                    isDeletingRef.current = false;
+                    wordIndexRef.current =
+                        (wordIndexRef.current + 1) % words.length;
+
+                    timeoutRef.current = setTimeout(
+                        tick,
+                        typingSpeedRef.current
+                    );
                 }
             }
         };
 
-        timeoutId = setTimeout(() => {
-            typeAndDelete(words[currentWordIndex]);
-        }, startDelay);
+        timeoutRef.current = setTimeout(tick, startDelay);
 
-        return () => clearTimeout(timeoutId);
-    }, [words, typingSpeed, deletingSpeed, pauseDuration, startDelay]);
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, [enabled, words, startDelay]);
 
     return { text, isTyping };
 }
