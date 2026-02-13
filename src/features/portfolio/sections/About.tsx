@@ -37,7 +37,7 @@ export default function About() {
                         animate={p1InView ? "animate" : "initial"}
                         variants={contentVariants}
                     >
-                        Hi, I'm Karoly — a full-stack engineer focused on turning ideas into
+                        Hi, I'm Karoly — a Full-Stack Developer focused on turning ideas into
                         reliable, production-ready software. I work comfortably across the
                         entire development lifecycle, breaking down complex problems and
                         delivering practical solutions that address real business needs.

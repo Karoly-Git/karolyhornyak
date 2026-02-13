@@ -97,7 +97,7 @@ export default function Hero() {
                     variants={contentVariants}
                 >
                     <h1>Karoly Hornyak</h1>
-                    <h4>Full-Stack Engineer</h4>
+                    <h4>Full-Stack Developer</h4>
 
                     <p>
                         <span>
