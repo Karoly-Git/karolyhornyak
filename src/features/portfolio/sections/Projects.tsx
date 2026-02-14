@@ -58,7 +58,7 @@ export default function Projects() {
                     </m.h3>
 
                     <m.div
-                        className="project-grid premium-grid"
+                        className="project-grid"
                         variants={containerVariants}
                         initial="hidden"
                         animate={sectionInView ? "show" : "hidden"}
