@@ -1,17 +1,17 @@
+import { motion as m, useInView } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { useRef } from "react";
-import { motion as m, useInView, type Variants } from "framer-motion";
-import { projects } from "@/data/projects";
+
+import { blogs } from "@/data/blogs";
+
 import Card from "@/shared/components/Card";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: {
-            staggerChildren: 0.12,
-            delayChildren: 0.2,
-        },
-    },
+        transition: { staggerChildren: 0.12, delayChildren: 0.2 }
+    }
 };
 
 const itemVariants: Variants = {
@@ -19,32 +19,29 @@ const itemVariants: Variants = {
     show: {
         opacity: 1,
         y: 0,
-        transition: {
-            duration: 0.6,
-            ease: "easeOut",
-        },
-    },
+        transition: { duration: 0.6 }
+    }
 };
 
-export default function Projects() {
-    const sectionRef = useRef<HTMLElement | null>(null);
+export default function Blog() {
+    const blogRef = useRef<HTMLElement | null>(null);
 
-    const sectionInView = useInView(sectionRef, {
+    const sectionInView = useInView(blogRef, {
         once: true,
-        amount: 0.1,
+        amount: 0.1
     });
 
-    const activeProjects = projects.filter((p) => p.isActive);
+    const blogPosts = blogs.filter(b => b.isActive);
 
     return (
-        <section id="projects" ref={sectionRef}>
+        <section id="blog" ref={blogRef}>
             <div className="container">
                 <m.h2
                     initial={{ opacity: 0, y: 40 }}
                     animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.9 }}
                 >
-                    Recent Projects
+                    Blogs
                 </m.h2>
 
                 <div className="content">
@@ -54,7 +51,7 @@ export default function Projects() {
                         animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.9, delay: 0.15 }}
                     >
-                        Side projects and practical applications built with modern web tools
+                        Thoughts, tutorials & insights
                     </m.h3>
 
                     <m.div
@@ -63,9 +60,9 @@ export default function Projects() {
                         initial="hidden"
                         animate={sectionInView ? "show" : "hidden"}
                     >
-                        {activeProjects.map((project) => (
-                            <m.div key={project.name} variants={itemVariants}>
-                                <Card variant="project" data={project} />
+                        {blogPosts.map((post) => (
+                            <m.div key={post.slug} variants={itemVariants}>
+                                <Card variant="blog" data={post} />
                             </m.div>
                         ))}
                     </m.div>

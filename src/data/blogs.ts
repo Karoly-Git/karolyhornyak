@@ -12,9 +12,9 @@ export type BlogPost = {
     isActive: boolean;
 };
 
-import { meta as howIBecame } from "@/features/blog/posts/how-i-became/meta";
-import { meta as reactQna } from "@/features/blog/posts/react-qna/meta";
-import { meta as lorryTracking } from "@/features/blog/posts/lorry-tracking/meta";
+import { meta as howIBecame } from "@/features/portfolio/blog/posts/how-i-became/meta";
+import { meta as reactQna } from "@/features/portfolio/blog/posts/react-qna/meta";
+import { meta as lorryTracking } from "@/features/portfolio/blog/posts/lorry-tracking/meta";
 
 export const blogs: BlogPost[] = [
     howIBecame,

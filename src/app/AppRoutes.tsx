@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Main from "@/app/layout/Main/Main";
-import Blog from "@/features/blog/pages/Blog";
+import Blog from "@/features/portfolio/blog/Blog";
 
 export default function AppRoutes() {
     return (
