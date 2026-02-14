@@ -29,7 +29,7 @@ export default function ProjectCard({
                     href={liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="demo-btn btn"
+                    className="btn demo-btn"
                 >
                     Live Demo
                 </a>
@@ -39,7 +39,7 @@ export default function ProjectCard({
                         href={gitHubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="github-btn btn"
+                        className="btn github-btn"
                     >
                         GitHub
                     </a>

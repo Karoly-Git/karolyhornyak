@@ -1,24 +1,20 @@
-import dmf from "../img/projects/dmf.webp";
-import spw from "../img/projects/spw.webp";
-import mary from "../img/projects/mary.webp";
-import talpak from "../img/projects/talpak.webp";
-import tsmrf from "../img/projects/tsmrf.png";
-import webdev from "../img/projects/webdev.png";
-import gazetteer from "../img/projects/gazetteer.webp";
-import dog from "../img/projects/dog.png";
-import namedayapi from "../img/projects/namedayapi.webp";
-import weather from "../img/projects/weather.png";
-import gomoku from "../img/projects/gomoku.webp";
-import carousel from "../img/projects/carousel.png";
-import bankholiday from "../img/projects/bankholiday.webp";
-import exchange from "../img/projects/exchange.png";
-import review from "../img/projects/review.png";
-import cd from "../img/projects/cd.png";
-import fsn from "../img/projects/fsn.webp";
-
-/* -------------------- */
-/* Types */
-/* -------------------- */
+import bankholiday from "@/assets/images/projects/bankholiday.webp";
+import carousel from "@/assets/images/projects/carousel.png";
+import cd from "@/assets/images/projects/cd.png";
+import dmf from "@/assets/images/projects/dmf.webp";
+import dog from "@/assets/images/projects/dog.png";
+import exchange from "@/assets/images/projects/exchange.png";
+import fsn from "@/assets/images/projects/fsn.webp";
+import gazetteer from "@/assets/images/projects/gazetteer.webp";
+import gomoku from "@/assets/images/projects/gomoku.webp";
+import mary from "@/assets/images/projects/mary.webp";
+import namedayapi from "@/assets/images/projects/namedayapi.webp";
+import review from "@/assets/images/projects/review.png";
+import spw from "@/assets/images/projects/spw.webp";
+import talpak from "@/assets/images/projects/talpak.webp";
+import tsmrf from "@/assets/images/projects/tsmrf.png";
+import weather from "@/assets/images/projects/weather.png";
+import webdev from "@/assets/images/projects/webdev.png";
 
 export type ProjectGroup = "api" | "website" | "web-app";
 
