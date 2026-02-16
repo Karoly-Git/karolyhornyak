@@ -1,8 +1,7 @@
-import { motion as m, useInView } from "framer-motion";
-import type { Variants } from "framer-motion";
+import { motion as m, useInView, type Variants } from "framer-motion";
 import { useRef } from "react";
 
-import { blogs } from "@/data/blogs";
+import { blogs } from "@/data/blogs.data";
 
 import Card from "@/shared/components/Card";
 
@@ -10,8 +9,11 @@ const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: { staggerChildren: 0.12, delayChildren: 0.2 }
-    }
+        transition: {
+            staggerChildren: 0.12,
+            delayChildren: 0.2,
+        },
+    },
 };
 
 const itemVariants: Variants = {
@@ -19,8 +21,11 @@ const itemVariants: Variants = {
     show: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6 }
-    }
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
 };
 
 export default function Blog() {
@@ -31,7 +36,7 @@ export default function Blog() {
         amount: 0.1
     });
 
-    const blogPosts = blogs.filter(b => b.isActive);
+    const activePosts = blogs.filter(b => b.isActive);
 
     return (
         <section id="blog" ref={blogRef}>
@@ -60,7 +65,7 @@ export default function Blog() {
                         initial="hidden"
                         animate={sectionInView ? "show" : "hidden"}
                     >
-                        {blogPosts.map((post) => (
+                        {activePosts.map((post) => (
                             <m.div key={post.slug} variants={itemVariants}>
                                 <Card variant="blog" data={post} />
                             </m.div>

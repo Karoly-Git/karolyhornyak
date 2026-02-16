@@ -1,6 +1,8 @@
-import { useRef } from "react";
 import { motion as m, useInView, type Variants } from "framer-motion";
-import { projects } from "@/data/projects";
+import { useRef } from "react";
+
+import { projects } from "@/data/projects.data";
+
 import Card from "@/shared/components/Card";
 
 const containerVariants: Variants = {
@@ -64,7 +66,7 @@ export default function Projects() {
                         animate={sectionInView ? "show" : "hidden"}
                     >
                         {activeProjects.map((project) => (
-                            <m.div key={project.name} variants={itemVariants}>
+                            <m.div key={project.slug} variants={itemVariants}>
                                 <Card variant="project" data={project} />
                             </m.div>
                         ))}

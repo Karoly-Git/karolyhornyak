@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import type { BlogPost } from "@/data/blogs";
-import type { Project } from "@/data/projects";
+import type { BlogPost } from "@/data/blogs.data";
+import type { Project } from "@/data/projects.data";
 
 type CardProps =
     | { variant: "blog"; data: BlogPost }
@@ -10,22 +10,15 @@ export default function Card(props: CardProps) {
     const { variant, data } = props;
 
     // Normalize fields
-    const image =
-        variant === "blog" ? data.cover : data.src;
+    const image = data.cover;
 
-    const title =
-        variant === "blog" ? data.title : data.name;
+    const title = data.title;
 
-    const description =
-        variant === "blog" ? data.excerpt : data.description;
+    const excerpt = data.excerpt;
 
-    const date =
-        variant === "blog" ? data.date : undefined;
+    const date = data.date;
 
-    const badges =
-        variant === "blog"
-            ? data.categories
-            : data.stack.split(", ");
+    const labels = data.labels;
 
     return (
         <div className="card">
@@ -35,9 +28,9 @@ export default function Card(props: CardProps) {
 
             {date && <p className="card-date">{date}</p>}
 
-            {badges?.length > 0 && (
-                <div className="card-badges">
-                    {badges.map((badge) => (
+            {labels?.length > 0 && (
+                <div className="card-labels">
+                    {labels.map((badge) => (
                         <span key={badge} className="card-badge">
                             {badge}
                         </span>
@@ -47,7 +40,7 @@ export default function Card(props: CardProps) {
 
             <h3 className="card-title">{title}</h3>
 
-            <p className="card-description">{description}</p>
+            <p className="card-excerpt">{excerpt}</p>
 
             {/* BLOG ACTION */}
             {variant === "blog" && (
@@ -71,7 +64,7 @@ export default function Card(props: CardProps) {
                         Live Demo
                     </a>
 
-                    {!data.isRepoPrivate && (
+                    {!data.isGitHubRepoPrivate && (
                         <a
                             href={data.gitHubUrl}
                             target="_blank"

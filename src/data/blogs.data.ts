@@ -8,7 +8,7 @@ export type BlogPost = {
     alt: string;
     excerpt: string;
     date: string;
-    categories: string[];
+    labels: string[];
     isActive: boolean;
 };
 

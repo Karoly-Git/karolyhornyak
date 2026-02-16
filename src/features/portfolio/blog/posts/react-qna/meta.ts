@@ -1,11 +1,11 @@
 import cover from "./cover.webp";
-import Post from "./index";
-import type { BlogPost } from "@/data/blogs";
+import PostComponent from "./index";
+import type { BlogPost } from "@/data/blogs.data";
 
 export const meta: BlogPost = {
     title: "20 Common React Theoretical Questions",
     slug: "20-common-react-theoretical-questions",
-    component: Post,
+    component: PostComponent,
     cover,
     alt: "20 Common React theoretical questions explained",
     excerpt:
