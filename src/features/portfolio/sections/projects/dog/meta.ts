@@ -1,0 +1,18 @@
+import cover from "./cover.webp";
+import ProjectComponent from "./index";
+import type { Project } from "@/data/projects.data";
+
+export const meta: Project = {
+    title: "Watch Dogs",
+    slug: "watchdogs",
+    component: ProjectComponent,
+    cover,
+    alt: "Watch Dogs",
+    excerpt: "Short description of the project.",
+    date: "2025",
+    labels: ["HTML", "CSS", "JS"],
+    liveDemoUrl: "https://karoly-git.github.io/watch-dog-photos/",
+    gitHubUrl: "https://github.com/Karoly-Git/watch-dog-photos",
+    isGitHubRepoPrivate: false,
+    isActive: false,
+};

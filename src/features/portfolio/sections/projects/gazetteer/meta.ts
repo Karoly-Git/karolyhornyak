@@ -3,17 +3,17 @@ import ProjectComponent from "./index";
 import type { Project } from "@/data/projects.data";
 
 export const meta: Project = {
-    title: "Name Day API",
+    title: "Gazetteer",
     slug: "gazetteer",
     component: ProjectComponent,
     cover,
-    alt: "Name Day API",
+    alt: "Gazetteer App",
     excerpt:
-        "A simple REST API that provides name day information for the entire year, with filtering options by month, date, and country.",
+        "An interactive world explorer that lets users view real-time country data—including weather, news, borders, population, photos, and currency—powered by multiple public APIs and an interactive Leaflet map.",
     date: "2025",
-    labels: ["Node.js", "Express.js", "JSON", "Swagger", "GitHub", "Heroku"],
-    liveDemoUrl: "https://karoly-git.github.io/name-day-frontend/",
-    gitHubUrl: "https://github.com/Karoly-Git/name-day-backend",
+    labels: ["HTML", "CSS", "JavaScript", "PHP", "Leaflet.js", "APIs"],
+    liveDemoUrl: "https://transferstation.co.uk/gazetteer/",
+    gitHubUrl: "https://github.com/Karoly-Git/gazetteer",
     isGitHubRepoPrivate: false,
     isActive: true,
 };
