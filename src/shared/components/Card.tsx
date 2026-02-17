@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import type { BlogPost } from "@/data/blogs.data";
-import type { Project } from "@/data/projects.data";
+import type { BlogPost } from "@/features/portfolio/blog/blogs.data";
+import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
 type CardProps =
     | { variant: "blog"; data: BlogPost }
@@ -43,24 +43,26 @@ export default function Card(props: CardProps) {
                         className="card-actions"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <a
-                            href={data.liveDemoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            type="button"
                             className="btn secondary"
+                            onClick={() =>
+                                window.open(data.liveDemoUrl, "_blank", "noopener,noreferrer")
+                            }
                         >
                             Live Demo
-                        </a>
+                        </button>
 
                         {!data.isGitHubRepoPrivate && (
-                            <a
-                                href={data.gitHubUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                type="button"
                                 className="btn secondary"
+                                onClick={() =>
+                                    window.open(data.gitHubUrl, "_blank", "noopener,noreferrer")
+                                }
                             >
                                 GitHub
-                            </a>
+                            </button>
                         )}
                     </div>
                 )}

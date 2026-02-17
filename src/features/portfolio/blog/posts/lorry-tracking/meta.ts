@@ -1,5 +1,5 @@
 import cover from "./cover.webp";
-import type { BlogPost } from "@/data/blogs.data";
+import type { BlogPost } from "@/features/portfolio/blog/blogs.data";
 
 export const meta: BlogPost = {
     title: "New Project: Building a Lorry Tracking System",

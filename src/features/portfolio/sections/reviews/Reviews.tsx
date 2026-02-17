@@ -4,12 +4,14 @@ import "slick-carousel/slick/slick-theme.css";
 import { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import type { Settings } from "react-slick";
-import { reviews, type Review } from "@/data/reviews";
+import { reviews, type Review } from "./reviews.data";
 import { MdOutlineNavigateNext as Arrow } from "react-icons/md";
 import { FaQuoteLeft as QIconL } from "react-icons/fa";
 import { FaQuoteRight as QIconR } from "react-icons/fa";
 import { motion as m, useInView } from "framer-motion";
 import type { MouseEventHandler } from "react";
+
+import "./reviews.scss";
 
 type ArrowProps = {
     onClick?: MouseEventHandler<HTMLDivElement>;
@@ -42,7 +44,6 @@ function NextArrow({ onClick }: ArrowProps) {
 }
 
 export default function Reviews() {
-    // ✅ FIXED TYPE HERE
     const sectionRef = useRef<HTMLHeadingElement>(null);
 
     const [hasAnimated, setHasAnimated] = useState(false);

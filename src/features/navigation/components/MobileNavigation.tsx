@@ -36,10 +36,10 @@ export default function MobileNavigation() {
             navigate("/");
 
             // wait for route change + render
-            setTimeout(executeScroll, 150);
+            setTimeout(executeScroll, 200);
         } else {
             // wait for menu close animation (0.4s)
-            setTimeout(executeScroll, 350);
+            setTimeout(executeScroll, 400);
         }
     };
 

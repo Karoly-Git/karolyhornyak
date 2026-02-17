@@ -1,22 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { motion as m, useInView } from "framer-motion";
 
-const contentVariants = {
-    initial: { opacity: 0, y: 180 },
-    animate: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 1 },
-    },
-};
+import "./hero.scss";
 
 export default function Hero() {
     const contentRef = useRef<HTMLDivElement | null>(null);
-
-    const contentInView = useInView(contentRef, {
-        once: true,
-        amount: 0.1,
-    });
 
     const words: string[] = [
         "I build reliable systems that solve real problems.",
@@ -27,13 +14,6 @@ export default function Hero() {
 
     const [text, setText] = useState<string>("");
     const [isWaiting, setIsWaiting] = useState<boolean>(false);
-    const [hasAnimated, setHasAnimated] = useState<boolean>(false);
-
-    useEffect(() => {
-        if (contentInView && !hasAnimated) {
-            setHasAnimated(true);
-        }
-    }, [contentInView, hasAnimated]);
 
     useEffect(() => {
         let currentWordIndex = 0;
@@ -68,7 +48,6 @@ export default function Hero() {
                         60
                     );
                 } else {
-                    // Waiting phase (cursor should blink)
                     setIsWaiting(true);
 
                     setTimeout(() => {
@@ -89,12 +68,9 @@ export default function Hero() {
     return (
         <section id="hero">
             <div className="container">
-                <m.div
+                <div
                     className="content"
                     ref={contentRef}
-                    initial="initial"
-                    animate={hasAnimated ? "animate" : "initial"}
-                    variants={contentVariants}
                 >
                     <h1>Karoly Hornyak</h1>
                     <h4>Full-Stack Developer</h4>
@@ -108,7 +84,7 @@ export default function Hero() {
                             />
                         </span>
                     </p>
-                </m.div>
+                </div>
             </div>
         </section>
     );

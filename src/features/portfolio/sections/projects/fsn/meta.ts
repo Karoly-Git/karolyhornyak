@@ -1,6 +1,6 @@
 import cover from "./cover.webp";
 import ProjectComponent from "./index";
-import type { Project } from "@/data/projects.data";
+import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
 export const meta: Project = {
     title: "Form Submit Now",

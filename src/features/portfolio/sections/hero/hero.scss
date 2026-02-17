@@ -1,0 +1,91 @@
+    #hero {
+        background: url("../../../../assets/images/hero/me4.webp") no-repeat top right / cover;
+        height: 530px;
+        align-items: flex-end;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+
+        @media (max-width: 800px) {
+            background: url("../../../../assets/images/hero/me4.webp") no-repeat top center / cover;
+            height: 400px;
+        }
+
+        @media (max-width: 550px) {
+            background: url("../../../../assets/images/hero/me4-small.webp") no-repeat top center / cover;
+        }
+
+        @media (max-width: 500px) {
+            height: 400px;
+        }
+
+        .container {
+            width: 100%;
+            color: #fff;
+            padding: 0;
+
+            * {
+                font-weight: 500;
+
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 2rem;
+                background-color: rgba(0, 0, 50, 0.5);
+                gap: unset;
+
+                @media (max-width: 800px) {
+                    padding: 0;
+                }
+
+                h1 {
+                    text-align: left;
+                    padding: 0.5rem 1rem;
+                    font-size: 2rem;
+                    text-shadow:
+                        -1px 0 0 #2f2e2e,
+                        1px 0 0 #2f2e2e,
+                        0 -1px 0 #2f2e2e,
+                        0 1px 0 #2f2e2e;
+                }
+
+                h4 {
+                    padding-left: 1rem;
+                }
+
+                p {
+                    text-align: left;
+                    padding: 0.5rem 1rem;
+                    font-size: 1.5rem;
+                    height: 5rem;
+                    display: flex;
+                    align-items: flex-start;
+                    text-shadow: 0 0 5px black;
+
+                    span {
+                        font-family: "Share Tech Mono", monospace;
+
+                        .blinking {
+                            animation: blink 0.7s infinite;
+                            margin-left: 8px;
+                            font-size: 1.75rem;
+                            display: inline-block;
+                            background-color: red;
+                            width: 16px;
+                            height: 28px;
+                            position: relative;
+                            bottom: -5px;
+                        }
+
+                        .stop-blinking {
+                            animation: none;
+                        }
+
+                    }
+                }
+            }
+        }
+    }

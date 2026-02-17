@@ -16,7 +16,7 @@ export default function DesktopNavigation() {
 
         if (location.pathname !== "/") {
             navigate("/");
-            setTimeout(executeScroll, 150);
+            setTimeout(executeScroll, 200);
         } else {
             executeScroll();
         }

@@ -1,18 +1,14 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import type { ChangeEvent, SyntheticEvent } from "react";
-import { motion as m, useInView } from "framer-motion";
 import EmailStatusModal from "@/features/email/components/EmailStatusModal";
+
+import "./contact.scss";
 
 type ModalStyle = {
     modalIndex: number;
     modalBgColor: React.CSSProperties["backgroundColor"];
     contentOpacity: number;
     contentTop: React.CSSProperties["top"];
-};
-
-const sectionVariants = {
-    initial: { opacity: 0, y: 180 },
-    animate: { opacity: 1, y: 0, transition: { duration: 1 } },
 };
 
 export default function Contact() {
@@ -28,26 +24,6 @@ export default function Contact() {
         contentOpacity: 0,
         contentTop: "3rem",
     });
-
-    const [hasAnimated, setHasAnimated] = useState({
-        h2: false,
-        form: false,
-    });
-
-    const h2InView = useInView(h2Ref, { once: true, amount: 0.1 });
-    const formInView = useInView(formRef, { once: true, amount: 0.1 });
-
-    useEffect(() => {
-        if (h2InView && !hasAnimated.h2) {
-            setHasAnimated((prev) => ({ ...prev, h2: true }));
-        }
-    }, [h2InView, hasAnimated.h2]);
-
-    useEffect(() => {
-        if (formInView && !hasAnimated.form) {
-            setHasAnimated((prev) => ({ ...prev, form: true }));
-        }
-    }, [formInView, hasAnimated.form]);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -134,13 +110,10 @@ export default function Contact() {
                     <h2 ref={h2Ref}>Contact Me</h2>
 
                     <div className="content">
-                        <m.form
+                        <form
                             className="contact-form"
                             onSubmit={handleSubmit}
                             ref={formRef}
-                            initial="initial"
-                            animate={hasAnimated.form ? "animate" : "initial"}
-                            variants={sectionVariants}
                             noValidate
                         >
                             <label htmlFor="name">Name:</label>
@@ -202,7 +175,7 @@ export default function Contact() {
                             >
                                 Get in touch
                             </button>
-                        </m.form>
+                        </form>
                     </div>
                 </div>
             </section>

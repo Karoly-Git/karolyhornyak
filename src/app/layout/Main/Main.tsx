@@ -1,10 +1,10 @@
-import About from "@/features/portfolio/sections/About";
-import Contact from "@/features/portfolio/sections/Contact";
-import Hero from "@/features/portfolio/sections/Hero";
+import About from "@/features/portfolio/sections/about/About";
+import Contact from "@/features/portfolio/sections/contact/Contact";
+import Hero from "@/features/portfolio/sections/hero/Hero";
 import Projects from "@/features/portfolio/sections/projects/Projects";
-import Resume from "@/features/portfolio/sections/Resume";
-import Reviews from "@/features/portfolio/sections/Reviews";
-import Skills from "@/features/portfolio/sections/Skills";
+import Resume from "@/features/portfolio/sections/resume/Resume";
+import Reviews from "@/features/portfolio/sections/reviews/Reviews";
+import Skills from "@/features/portfolio/sections/skills/Skills";
 
 import "@/features/portfolio/portfolio.styles.scss";
 

@@ -1,15 +1,7 @@
 import { useRef } from "react";
-import { motion as m, useInView } from "framer-motion";
 import myCV from "@/assets/documents/cv/myCV_v8.docx";
 
-const contentVariants = {
-    initial: { opacity: 0, y: 180 },
-    animate: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 1 }
-    }
-};
+import "./resume.scss";
 
 export default function Resume() {
     const h2Ref = useRef<HTMLHeadingElement | null>(null);
@@ -18,34 +10,18 @@ export default function Resume() {
     const projectsRef = useRef<HTMLElement | null>(null);
     const educationRef = useRef<HTMLElement | null>(null);
 
-    const h2InView = useInView(h2Ref, { once: true });
-    const summaryInView = useInView(summaryRef, { once: true });
-    const experienceInView = useInView(experienceRef, { once: true, amount: 0.1 });
-    const projectsInView = useInView(projectsRef, { once: true, amount: 0.1 });
-    const educationInView = useInView(educationRef, { once: true, amount: 0.1 });
-
     return (
         <section id="resume">
             <div className="container">
-                <m.h2
-                    ref={h2Ref}
-                    initial="initial"
-                    animate={h2InView ? "animate" : "initial"}
-                    variants={contentVariants}
-                >
+                <h2 ref={h2Ref}>
                     Resume
-                </m.h2>
+                </h2>
 
                 <div className="content">
                     <div className="columns">
                         <div className="column-left">
 
-                            <m.article
-                                ref={summaryRef}
-                                initial="initial"
-                                animate={summaryInView ? "animate" : "initial"}
-                                variants={contentVariants}
-                            >
+                            <article ref={summaryRef}>
                                 <h3>Professional Summary</h3>
                                 <p>
                                     Full-Stack Developer with 3+ years of experience building
@@ -56,7 +32,7 @@ export default function Resume() {
                                     Experienced in code reviews, troubleshooting, Agile workflows,
                                     and delivering maintainable solutions from concept to deployment.
                                 </p>
-                            </m.article>
+                            </article>
 
                             <article>
                                 <h3>Technical Skills</h3>
@@ -69,12 +45,9 @@ export default function Resume() {
                                 </ul>
                             </article>
 
-                            <m.article
+                            <article
                                 className="experience"
                                 ref={experienceRef}
-                                initial="initial"
-                                animate={experienceInView ? "animate" : "initial"}
-                                variants={contentVariants}
                             >
                                 <h3>Professional Experience</h3>
 
@@ -90,18 +63,13 @@ export default function Resume() {
                                         <li>Collaborated with clients through iterative development cycles.</li>
                                     </ul>
                                 </div>
-                            </m.article>
+                            </article>
                         </div>
 
-                        {/* RIGHT COLUMN */}
                         <div className="column-right">
 
-                            {/* PROJECTS */}
-                            <m.article
+                            <article
                                 ref={projectsRef}
-                                initial="initial"
-                                animate={projectsInView ? "animate" : "initial"}
-                                variants={contentVariants}
                             >
                                 <h3>Key Projects</h3>
 
@@ -139,15 +107,11 @@ export default function Resume() {
                                     <h4>Gazetteer - Study Project (2025)</h4>
                                     <p>Integrated Geonames, OpenWeather & API Ninjas</p>
                                 </div>
-                            </m.article>
+                            </article>
 
-                            {/* EDUCATION */}
-                            <m.article
+                            <article
                                 className="education"
                                 ref={educationRef}
-                                initial="initial"
-                                animate={educationInView ? "animate" : "initial"}
-                                variants={contentVariants}
                             >
                                 <h3>Education</h3>
 
@@ -170,7 +134,7 @@ export default function Resume() {
                                     <h4>BSc Mechanical Engineering · University of Szeged</h4>
                                     <p>GPA: 4.04 / 5</p>
                                 </div>
-                            </m.article>
+                            </article>
 
                             <article>
                                 <h3>Additional Information</h3>
