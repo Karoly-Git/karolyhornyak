@@ -1,0 +1,54 @@
+.mobile-navigation {
+    position: relative;
+
+    .mobile-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        z-index: 1003;
+    }
+
+    .mobile-toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        .open-icon {
+            color: #45505B;
+        }
+
+        .close-icon {
+            color: white;
+        }
+    }
+
+    /* FULL SCREEN SLIDE MENU */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        background: #000;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 4rem;
+        gap: 1.5rem;
+
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+
+        z-index: 1002;
+    }
+
+    .mobile-menu.open {
+        transform: translateY(0);
+    }
+
+    @media (min-width: 601px) {
+        display: none;
+    }
+}

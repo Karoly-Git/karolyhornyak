@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion as m } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Main from "@/app/layout/Main/Main";
 import Blog from "@/features/portfolio/blog/Blog";
@@ -12,26 +12,54 @@ export default function AppRoutes() {
 
     return (
         <AnimatePresence mode="wait">
-            <m.div
-                key={location.pathname}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-            >
-                <Routes location={location}>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route
-                        path="/blog/how-i-became-a-full-stack-developer"
-                        element={<HowIBecome />}
-                    />
-                    <Route
-                        path="/blog/start-to-build-a-lorry-tracking-system"
-                        element={<TrackingSystem />}
-                    />
-                </Routes>
-            </m.div>
+            <Routes location={location} key={location.pathname}>
+                <Route
+                    path="/"
+                    element={
+                        <PageWrapper>
+                            <Main />
+                        </PageWrapper>
+                    }
+                />
+                <Route
+                    path="/blog"
+                    element={
+                        <PageWrapper>
+                            <Blog />
+                        </PageWrapper>
+                    }
+                />
+                <Route
+                    path="/blog/how-i-became-a-full-stack-developer"
+                    element={
+                        <PageWrapper>
+                            <HowIBecome />
+                        </PageWrapper>
+                    }
+                />
+                <Route
+                    path="/blog/start-to-build-a-lorry-tracking-system"
+                    element={
+                        <PageWrapper>
+                            <TrackingSystem />
+                        </PageWrapper>
+                    }
+                />
+            </Routes>
         </AnimatePresence>
+    );
+}
+
+function PageWrapper({ children }: { children: React.ReactNode }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ height: "100%" }}
+        >
+            {children}
+        </motion.div>
     );
 }

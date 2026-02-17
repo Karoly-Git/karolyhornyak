@@ -1,0 +1,11 @@
+.desktop-navigation {
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+        display: none;
+    }
+}

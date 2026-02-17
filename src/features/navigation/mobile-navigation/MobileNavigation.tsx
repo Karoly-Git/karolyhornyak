@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-import "@/features/navigation/navigation.styles.scss";
+import "../navigation.styles.scss";
+import "./mobile-navigation.scss";
 
 export default function MobileNavigation() {
     const [isOpen, setIsOpen] = useState(false);

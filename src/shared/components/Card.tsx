@@ -16,57 +16,69 @@ export default function Card(props: CardProps) {
     const labels = data.labels;
 
     return (
-        <Link to={`/${variant}/${data.slug}`} className="card">
-            <div className="card-image">
-                <img src={image} alt={data.alt} />
-            </div>
+        <div className="card">
+            {/* MAIN CLICKABLE AREA */}
+            <Link
+                to={`/${variant}/${data.slug}`}
+                className="card-main-link"
+            >
+                <div className="card-image">
+                    <img src={image} alt={data.alt} />
+                </div>
 
-            <div className="card-content">
-                {date && <span className="card-date">{date}</span>}
+                <div className="card-content">
+                    {date && <span className="card-date">{date}</span>}
 
-                {labels?.length > 0 && (
-                    <div className="card-labels">
-                        {labels.map((label) => (
-                            <span key={label} className="card-badge">
-                                {label}
-                            </span>
-                        ))}
-                    </div>
-                )}
+                    {labels?.length > 0 && (
+                        <div className="card-labels">
+                            {labels.map((label) => (
+                                <span key={label} className="card-badge">
+                                    {label}
+                                </span>
+                            ))}
+                        </div>
+                    )}
 
-                <h3 className="card-title">{title}</h3>
+                    <h3 className="card-title">{title}</h3>
 
-                <p className="card-excerpt">{excerpt}</p>
+                    <p className="card-excerpt">{excerpt}</p>
+                </div>
+            </Link>
 
-                {variant === "project" && (
-                    <div
-                        className="card-actions"
-                        onClick={(e) => e.stopPropagation()}
+            {/* ACTION BUTTONS (NOT INSIDE LINK) */}
+            {variant === "project" && (
+                <div className="card-actions">
+                    <button
+                        type="button"
+                        className="btn secondary"
+                        onClick={() =>
+                            window.open(
+                                data.liveDemoUrl,
+                                "_blank",
+                                "noopener,noreferrer"
+                            )
+                        }
                     >
+                        Live Demo
+                    </button>
+
+                    {!data.isGitHubRepoPrivate && (
                         <button
                             type="button"
                             className="btn secondary"
                             onClick={() =>
-                                window.open(data.liveDemoUrl, "_blank", "noopener,noreferrer")
+                                window.open(
+                                    data.gitHubUrl,
+                                    "_blank",
+                                    "noopener,noreferrer"
+                                )
                             }
                         >
-                            Live Demo
+                            GitHub
                         </button>
-
-                        {!data.isGitHubRepoPrivate && (
-                            <button
-                                type="button"
-                                className="btn secondary"
-                                onClick={() =>
-                                    window.open(data.gitHubUrl, "_blank", "noopener,noreferrer")
-                                }
-                            >
-                                GitHub
-                            </button>
-                        )}
-                    </div>
-                )}
-            </div>
-        </Link>
+                    )}
+                </div>
+            )}
+        </div>
     );
 }

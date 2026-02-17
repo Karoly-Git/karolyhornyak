@@ -1,24 +1,23 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import "@/features/navigation/navigation.styles.scss";
+import "../navigation.styles.scss";
+import "./desktop-navigation.scss";
 
 export default function DesktopNavigation() {
     const location = useLocation();
     const navigate = useNavigate();
 
     const scrollTo = (id: string) => {
-        const executeScroll = () => {
-            document.getElementById(id)?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        };
-
         if (location.pathname !== "/") {
-            navigate("/");
-            setTimeout(executeScroll, 200);
+            navigate("/", { state: { scrollTo: id } });
         } else {
-            executeScroll();
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
         }
     };
 

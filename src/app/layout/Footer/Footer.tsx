@@ -1,4 +1,4 @@
-import DesktopNavigation from "@/features/navigation/components/DesktopNavigation";
+import DesktopNavigation from "@/features/navigation/desktop-navigation/DesktopNavigation";
 
 export default function Footer() {
     return (
