@@ -1,11 +1,9 @@
 import cover from "./cover.webp";
-import PostComponent from "./index";
 import type { BlogPost } from "@/data/blogs.data";
 
 export const meta: BlogPost = {
     title: "How I Became a Full-Stack Developer",
     slug: "how-i-became-a-full-stack-developer",
-    component: PostComponent,
     cover,
     alt: "Journey into programming and becoming a full-stack developer",
     excerpt:

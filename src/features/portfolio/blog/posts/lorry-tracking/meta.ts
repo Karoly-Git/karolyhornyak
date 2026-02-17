@@ -1,11 +1,9 @@
 import cover from "./cover.webp";
-import PostComponent from "./index";
 import type { BlogPost } from "@/data/blogs.data";
 
 export const meta: BlogPost = {
     title: "New Project: Building a Lorry Tracking System",
     slug: "start-to-build-a-lorry-tracking-system",
-    component: PostComponent,
     cover,
     alt: "Real-time lorry tracking dashboard for production site operations",
     excerpt:

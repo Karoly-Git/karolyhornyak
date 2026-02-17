@@ -1,9 +1,6 @@
-import type { ComponentType } from "react";
-
 export type BlogPost = {
     title: string;
     slug: string;
-    component: ComponentType;
     cover: string;
     alt: string;
     excerpt: string;

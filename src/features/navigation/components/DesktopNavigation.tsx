@@ -32,7 +32,7 @@ export default function DesktopNavigation() {
                 <li onClick={() => scrollTo("projects")}>Projects</li>
 
                 <li>
-                    <Link to="/blog">Blog</Link>
+                    <Link to="/blog">Blogs</Link>
                 </li>
 
                 <li onClick={() => scrollTo("contact")}>Contact</li>

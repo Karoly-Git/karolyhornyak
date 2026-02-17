@@ -46,7 +46,7 @@ export default function Projects() {
                     animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.9 }}
                 >
-                    Recent Projects
+                    Projects
                 </m.h2>
 
                 <div className="content">

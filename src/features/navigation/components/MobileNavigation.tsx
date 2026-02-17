@@ -67,7 +67,7 @@ export default function MobileNavigation() {
 
                 <li>
                     <Link to="/blog" onClick={() => setIsOpen(false)}>
-                        Blog
+                        Blogs
                     </Link>
                 </li>
 
