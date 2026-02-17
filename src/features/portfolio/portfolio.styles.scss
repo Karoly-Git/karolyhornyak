@@ -5,6 +5,8 @@ section {
     scroll-margin-top: 50px;
 
     .container {
+        padding: 0 0.5rem;
+
         h2 {
             text-align: center;
             margin-bottom: 3rem;
@@ -37,25 +39,22 @@ section {
                 line-height: 1.5rem;
             }
         }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 650px;
+            text-align: center;
+            line-height: 1.6;
+            padding: 0 2rem;
+            font-weight: 500;
+        }
     }
 
     &#projects {
         flex-direction: column;
         align-items: center;
         background: #fafafa;
-
-        .container {
-            .subtitle {
-                font-size: 1.1rem;
-                color: #555;
-                max-width: 650px;
-                text-align: center;
-                line-height: 1.6;
-                padding: 0 2rem;
-                font-weight: 500;
-            }
-
-        }
     }
 
     &#hero {
@@ -82,6 +81,7 @@ section {
         .container {
             width: 100%;
             color: #fff;
+            padding: 0;
 
             * {
                 font-weight: 500;
@@ -458,6 +458,7 @@ section {
 
     @media(max-width: 600px) {
         scroll-margin-top: 0px;
+        padding: 2rem 0;
     }
 }
 

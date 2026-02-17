@@ -34,19 +34,21 @@ import { meta as weather } from "@/features/portfolio/sections/projects/weather/
 import { meta as webdev } from "@/features/portfolio/sections/projects/webdev/meta";
 
 export const projects: Project[] = [
+    namedayapi,
+    gazetteer,
+    fsn,
     bankholiday,
+    spw,
+    mary,
+    dmf,
+
+    // These are disabled (isActive: false)
     carousel,
     cd,
-    dmf,
     dog,
     exchange,
-    fsn,
-    gazetteer,
     gomoku,
-    mary,
-    namedayapi,
     slider,
-    spw,
     talpak,
     tsmrf,
     weather,

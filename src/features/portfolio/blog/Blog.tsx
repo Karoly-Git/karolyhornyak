@@ -1,8 +1,7 @@
 import { motion as m, useInView, type Variants } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 import { blogs } from "@/data/blogs.data";
-
 import Card from "@/shared/components/Card";
 
 const containerVariants: Variants = {
@@ -31,12 +30,17 @@ const itemVariants: Variants = {
 export default function Blog() {
     const blogRef = useRef<HTMLElement | null>(null);
 
+    // ✅ Scroll to top only when this page mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const sectionInView = useInView(blogRef, {
         once: true,
-        amount: 0.1
+        amount: 0.1,
     });
 
-    const activePosts = blogs.filter(b => b.isActive);
+    const activePosts = blogs.filter((b) => b.isActive);
 
     return (
         <section id="blog" ref={blogRef}>
@@ -56,7 +60,7 @@ export default function Blog() {
                         animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.9, delay: 0.15 }}
                     >
-                        Thoughts, tutorials & insights
+                        Thoughts & insights
                     </m.h3>
 
                     <m.div
