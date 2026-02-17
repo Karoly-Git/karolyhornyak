@@ -1,20 +1,23 @@
 import { useRef, useState } from "react";
 import type { ChangeEvent, SyntheticEvent } from "react";
-import EmailStatusModal from "@/features/email/components/EmailStatusModal";
+// import EmailStatusModal from "@/features/email/components/EmailStatusModal";
 
 import "./contact.scss";
 
+/*
 type ModalStyle = {
     modalIndex: number;
     modalBgColor: React.CSSProperties["backgroundColor"];
     contentOpacity: number;
     contentTop: React.CSSProperties["top"];
 };
+*/
 
 export default function Contact() {
     const h2Ref = useRef<HTMLHeadingElement | null>(null);
     const formRef = useRef<HTMLFormElement | null>(null);
 
+    /*
     const [isSending, setIsSending] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
@@ -24,6 +27,7 @@ export default function Contact() {
         contentOpacity: 0,
         contentTop: "3rem",
     });
+    */
 
     const [formData, setFormData] = useState({
         name: "",
@@ -53,7 +57,9 @@ export default function Contact() {
             return;
         }
 
+        /*
         setIsSending(true);
+        */
 
         const isLocal =
             window.location.hostname === "localhost" ||
@@ -64,7 +70,14 @@ export default function Contact() {
             : "http://karolyhornyak.com/";
 
         try {
-            const response = await fetch(baseUrl + "backend/php/send-form.php", {
+            // const response = await fetch(baseUrl + "backend/php/send-form.php", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify(formData),
+            // });
+            await fetch(baseUrl + "backend/php/send-form.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -72,14 +85,20 @@ export default function Contact() {
                 body: JSON.stringify(formData),
             });
 
+
+            /*
             setIsSending(false);
             setIsSuccess(response.ok);
+            */
         } catch {
+            /*
             setIsSending(false);
             setIsSuccess(false);
+            */
         }
     }
 
+    /*
     function handleCloseClick() {
         setIsSending(false);
         setIsSuccess(false);
@@ -102,6 +121,7 @@ export default function Contact() {
 
         formRef.current?.reset();
     }
+    */
 
     return (
         <>
@@ -162,12 +182,14 @@ export default function Contact() {
                                     if (!formRef.current) return;
 
                                     if (formRef.current.checkValidity()) {
+                                        /*
                                         setModalStyle({
                                             modalIndex: 20000,
                                             modalBgColor: "rgba(0, 0, 0, 0.8)",
                                             contentOpacity: 1,
                                             contentTop: "4rem",
                                         });
+                                        */
                                     } else {
                                         formRef.current.reportValidity();
                                     }
@@ -180,13 +202,15 @@ export default function Contact() {
                 </div>
             </section>
 
-            {/*<EmailStatusModal
+            {/*
+            <EmailStatusModal
                 isSending={isSending}
                 isSuccess={isSuccess}
                 modalStyle={modalStyle}
                 handleCloseClick={handleCloseClick}
                 resetFormAndData={resetFormAndData}
-            />*/}
+            />
+            */}
         </>
     );
 }
