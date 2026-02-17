@@ -9,73 +9,62 @@ type CardProps =
 export default function Card(props: CardProps) {
     const { variant, data } = props;
 
-    // Normalize fields
     const image = data.cover;
-
     const title = data.title;
-
     const excerpt = data.excerpt;
-
     const date = data.date;
-
     const labels = data.labels;
 
     return (
-        <div className="card">
-            <div className="card-img">
+        <Link to={`/${variant}/${data.slug}`} className="card">
+            <div className="card-image">
                 <img src={image} alt={data.alt} />
             </div>
 
-            {date && <p className="card-date">{date}</p>}
+            <div className="card-content">
+                {date && <span className="card-date">{date}</span>}
 
-            {labels?.length > 0 && (
-                <div className="card-labels">
-                    {labels.map((badge) => (
-                        <span key={badge} className="card-badge">
-                            {badge}
-                        </span>
-                    ))}
-                </div>
-            )}
+                {labels?.length > 0 && (
+                    <div className="card-labels">
+                        {labels.map((label) => (
+                            <span key={label} className="card-badge">
+                                {label}
+                            </span>
+                        ))}
+                    </div>
+                )}
 
-            <h3 className="card-title">{title}</h3>
+                <h3 className="card-title">{title}</h3>
 
-            <p className="card-excerpt">{excerpt}</p>
+                <p className="card-excerpt">{excerpt}</p>
 
-            {/* BLOG ACTION */}
-            {variant === "blog" && (
-                <Link
-                    to={`/blog/${data.slug}`}
-                    className="btn"
-                >
-                    Read More →
-                </Link>
-            )}
-
-            {/* PROJECT ACTION */}
-            {variant === "project" && (
-                <div className="button-container">
-                    <a
-                        href={data.liveDemoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn"
+                {variant === "project" && (
+                    <div
+                        className="card-actions"
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        Live Demo
-                    </a>
-
-                    {!data.isGitHubRepoPrivate && (
                         <a
-                            href={data.gitHubUrl}
+                            href={data.liveDemoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn"
+                            className="btn secondary"
                         >
-                            GitHub
+                            Live Demo
                         </a>
-                    )}
-                </div>
-            )}
-        </div>
+
+                        {!data.isGitHubRepoPrivate && (
+                            <a
+                                href={data.gitHubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn secondary"
+                            >
+                                GitHub
+                            </a>
+                        )}
+                    </div>
+                )}
+            </div>
+        </Link>
     );
 }
