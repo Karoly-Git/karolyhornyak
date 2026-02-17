@@ -26,21 +26,18 @@ export default function MobileNavigation() {
     const scrollTo = (id: string) => {
         setIsOpen(false);
 
-        const executeScroll = () => {
-            document.getElementById(id)?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        };
-
         if (location.pathname !== "/") {
-            navigate("/");
-
-            // wait for route change + render
-            setTimeout(executeScroll, 200);
+            // 🔥 Pass scroll target via state
+            navigate("/", { state: { scrollTo: id } });
         } else {
-            // wait for menu close animation (0.4s)
-            setTimeout(executeScroll, 400);
+            // Already on main page
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
         }
     };
 
