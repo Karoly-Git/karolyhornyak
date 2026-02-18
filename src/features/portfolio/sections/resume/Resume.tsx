@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import myCV from "@/assets/documents/cv/myCV_v8.docx";
+import myCV from "/documents/cv/myCV_v8.docx";
 
 import "./resume.scss";
 
