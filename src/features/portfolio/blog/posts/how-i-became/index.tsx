@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import "@/features/portfolio/blog/blogs.styles.scss";
 import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
 import { meta } from "./meta";
+
+import "@/features/portfolio/blog/blogs.styles.scss";
 
 export default function HowIBecame() {
     useEffect(() => {
@@ -26,7 +27,7 @@ export default function HowIBecame() {
 
     return (
         <>
-            <article className="post">
+            <article className="blog-post">
                 <h1 className="title">{meta.title}</h1>
 
                 <p className="meta">

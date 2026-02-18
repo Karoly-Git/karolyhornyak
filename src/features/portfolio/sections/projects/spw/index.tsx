@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import "@/features/portfolio/blog/blogs.styles.scss";
 import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
 import { meta } from "./meta";
+
+import "@/features/portfolio/sections/projects/projects.scss";
 
 export default function Spw() {
     useEffect(() => {
@@ -26,7 +27,7 @@ export default function Spw() {
 
     return (
         <>
-            <article className="post">
+            <article className="project-post">
                 <h1 className="title">{meta.title}</h1>
 
                 <p className="meta">{meta.excerpt}</p>

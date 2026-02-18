@@ -26,7 +26,7 @@ export default function ReactQandA() {
 
     return (
         <>
-            <article className="post">
+            <article className="blog-post">
                 <h1 className="title">
                     20 Common React Theoretical Questions & Answers
                 </h1>

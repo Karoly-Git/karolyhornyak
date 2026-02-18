@@ -26,7 +26,7 @@ export default function LorryTrackingPartOne() {
 
     return (
         <>
-            <article className="post">
+            <article className="blog-post">
                 <h1 className="title">{meta.title}</h1>
 
                 <p className="meta">
