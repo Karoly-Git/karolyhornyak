@@ -4,6 +4,11 @@ section {
     padding: 2rem;
     scroll-margin-top: 50px;
 
+    code {
+        font-family: "Fira Code", "JetBrains Mono", "Courier New", monospace;
+        padding: 0 0.4rem;
+    }
+
     .container {
         padding: 0 0.5rem;
 

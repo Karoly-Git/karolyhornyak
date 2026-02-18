@@ -32,20 +32,107 @@ export default function Spw() {
                 <p className="meta">{meta.excerpt}</p>
 
                 <section>
-                    <h2>The Project</h2>
+                    <h2>How It Started</h2>
                     <p>
-                        This project was a complete redesign and rebuild of a professional
-                        photography studio website. The goal was to transform the existing
-                        platform into a modern, elegant, and performance-focused Progressive Web App.
+                        Sparkling Willow Photography was my first freelance client project.
+                        The original website had been built by the client using GoDaddy’s
+                        website builder. While it served its purpose initially, it began to
+                        feel increasingly unprofessional as the business grew.
                     </p>
                     <p>
-                        Photography is visual storytelling — the website needed to reflect
-                        that quality while remaining fast, responsive, and easy to navigate.
+                        With client bookings increasing and day-to-day operations becoming
+                        more demanding, there was simply no time to properly maintain,
+                        redesign, or optimise the platform. As photographers and business owners —
+                        not developers — they needed a professional solution that would
+                        handle the technical side reliably and allow them to focus on their work.
+                    </p>
+                    <p>
+                        The site no longer reflected the quality of the photography or the
+                        professionalism of the brand, making it clear that a more robust,
+                        scalable approach was necessary.
+                    </p>
+                    <p>
+                        The objective became clear: build a modern, scalable, and
+                        performance-focused website that would elevate the brand
+                        and support long-term business growth.
                     </p>
                 </section>
 
                 <section>
-                    <h2>Client Feedback</h2>
+                    <h2>The First Version – Server-Side Rendering</h2>
+                    <p>
+                        The first implementation used a Node.js backend with Handlebars
+                        for server-side rendering. At the time, this approach made sense:
+                        it allowed fast initial development, dynamic templates, and
+                        straightforward deployment.
+                    </p>
+                    <p>
+                        However, as the portfolio grew and new feature ideas emerged,
+                        limitations started to appear. The structure became harder to
+                        maintain, UI updates required more template coordination,
+                        and the image-heavy nature of the site demanded a more flexible
+                        frontend architecture.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>The Turning Point – Rebuilding with React</h2>
+                    <p>
+                        Instead of continuously patching the original architecture,
+                        I decided to rebuild the project using React. The first rebuild
+                        was created using the standard <code>npx create-react-app</code> setup,
+                        which allowed me to move to a fully component-based frontend
+                        architecture.
+                    </p>
+                    <p>
+                        This transition introduced reusable UI components, cleaner state
+                        management, and a more maintainable project structure compared
+                        to the earlier template-driven approach.
+                    </p>
+                    <p>
+                        As the project matured, I later migrated the application to Vite.
+                        The improved build speed, better development experience, and
+                        more efficient production bundling made it a natural evolution.
+                    </p>
+                    <p>
+                        Each iteration refined the architecture and strengthened the
+                        long-term scalability of the platform.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Managing a Large Photography Portfolio</h2>
+                    <p>
+                        One of the main technical challenges was handling hundreds of
+                        high-resolution images across multiple categories such as newborn,
+                        maternity, family, weddings, and engagement sessions.
+                    </p>
+                    <p>
+                        Performance optimisation became a priority. I implemented structured
+                        folder organisation, image compression strategies, lazy loading,
+                        and clean routing for album navigation.
+                    </p>
+                    <p>
+                        The result is a visually rich website that maintains strong
+                        performance and smooth interaction across devices.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Architecture & Deployment</h2>
+                    <p>
+                        The final version of the application is built with React and Vite,
+                        styled using modular Sass architecture, and structured into
+                        clearly separated components, layouts, and utility-driven data layers.
+                    </p>
+                    <p>
+                        The project is deployed via Firebase Hosting, ensuring fast
+                        global delivery and reliable uptime.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Client Impact</h2>
                     <blockquote>
                         “Karoly redesigned my business website from the ground up,
                         transforming it into a modern and professional platform I’m proud to share.
@@ -58,102 +145,44 @@ export default function Spw() {
                 </section>
 
                 <section>
-                    <h2>Architecture & Structure</h2>
+                    <h2>What This Project Represents</h2>
                     <p>
-                        The application was built using React with Vite for fast development
-                        and optimised builds. The structure follows a modular component-based architecture.
+                        This project represents more than just a website redesign.
+                        It marks the beginning of my freelance journey and demonstrates
+                        my ability to evolve architecture when requirements grow.
                     </p>
-
                     <p>
-                        Key structural decisions:
-                    </p>
-
-                    <p>
-                        • Dedicated pages (Home, Portfolio, Booking, Testimonials, FAQ, etc.)<br />
-                        • Reusable components (navigation, sliders, modals, layout sections)<br />
-                        • Utility-driven data handling for photos, FAQs, and testimonials<br />
-                        • Organised image directory structure for large portfolio management<br />
-                        • Sass modular styling system for maintainability
-                    </p>
-
-                    <p>
-                        The project is deployed via Firebase Hosting, ensuring fast
-                        and reliable global delivery.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Handling a Large Photography Portfolio</h2>
-                    <p>
-                        One of the main technical challenges was managing hundreds of high-quality images
-                        across multiple categories including newborn, maternity, family,
-                        wedding, and engagement sessions.
-                    </p>
-
-                    <p>
-                        To maintain performance without sacrificing quality, I implemented:
-                    </p>
-
-                    <p>
-                        • Image compression strategies<br />
-                        • Lazy loading techniques<br />
-                        • Clean routing for album navigation<br />
-                        • Structured folder organisation for scalability
-                    </p>
-
-                    <p>
-                        The result is a visually rich experience with strong performance metrics.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Key Features</h2>
-                    <p>
-                        • Fully responsive across all devices<br />
-                        • Progressive Web App support<br />
-                        • Portfolio categorisation system<br />
-                        • Review slider component<br />
-                        • Booking & contact functionality<br />
-                        • SEO-friendly structure<br />
-                        • Clean UI focused on imagery
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Outcome</h2>
-                    <p>
-                        This project represents a real-world business transformation —
-                        not just a design refresh. The platform supports an active
-                        photography studio and reflects the brand’s professionalism and personality.
-                    </p>
-
-                    <p>
-                        It demonstrates my ability to deliver production-ready React applications,
-                        structure scalable projects, and translate client vision into
-                        technical implementation.
+                        It shows my approach to building production-ready applications:
+                        starting pragmatically, recognising limitations, and improving
+                        the technical foundation when necessary.
                     </p>
                 </section>
 
                 <section>
                     <h2>Live Project</h2>
+
                     <p>
+                        You can view the live website here:
+                        <br />
                         <a
                             href={meta.liveDemoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            View Live Website
+                            {meta.liveDemoUrl}
                         </a>
                     </p>
 
-                    {!meta.isGitHubRepoPrivate && (
+                    {!meta.isGitHubRepoPrivate && meta.gitHubUrl && (
                         <p>
+                            Explore the source code on GitHub:
+                            <br />
                             <a
                                 href={meta.gitHubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                View GitHub Repository
+                                {meta.gitHubUrl}
                             </a>
                         </p>
                     )}
