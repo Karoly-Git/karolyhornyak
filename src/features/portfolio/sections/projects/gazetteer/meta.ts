@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/gazetteer.webp";
 
 export const meta: Project = {
     title: "Gazetteer",
     slug: "gazetteer",
-    cover: "/images/projects/gazetteer.webp",
+    cover,
     alt: "Gazetteer App",
     excerpt:
         "An interactive geospatial web application that aggregates real-time country data from multiple APIs and visualises it through a dynamic map interface.",

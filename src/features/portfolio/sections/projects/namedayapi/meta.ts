@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/namedayapi.webp";
 
 export const meta: Project = {
     title: "Name Day API",
     slug: "namedayapi",
-    cover: "/images/projects/namedayapi.webp",
+    cover,
     alt: "Name Day API",
     excerpt:
         "A production-ready REST API delivering structured name day data with filtering by month, date, and country, featuring rate limiting and OpenAPI documentation.",

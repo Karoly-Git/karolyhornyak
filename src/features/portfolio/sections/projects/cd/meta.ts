@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/cd.webp";
 
 export const meta: Project = {
     title: "Company Directory",
     slug: "cd",
-    cover: "/images/projects/cd.webp",
+    cover,
     alt: "Company Directory",
     excerpt: "Short description of the project.",
     info: "2025",

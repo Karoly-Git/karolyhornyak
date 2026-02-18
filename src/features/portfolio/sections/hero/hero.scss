@@ -1,5 +1,5 @@
     #hero {
-        background: url("/images/sections/hero/me4.webp") no-repeat top right / cover;
+        background: url("@/assets/images/sections/hero/me4.webp") no-repeat top right / cover;
         height: 530px;
         align-items: flex-end;
         max-width: 1200px;
@@ -7,12 +7,12 @@
         padding: 0;
 
         @media (max-width: 800px) {
-            background: url("/images/sections/hero/me4.webp") no-repeat top center / cover;
+            background: url("@/assets/images/sections/hero/me4.webp") no-repeat top center / cover;
             height: 400px;
         }
 
         @media (max-width: 550px) {
-            background: url("/images/sections/hero/me4-small.webp") no-repeat top center / cover;
+            background: url("@/assets/images/sections/hero/me4-small.webp") no-repeat top center / cover;
         }
 
         @media (max-width: 500px) {

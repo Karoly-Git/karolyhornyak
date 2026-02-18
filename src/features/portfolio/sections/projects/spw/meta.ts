@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/spw.webp";
 
 export const meta: Project = {
     title: "Sparkling Willow Photography",
     slug: "spw",
-    cover: "/images/projects/spw.webp",
+    cover,
     alt: "SPW",
     excerpt:
         "A fully responsive photography business platform built as a Progressive Web App, designed to showcase portfolios and support client bookings.",

@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/dmf.webp";
 
 export const meta: Project = {
     title: "DMF Plumbing & Heating",
     slug: "dmf",
-    cover: "/images/projects/dmf.webp",
+    cover,
     alt: "DMF",
     excerpt:
         "A responsive React + Node.js service Progressive Web App showcasing plumbing and heating services.",

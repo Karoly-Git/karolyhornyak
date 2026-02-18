@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/tsmrf.webp";
 
 export const meta: Project = {
     title: "Transfer Station Apps",
     slug: "tsmrf",
-    cover: "/images/projects/tsmrf.webp",
+    cover,
     alt: "TS & MRF",
     excerpt: "Short description of the project.",
     info: "2025",

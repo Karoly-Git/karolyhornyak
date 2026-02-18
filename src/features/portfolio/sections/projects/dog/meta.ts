@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/dog.webp";
 
 export const meta: Project = {
     title: "Watch Dogs",
     slug: "dog",
-    cover: "/images/projects/dog.webp",
+    cover,
     alt: "Watch Dogs",
     excerpt: "Short description of the project.",
     info: "2025",

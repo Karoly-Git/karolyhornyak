@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/fsn.webp";
 
 export const meta: Project = {
     title: "Form Submit Now",
     slug: "fsn",
-    cover: "/images/projects/fsn.webp",
+    cover,
     alt: "Form Submit Now",
     excerpt:
         "A plug-and-play form submission API that enables developers to send contact form data directly to email without building a backend service.",

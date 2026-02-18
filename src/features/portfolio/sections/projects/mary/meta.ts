@@ -1,9 +1,10 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
+import cover from "@/assets/images/projects/mary.webp";
 
 export const meta: Project = {
     title: "Mary's Dressmaking Workshop",
     slug: "mary",
-    cover: "/images/projects/mary.webp",
+    cover,
     alt: "Mary",
     excerpt:
         "A handcrafted business website designed to showcase bespoke dressmaking services and provide an elegant, accessible client experience.",
