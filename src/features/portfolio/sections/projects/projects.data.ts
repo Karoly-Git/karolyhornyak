@@ -1,9 +1,6 @@
-import type { ComponentType } from "react";
-
 export interface Project {
     title: string;
     slug: string;
-    component: ComponentType;
     cover: string;
     alt: string;
     excerpt: string;

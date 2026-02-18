@@ -1,14 +1,13 @@
-import cover from "./cover.webp";
 import type { BlogPost } from "@/features/portfolio/blog/blogs.data";
 
 export const meta: BlogPost = {
     title: "20 Common React Theoretical Questions",
-    slug: "20-common-react-theoretical-questions",
-    cover,
+    slug: "react-1",
+    cover: "/images/blogs/react-1.webp",
     alt: "20 Common React theoretical questions explained",
     excerpt:
         "A curated list of 20 common React theoretical questions with explanations to help you master core concepts.",
     date: "13th December 2025",
     labels: ["react", "frontend", "Q&A"],
-    isActive: false,
+    isActive: true,
 };

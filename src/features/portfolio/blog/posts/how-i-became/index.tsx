@@ -1,48 +1,35 @@
 import { useEffect } from "react";
-//import PostNavigation from "../../postnavigation/PostNavigation";
-
-import "../../blog.styles.scss";
+import "@/features/portfolio/blog/blogs.styles.scss";
 import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
+import { meta } from "./meta";
 
 export default function HowIBecame() {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        // SEO / Social Sharing (React 19 compatible)
-        document.title = "How I Became a Full-Stack Developer";
+        const baseUrl = window.location.origin;
+        const fullUrl = `${baseUrl}/blog/${meta.slug}`;
+        const imageUrl = `${baseUrl}${meta.cover}`;
 
-        updateMetaTag("name", "description",
-            "An unexpected journey into programming, a 15-year detour, and becoming a full-stack developer."
-        );
+        document.title = meta.title;
+
+        updateMetaTag("name", "description", meta.excerpt);
 
         updateMetaTag("property", "og:locale", "en_GB");
         updateMetaTag("property", "og:type", "article");
-        updateMetaTag("property", "og:title", "How I Became a Full-Stack Developer");
-        updateMetaTag(
-            "property",
-            "og:description",
-            "A surprising story about early years and a 15-year detour, rediscovering programming, and becoming a full-stack developer."
-        );
-        updateMetaTag(
-            "property",
-            "og:url",
-            "https://karolyhornyak.com/blog/how-i-became-a-full-stack-developer"
-        );
-        updateMetaTag(
-            "property",
-            "og:image",
-            "https://karolyhornyak.com/static/media/how_i_became_a_full_stack_developer.5968537a064932e38844.webp"
-        );
+        updateMetaTag("property", "og:title", meta.title);
+        updateMetaTag("property", "og:description", meta.excerpt);
+        updateMetaTag("property", "og:url", fullUrl);
+        updateMetaTag("property", "og:image", imageUrl);
         updateMetaTag("property", "og:site_name", "Karoly Hornyak");
-
     }, []);
 
     return (
         <>
-            <article className="blog-post">
-                <h1 className="blog-title">How I Became a Full-Stack Developer</h1>
+            <article className="post">
+                <h1 className="title">{meta.title}</h1>
 
-                <p className="blog-meta">
+                <p className="meta">
                     An unexpected journey into programming, a detour, rediscovery, and finding my real path.
                 </p>
 
@@ -64,8 +51,7 @@ export default function HowIBecame() {
                         took students hours or even days suddenly took me about an hour.
                     </p>
                     <p>
-                        I probably don't need to mention how popular I became after that — or how much extra money
-                        I made helping my classmates finish the same assignment. Let's just say automation paid
+                        I probably don't need to mention how popular I became after that 😉 Let's just say automation paid
                         off in more ways than one.
                     </p>
                     <p>
@@ -77,11 +63,11 @@ export default function HowIBecame() {
                 <section>
                     <h2>A Long Detour</h2>
                     <p>
-                        For the next fifteen years, I didn't think about a programming career. My professional journey
-                        took me across several different fields. That decade and a half was full of adventures,
-                        changes, and life happening. But let's fast-forward to 2018, when I had already been living
-                        in the UK for three years and, after holding various positions, had just started working
-                        as a production supervisor.
+                        My professional journey took me across several different fields for the next fifteen years, as
+                        those were mainly managing roles, I didn't think about a programming career. That decade
+                        and a half was full of adventures, changes, and life happening. But let's fast-forward to 2018,
+                        when I had already been living in the UK for three years and, after holding various positions,
+                        had just started working as a production supervisor.
                     </p>
                     <p>
                         It didn't take long to realise just how painfully inefficient everything was. Procedures,
@@ -143,7 +129,7 @@ export default function HowIBecame() {
                     <p>
                         Another fantastic thing was that, unlike many other professions, making mistakes
                         didn't hurt anyone physically or financially. If I broke something, I could simply
-                        delete the code and try again.
+                        delete the code and try again 😂
                     </p>
                     <p>
                         As I started building more complex applications, I realized frontend development
@@ -169,8 +155,6 @@ export default function HowIBecame() {
                         This is where Part 1 ends. I'll share Part 2 soon, where things will start getting very real.
                     </p>
                 </section>
-
-                {/*<PostNavigation title="How I Became a Full-Stack Developer" />*/}
             </article>
 
             <PostNavigation />
@@ -178,9 +162,6 @@ export default function HowIBecame() {
     );
 }
 
-/**
- * Utility to safely create/update meta tags
- */
 function updateMetaTag(
     attr: "name" | "property",
     key: string,

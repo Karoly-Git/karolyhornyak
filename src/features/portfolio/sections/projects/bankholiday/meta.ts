@@ -1,12 +1,9 @@
-import cover from "./cover.webp";
-import ProjectComponent from "./index";
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
 export const meta: Project = {
     title: "Bank Holiday",
     slug: "bankholiday",
-    component: ProjectComponent,
-    cover,
+    cover: "/images/projects/bankholiday.webp",
     alt: "Bank Holiday",
     excerpt:
         "A fast React + Vite app that fetches official UK bank-holiday data and displays it in a clear, responsive interface.",

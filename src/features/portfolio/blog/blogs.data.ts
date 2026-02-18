@@ -9,12 +9,32 @@ export type BlogPost = {
     isActive: boolean;
 };
 
-import { meta as howIBecame } from "@/features/portfolio/blog/posts/how-i-became/meta";
-import { meta as reactQna } from "@/features/portfolio/blog/posts/react-qna/meta";
-import { meta as lorryTracking } from "@/features/portfolio/blog/posts/lorry-tracking/meta";
+const modules = import.meta.glob<{
+    meta: BlogPost;
+}>("@/features/portfolio/blog/posts/*/meta.ts", {
+    eager: true,
+});
 
-export const blogs: BlogPost[] = [
-    howIBecame,
-    reactQna,
-    lorryTracking,
-];
+const posts: BlogPost[] = Object.entries(modules).map(
+    ([path, module]) => {
+        const folderSlug = path.split("/").slice(-2, -1)[0];
+        const post = module.meta;
+
+        if (post.slug !== folderSlug) {
+            console.warn(
+                `Slug mismatch detected:
+           Folder: "${folderSlug}"
+           meta.slug: "${post.slug}"`
+            );
+        }
+
+        return post;
+    }
+);
+
+export const blogs: BlogPost[] = posts
+    .filter((post) => post.isActive)
+    .sort(
+        (a, b) =>
+            new Date(b.date).getTime() - new Date(a.date).getTime()
+    );

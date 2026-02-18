@@ -1,38 +1,31 @@
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
-import PostNavigation from "../../postnavigation/PostNavigation";
+import "@/features/portfolio/blog/blogs.styles.scss";
+import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
+import { meta } from "./meta";
 
-export default function React_QandA() {
+export default function ReactQandA() {
     useEffect(() => {
         window.scrollTo(0, 0);
+
+        const baseUrl = window.location.origin;
+        const fullUrl = `${baseUrl}/blog/${meta.slug}`;
+        const imageUrl = `${baseUrl}${meta.cover}`;
+
+        document.title = meta.title;
+
+        updateMetaTag("name", "description", meta.excerpt);
+
+        updateMetaTag("property", "og:locale", "en_GB");
+        updateMetaTag("property", "og:type", "article");
+        updateMetaTag("property", "og:title", meta.title);
+        updateMetaTag("property", "og:description", meta.excerpt);
+        updateMetaTag("property", "og:url", fullUrl);
+        updateMetaTag("property", "og:image", imageUrl);
+        updateMetaTag("property", "og:site_name", "Karoly Hornyak");
     }, []);
 
     return (
         <>
-            {/* SEO / Social Sharing */}
-            <Helmet>
-                <title>20 Common React Theoretical Questions</title>
-
-                <meta property="og:type" content="article" />
-                <meta
-                    property="og:title"
-                    content="20 Common React Theoretical Questions"
-                />
-                <meta
-                    property="og:description"
-                    content="A curated list of 20 common React theoretical questions with clear explanations to help you master core concepts."
-                />
-                <meta
-                    property="og:url"
-                    content="https://karolyhornyak.com/blog/20-common-react-theoretical-questions"
-                />
-                <meta
-                    property="og:image"
-                    content="https://karolyhornyak.com/static/media/React_QandA.jpg"
-                />
-                <meta property="og:site_name" content="karolyhornyak.com" />
-            </Helmet>
-
             <article className="post">
                 <h1 className="title">
                     20 Common React Theoretical Questions & Answers
@@ -54,9 +47,7 @@ export default function React_QandA() {
 
                 <section>
                     <h2>2. What are React components?</h2>
-                    <p>
-                        Components are independent, reusable pieces of UI.
-                    </p>
+                    <p>Components are independent, reusable pieces of UI.</p>
                     <ul>
                         <li>Functional Components (preferred)</li>
                         <li>Class Components (older)</li>
@@ -120,15 +111,14 @@ export default function React_QandA() {
                         <li>useState</li>
                         <li>useEffect</li>
                         <li>useContext</li>
-                        <li>useMemo, useCallback</li>
+                        <li>useMemo</li>
+                        <li>useCallback</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>9. What is useState?</h2>
-                    <p>
-                        A hook that adds state to functional components.
-                    </p>
+                    <p>A hook that adds state to functional components.</p>
                     <pre>
                         <code>{`const [count, setCount] = useState(0);`}</code>
                     </pre>
@@ -173,9 +163,7 @@ export default function React_QandA() {
 
                 <section>
                     <h2>14. What are controlled components?</h2>
-                    <p>
-                        Form elements where React controls the value via state.
-                    </p>
+                    <p>Form elements where React controls the value via state.</p>
                 </section>
 
                 <section>
@@ -229,8 +217,24 @@ export default function React_QandA() {
                     </ul>
                 </section>
 
-                <PostNavigation title="20 Common React Theoretical Questions" />
+                <PostNavigation />
             </article>
         </>
     );
+}
+
+function updateMetaTag(
+    attr: "name" | "property",
+    key: string,
+    content: string
+) {
+    let element = document.querySelector(`meta[${attr}="${key}"]`);
+
+    if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attr, key);
+        document.head.appendChild(element);
+    }
+
+    element.setAttribute("content", content);
 }

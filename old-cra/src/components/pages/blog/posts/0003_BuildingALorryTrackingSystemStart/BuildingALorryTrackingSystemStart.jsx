@@ -26,11 +26,11 @@ export default function BuildingALorryTrackingSystemStart() {
                 />
                 <meta
                     property="og:url"
-                    content="https://karolyhornyak.co.uk/blog/building-a-lorry-tracking-system-start"
+                    content="https://karolyhornyak.com/blog/building-a-lorry-tracking-system-start"
                 />
                 <meta
                     property="og:image"
-                    content="https://karolyhornyak.co.uk/static/media/building_a_lorry_tracking_system_start.94a468f8b0afaf889e0a.webp"
+                    content="https://karolyhornyak.com/static/media/building_a_lorry_tracking_system_start.94a468f8b0afaf889e0a.webp"
                 />
                 <meta property="og:site_name" content="Karoly Hornyak" />
                 <meta
@@ -39,12 +39,12 @@ export default function BuildingALorryTrackingSystemStart() {
                 />
             </Helmet>
 
-            <article className="blog-post">
-                <h1 className="blog-title">
+            <article className="post">
+                <h1 className="title">
                     New Project Begins: I'm Building a Real-Time Lorry Tracking System
                 </h1>
 
-                <p className="blog-meta">
+                <p className="meta">
                     Starting a new full-stack project to solve a real operational
                     problem on a busy production site.
                 </p>

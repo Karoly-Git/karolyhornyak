@@ -1,11 +1,38 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { lazy, Suspense } from "react";
 
 import Main from "@/app/layout/Main/Main";
-import Blog from "@/features/portfolio/blog/Blog";
+import Blog from "@/features/portfolio/blog";
+import Projects from "@/features/portfolio/sections/projects";
 
-import HowIBecome from "@/features/portfolio/blog/posts/how-i-became/index";
-import TrackingSystem from "@/features/portfolio/blog/posts/lorry-tracking";
+// 🔥 Auto-import blog posts
+const blogModules = import.meta.glob(
+    "@/features/portfolio/blog/posts/*/index.tsx"
+);
+
+const blogRoutes = Object.entries(blogModules).map(([path, importer]) => {
+    const slug = path.split("/").slice(-2, -1)[0];
+
+    return {
+        slug,
+        Component: lazy(importer as () => Promise<{ default: React.ComponentType<any> }>),
+    };
+});
+
+// 🔥 Auto-import project pages
+const projectModules = import.meta.glob(
+    "@/features/portfolio/sections/projects/*/index.tsx"
+);
+
+const projectRoutes = Object.entries(projectModules).map(([path, importer]) => {
+    const slug = path.split("/").slice(-2, -1)[0];
+
+    return {
+        slug,
+        Component: lazy(importer as () => Promise<{ default: React.ComponentType<any> }>),
+    };
+});
 
 export default function AppRoutes() {
     const location = useLocation();
@@ -13,6 +40,8 @@ export default function AppRoutes() {
     return (
         <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
+
+                {/* Home */}
                 <Route
                     path="/"
                     element={
@@ -21,6 +50,8 @@ export default function AppRoutes() {
                         </PageWrapper>
                     }
                 />
+
+                {/* Blog listing */}
                 <Route
                     path="/blog"
                     element={
@@ -29,22 +60,47 @@ export default function AppRoutes() {
                         </PageWrapper>
                     }
                 />
+
+                {/* Projects listing */}
                 <Route
-                    path="/blog/how-i-became-a-full-stack-developer"
+                    path="/project"
                     element={
                         <PageWrapper>
-                            <HowIBecome />
+                            <Projects />
                         </PageWrapper>
                     }
                 />
-                <Route
-                    path="/blog/start-to-build-a-lorry-tracking-system"
-                    element={
-                        <PageWrapper>
-                            <TrackingSystem />
-                        </PageWrapper>
-                    }
-                />
+
+                {/* Blog posts */}
+                {blogRoutes.map(({ slug, Component }) => (
+                    <Route
+                        key={slug}
+                        path={`/blog/${slug}`}
+                        element={
+                            <PageWrapper>
+                                <Suspense fallback={<div>Loading...</div>}>
+                                    <Component />
+                                </Suspense>
+                            </PageWrapper>
+                        }
+                    />
+                ))}
+
+                {/* Project pages */}
+                {projectRoutes.map(({ slug, Component }) => (
+                    <Route
+                        key={slug}
+                        path={`/project/${slug}`}
+                        element={
+                            <PageWrapper>
+                                <Suspense fallback={<div>Loading...</div>}>
+                                    <Component />
+                                </Suspense>
+                            </PageWrapper>
+                        }
+                    />
+                ))}
+
             </Routes>
         </AnimatePresence>
     );

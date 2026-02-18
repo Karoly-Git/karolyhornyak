@@ -4,7 +4,7 @@ import { motion as m, useInView, type Variants } from "framer-motion";
 import { projects } from "@/features/portfolio/sections/projects/projects.data";
 import Card from "@/shared/components/Card";
 
-import "./projects.scss";
+import "@/features/portfolio/sections/projects/projects.scss";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },

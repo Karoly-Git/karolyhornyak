@@ -1,55 +1,35 @@
-import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
 import { useEffect } from "react";
-//import PostNavigation from "../../postnavigation/PostNavigation";
+import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
+import "@/features/portfolio/blog/blogs.styles.scss";
+import { meta } from "./meta";
 
-export default function TrackingSystem() {
+export default function LorryTrackingPartOne() {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        // SEO / Social Sharing (React 19 compatible)
-        document.title =
-            "New Project Begins: Building a Real-Time Lorry Tracking System";
+        const baseUrl = window.location.origin;
+        const fullUrl = `${baseUrl}/blog/${meta.slug}`;
+        const imageUrl = `${baseUrl}${meta.cover}`;
 
-        updateMetaTag(
-            "name",
-            "description",
-            "New project begins: building a real-time lorry tracking system to improve operational visibility and replace manual processes."
-        );
+        document.title = meta.title;
+
+        updateMetaTag("name", "description", meta.excerpt);
 
         updateMetaTag("property", "og:locale", "en_GB");
         updateMetaTag("property", "og:type", "article");
-        updateMetaTag(
-            "property",
-            "og:title",
-            "New Project Begins: Building a Real-Time Lorry Tracking System"
-        );
-        updateMetaTag(
-            "property",
-            "og:description",
-            "Starting a new full-stack project to build a real-time lorry tracking system and replace handwritten logs on a busy production site."
-        );
-        updateMetaTag(
-            "property",
-            "og:url",
-            "https://karolyhornyak.co.uk/blog/building-a-lorry-tracking-system-start"
-        );
-        updateMetaTag(
-            "property",
-            "og:image",
-            "https://karolyhornyak.co.uk/static/media/building_a_lorry_tracking_system_start.94a468f8b0afaf889e0a.webp"
-        );
+        updateMetaTag("property", "og:title", meta.title);
+        updateMetaTag("property", "og:description", meta.excerpt);
+        updateMetaTag("property", "og:url", fullUrl);
+        updateMetaTag("property", "og:image", imageUrl);
         updateMetaTag("property", "og:site_name", "Karoly Hornyak");
-
     }, []);
 
     return (
         <>
-            <article className="blog-post">
-                <h1 className="blog-title">
-                    New Project Begins: I'm Building a Real-Time Lorry Tracking System
-                </h1>
+            <article className="post">
+                <h1 className="title">{meta.title}</h1>
 
-                <p className="blog-meta">
+                <p className="meta">
                     Starting a new full-stack project to solve a real operational
                     problem on a busy production site.
                 </p>
@@ -57,9 +37,9 @@ export default function TrackingSystem() {
                 <section>
                     <h2>The Problem on Site</h2>
                     <p>
-                        On a busy production site in London, lorries arrive
+                        On a busy industrial production site in London, lorries arrive
                         continuously to collect finished goods. Once a lorry
-                        checks in, it moves through several stages on site —
+                        checks in at the weighbridge, it moves through several stages on site —
                         waiting, loading, and eventually checking out.
                     </p>
                     <p>
@@ -146,12 +126,8 @@ export default function TrackingSystem() {
                         be sharing progress, design decisions, and lessons
                         learned as it evolves.
                     </p>
-                    <p>
-                        Feedback and insights are always welcome.
-                    </p>
+                    <p>Feedback and insights are always welcome.</p>
                 </section>
-
-                {/*<PostNavigation title="New Project Begins: I'm Building a Real-Time Lorry Tracking System" />*/}
             </article>
 
             <PostNavigation />
@@ -159,9 +135,6 @@ export default function TrackingSystem() {
     );
 }
 
-/**
- * Utility to safely create/update meta tags
- */
 function updateMetaTag(
     attr: "name" | "property",
     key: string,
