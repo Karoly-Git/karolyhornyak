@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "@/features/portfolio/blog/blogs.styles.scss";
+import "@/features/portfolio/blog/blogs.scss";
 import { meta } from "./meta";
 import PostNavigation from "@/features/navigation/post-navigation";
 
