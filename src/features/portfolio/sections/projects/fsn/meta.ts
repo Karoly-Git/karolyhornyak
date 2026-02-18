@@ -1,16 +1,13 @@
-import cover from "./cover.webp";
-import ProjectComponent from "./index";
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
 export const meta: Project = {
     title: "Form Submit Now",
-    slug: "formsubmitnow",
-    component: ProjectComponent,
-    cover,
+    slug: "fsn",
+    cover: "/images/projects/fsn.webp",
     alt: "Form Submit Now",
     excerpt:
-        "A plug-and-play contact form API that lets developers send form submissions directly to email—no backend required.",
-    date: "2025",
+        "A plug-and-play form submission API that enables developers to send contact form data directly to email without building a backend service.",
+    info: "Developer utility API",
     labels: ["HTML", "CSS", "JavaScript", "Node.js"],
     liveDemoUrl: "https://karoly-git.github.io/form-submit-now/",
     gitHubUrl: "https://github.com/Karoly-Git/form-submit-now",

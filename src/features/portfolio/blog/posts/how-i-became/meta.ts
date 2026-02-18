@@ -7,7 +7,7 @@ export const meta: BlogPost = {
     alt: "Journey into programming and becoming a full-stack developer",
     excerpt:
         "A surprising story about early years, a 15-year detour, rediscovering programming, and becoming a full-stack developer.",
-    date: "4th November 2025",
-    labels: ["sparks", "career"],
+    info: "4th November 2025",
+    labels: ["Sparks", "Career"],
     isActive: true,
 };

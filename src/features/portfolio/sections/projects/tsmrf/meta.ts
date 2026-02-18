@@ -1,15 +1,12 @@
-import cover from "./cover.webp";
-import ProjectComponent from "./index";
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
 export const meta: Project = {
     title: "Transfer Station Apps",
     slug: "tsmrf",
-    component: ProjectComponent,
-    cover,
+    cover: "/images/projects/tsmrf.webp",
     alt: "TS & MRF",
     excerpt: "Short description of the project.",
-    date: "2025",
+    info: "2025",
     labels: ["React", "JavaScript", "Node.js", "Sass"],
     liveDemoUrl: "https://transferstation.co.uk/",
     gitHubUrl: "https://github.com/Karoly-Git/transferstation",

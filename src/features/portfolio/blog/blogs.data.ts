@@ -4,7 +4,7 @@ export type BlogPost = {
     cover: string;
     alt: string;
     excerpt: string;
-    date: string;
+    info: string;
     labels: string[];
     isActive: boolean;
 };
@@ -33,8 +33,4 @@ const posts: BlogPost[] = Object.entries(modules).map(
 );
 
 export const blogs: BlogPost[] = posts
-    .filter((post) => post.isActive)
-    .sort(
-        (a, b) =>
-            new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
+    .filter((post) => post.isActive);

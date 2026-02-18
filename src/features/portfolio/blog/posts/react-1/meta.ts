@@ -7,7 +7,7 @@ export const meta: BlogPost = {
     alt: "20 Common React theoretical questions explained",
     excerpt:
         "A curated list of 20 common React theoretical questions with explanations to help you master core concepts.",
-    date: "13th December 2025",
-    labels: ["react", "frontend", "Q&A"],
+    info: "13th December 2025",
+    labels: ["React", "Frontend", "Q&A"],
     isActive: true,
 };

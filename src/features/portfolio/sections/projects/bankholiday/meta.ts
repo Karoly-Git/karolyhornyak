@@ -1,13 +1,13 @@
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
 export const meta: Project = {
-    title: "Bank Holiday",
+    title: "UK Bank Holidays",
     slug: "bankholiday",
     cover: "/images/projects/bankholiday.webp",
     alt: "Bank Holiday",
     excerpt:
-        "A fast React + Vite app that fetches official UK bank-holiday data and displays it in a clear, responsive interface.",
-    date: "2025",
+        "A fast React and Vite application that fetches official UK bank holiday data and presents it in a clean, responsive interface.",
+    info: "API-driven frontend application",
     labels: ["React", "Vite", "JavaScript", "CSS"],
     liveDemoUrl: "https://karoly-git.github.io/bank-holidays-uk/",
     gitHubUrl: "https://github.com/Karoly-Git/bank-holidays-uk",

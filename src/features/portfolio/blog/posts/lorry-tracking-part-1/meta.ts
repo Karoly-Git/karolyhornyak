@@ -7,7 +7,7 @@ export const meta: BlogPost = {
     alt: "Real-time lorry tracking system project",
     excerpt:
         "Starting a new full-stack project to build a real-time lorry tracking system and replace handwritten logs.",
-    date: "2025-01-15",
-    labels: ["project", "full-stack", "logistics"],
+    info: "15th January 2026",
+    labels: ["Project", "Full-Stack", "Logistics"],
     isActive: true,
 };

@@ -13,7 +13,8 @@ html {
     scrollbar-gutter: stable;
 }
 
-body {
-    background-color: #272727;
-    background-color: unset;
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

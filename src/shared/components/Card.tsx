@@ -12,7 +12,7 @@ export default function Card(props: CardProps) {
     const image = data.cover;
     const title = data.title;
     const excerpt = data.excerpt;
-    const date = data.date;
+    const info = data.info;
     const labels = data.labels;
 
     return (
@@ -27,7 +27,7 @@ export default function Card(props: CardProps) {
                 </div>
 
                 <div className="card-content">
-                    {date && <span className="card-date">{date}</span>}
+                    {info && <span className="card-info">{info}</span>}
 
                     {labels?.length > 0 && (
                         <div className="card-labels">

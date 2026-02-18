@@ -4,7 +4,7 @@ export interface Project {
     cover: string;
     alt: string;
     excerpt: string;
-    date: string,
+    info: string,
     labels: string[];
     liveDemoUrl: string;
     gitHubUrl: string;
@@ -28,26 +28,25 @@ import { meta as spw } from "@/features/portfolio/sections/projects/spw/meta";
 import { meta as talpak } from "@/features/portfolio/sections/projects/talpak/meta";
 import { meta as tsmrf } from "@/features/portfolio/sections/projects/tsmrf/meta";
 import { meta as weather } from "@/features/portfolio/sections/projects/weather/meta";
-import { meta as webdev } from "@/features/portfolio/sections/projects/webdev/meta";
+import { meta as kh } from "@/features/portfolio/sections/projects/kh/meta";
 
 export const projects: Project[] = [
+    kh,
+    spw,
+    mary,
+    dmf,
+    talpak,
     namedayapi,
     gazetteer,
     fsn,
     bankholiday,
-    spw,
-    mary,
-    dmf,
 
-    // These are disabled (isActive: false)
     carousel,
     cd,
     dog,
     exchange,
     gomoku,
     slider,
-    talpak,
     tsmrf,
     weather,
-    webdev,
 ];

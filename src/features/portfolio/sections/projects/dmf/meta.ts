@@ -1,14 +1,13 @@
-import cover from "./cover.webp";
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
 export const meta: Project = {
-    title: "Plumbing & Heating",
-    slug: "plumbingandheating",
-    cover,
+    title: "DMF Plumbing & Heating",
+    slug: "dmf",
+    cover: "/images/projects/dmf.webp",
     alt: "DMF",
     excerpt:
         "A responsive React + Node.js service Progressive Web App showcasing plumbing and heating services.",
-    date: `2024 - ${new Date().getFullYear()}`,
+    info: "Freelance client project",
     labels: ["React", "Vite", "JavaScript", "Sass", "Node.js"],
     liveDemoUrl: "https://dmfplumbingandheating.com/",
     gitHubUrl: "https://github.com/Karoly-Git/dmf-plumbing",
