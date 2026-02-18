@@ -11,6 +11,7 @@ import { FaQuoteRight as QIconR } from "react-icons/fa";
 import { motion as m, useInView } from "framer-motion";
 import type { MouseEventHandler } from "react";
 
+import "../sections.scss";
 import "./reviews.scss";
 
 type ArrowProps = {

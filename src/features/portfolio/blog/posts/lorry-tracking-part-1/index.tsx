@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
-import "@/features/portfolio/blog/blogs.styles.scss";
+import PostNavigation from "@/features/navigation/post-navigation";
 import { meta } from "./meta";
+
+import "@/features/portfolio/blog/blogs.scss";
 
 export default function LorryTrackingPartOne() {
     useEffect(() => {

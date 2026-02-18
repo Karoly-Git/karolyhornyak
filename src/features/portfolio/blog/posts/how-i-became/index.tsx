@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import PostNavigation from "@/features/navigation/post-navigation/PostNavigation";
+import PostNavigation from "@/features/navigation/post-navigation";
 import { meta } from "./meta";
 
-import "@/features/portfolio/blog/blogs.styles.scss";
+import "@/features/portfolio/blog/blogs.scss";
 
 export default function HowIBecame() {
     useEffect(() => {

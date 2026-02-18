@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import type { BlogPost } from "@/features/portfolio/blog/blogs.data";
 import type { Project } from "@/features/portfolio/sections/projects/projects.data";
 
+import "./card.scss";
+
 type CardProps =
     | { variant: "blog"; data: BlogPost }
     | { variant: "project"; data: Project };

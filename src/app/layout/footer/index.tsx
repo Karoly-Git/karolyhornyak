@@ -1,4 +1,5 @@
-import DesktopNavigation from "@/features/navigation/desktop-navigation/DesktopNavigation";
+import { DesktopNavigation } from "@/features/navigation";
+import "./footer.scss";
 
 export default function Footer() {
     return (

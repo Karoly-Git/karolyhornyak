@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import type { ChangeEvent, SyntheticEvent } from "react";
 // import EmailStatusModal from "@/features/email/components/EmailStatusModal";
 
+import "../sections.scss";
 import "./contact.scss";
 
 /*

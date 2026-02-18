@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
-import "@/shared/components/component.styles.scss"
+import "./social-links.scss";
 
 type SocialLink = {
     name: string;

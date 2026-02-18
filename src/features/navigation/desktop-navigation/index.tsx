@@ -1,6 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import "../navigation.styles.scss";
 import "./desktop-navigation.scss";
 
 export default function DesktopNavigation() {

@@ -1,56 +1,5 @@
 $hover-highlight: #ffc42e;
 
-/* ================================
-   SOCIAL LINKS
-================================ */
-.social-links {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
-    .icon {
-        font-size: 1.75rem;
-        color: #45505B;
-        text-decoration: none;
-        transition: color 0.15s;
-
-        &:hover {
-            color: $hover-highlight;
-        }
-    }
-}
-
-/* ================================
-   SCROLL UP BUTTON
-================================ */
-.scroll-up {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 2.2rem;
-    height: 2.2rem;
-    bottom: 8rem;
-    right: 2rem;
-    border-radius: 50%;
-    background-color: rgb(41, 74, 127);
-    transition: all 150ms ease-in-out;
-    cursor: pointer;
-    z-index: 2000;
-
-    .icon {
-        color: white;
-    }
-
-    &:hover {
-        background-color: rgb(30, 102, 214);
-    }
-}
-
-/* ================================
-   CARD
-================================ */
 .card {
     display: flex;
     flex-direction: column;

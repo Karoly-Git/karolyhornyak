@@ -1,0 +1,25 @@
+$hover-highlight: #ffc42e;
+
+.scroll-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 2.2rem;
+    height: 2.2rem;
+    bottom: 8rem;
+    right: 2rem;
+    border-radius: 50%;
+    background-color: rgb(41, 74, 127);
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+    z-index: 2000;
+
+    .icon {
+        color: white;
+    }
+
+    &:hover {
+        background-color: rgb(30, 102, 214);
+    }
+}

@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import SocialLinks from "@/shared/components/SocialLinks";
+import SocialLinks from "@/shared/components/social-links";
 
+import "../sections.scss";
 import './about.scss';
 
 export default function About() {

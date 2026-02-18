@@ -1,0 +1,19 @@
+$hover-highlight: #ffc42e;
+
+.social-links {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+        font-size: 1.75rem;
+        color: #45505B;
+        text-decoration: none;
+        transition: color 0.15s;
+
+        &:hover {
+            color: $hover-highlight;
+        }
+    }
+}

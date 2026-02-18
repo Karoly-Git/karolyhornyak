@@ -1,6 +1,5 @@
 import { useRef } from "react";
 
-// Frontend
 import { AiOutlineHtml5, AiOutlinePython } from "react-icons/ai";
 import { BiLogoCss3, BiLogoSass } from "react-icons/bi";
 import { TbBrandJavascript } from "react-icons/tb";
@@ -10,18 +9,11 @@ import { PiFileSqlThin } from "react-icons/pi";
 import { FaPhp, FaBootstrap } from "react-icons/fa6";
 import { DiJqueryLogo } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
-
-// NEW
-import {
-    SiTypescript,
-    SiNextdotjs,
-    SiGithubactions,
-} from "react-icons/si";
-
+import { SiTypescript, SiNextdotjs, SiGithubactions, } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-
 import { MdOutlineAutoAwesome } from "react-icons/md";
 
+import "../sections.scss";
 import "./skills.scss";
 
 type SkillCategory =

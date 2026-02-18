@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import myCV from "@/assets/documents/cv/myCV_v8.docx";
 
+import "../sections.scss";
 import "./resume.scss";
 
 export default function Resume() {

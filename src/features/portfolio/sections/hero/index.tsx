@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
+import "../sections.scss";
 import "./hero.scss";
 
 export default function Hero() {

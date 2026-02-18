@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { FaArrowUp as ArrowIcon } from "react-icons/fa";
 
+import "./scroll-up.scss";
+
 export default function ScrollUp() {
     const showUpAt = 500;
     const [isScrollBtnVisible, setIsScrollBtnVisible] = useState(false);

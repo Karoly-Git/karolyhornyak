@@ -1,7 +1,8 @@
 import { projects } from "@/features/portfolio/sections/projects/projects.data";
-import Card from "@/shared/components/Card";
+import Card from "@/shared/components/card";
 
-import "@/features/portfolio/sections/projects/projects.scss";
+import "../sections.scss";
+import "./projects.scss";
 
 export default function Projects() {
     const activeProjects = projects.filter((p) => p.isActive);

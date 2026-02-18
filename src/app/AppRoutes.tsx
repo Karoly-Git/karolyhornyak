@@ -1,10 +1,15 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { lazy, Suspense } from "react";
+import type { ComponentType } from "react";
 
-import Main from "@/app/layout/Main/Main";
+import Main from "@/app/layout/main";
 import Blog from "@/features/portfolio/blog";
 import Projects from "@/features/portfolio/sections/projects";
+import Loader from "@/shared/components/loader";
+
+type LazyComponent = () => Promise<{ default: ComponentType }>;
+
 
 // 🔥 Auto-import blog posts
 const blogModules = import.meta.glob(
@@ -12,11 +17,11 @@ const blogModules = import.meta.glob(
 );
 
 const blogRoutes = Object.entries(blogModules).map(([path, importer]) => {
-    const slug = path.split("/").slice(-2, -1)[0];
+    const slug = path.split("/").at(-2)!;
 
     return {
         slug,
-        Component: lazy(importer as () => Promise<{ default: React.ComponentType<any> }>),
+        Component: lazy(importer as LazyComponent),
     };
 });
 
@@ -30,7 +35,7 @@ const projectRoutes = Object.entries(projectModules).map(([path, importer]) => {
 
     return {
         slug,
-        Component: lazy(importer as () => Promise<{ default: React.ComponentType<any> }>),
+        Component: lazy(importer as LazyComponent),
     };
 });
 
@@ -39,69 +44,66 @@ export default function AppRoutes() {
 
     return (
         <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
+            <Suspense fallback={<Loader />}>
+                <Routes location={location} key={location.pathname}>
 
-                {/* Home */}
-                <Route
-                    path="/"
-                    element={
-                        <PageWrapper>
-                            <Main />
-                        </PageWrapper>
-                    }
-                />
-
-                {/* Blog listing */}
-                <Route
-                    path="/blog"
-                    element={
-                        <PageWrapper>
-                            <Blog />
-                        </PageWrapper>
-                    }
-                />
-
-                {/* Projects listing */}
-                <Route
-                    path="/project"
-                    element={
-                        <PageWrapper>
-                            <Projects />
-                        </PageWrapper>
-                    }
-                />
-
-                {/* Blog posts */}
-                {blogRoutes.map(({ slug, Component }) => (
+                    {/* Home */}
                     <Route
-                        key={slug}
-                        path={`/blog/${slug}`}
+                        path="/"
                         element={
                             <PageWrapper>
-                                <Suspense fallback={<div>Loading...</div>}>
-                                    <Component />
-                                </Suspense>
+                                <Main />
                             </PageWrapper>
                         }
                     />
-                ))}
 
-                {/* Project pages */}
-                {projectRoutes.map(({ slug, Component }) => (
+                    {/* Blog listing */}
                     <Route
-                        key={slug}
-                        path={`/project/${slug}`}
+                        path="/blog"
                         element={
                             <PageWrapper>
-                                <Suspense fallback={<div>Loading...</div>}>
-                                    <Component />
-                                </Suspense>
+                                <Blog />
                             </PageWrapper>
                         }
                     />
-                ))}
 
-            </Routes>
+                    {/* Projects listing */}
+                    <Route
+                        path="/project"
+                        element={
+                            <PageWrapper>
+                                <Projects />
+                            </PageWrapper>
+                        }
+                    />
+
+                    {/* Blog posts */}
+                    {blogRoutes.map(({ slug, Component }) => (
+                        <Route
+                            key={slug}
+                            path={`/blog/${slug}`}
+                            element={
+                                <PageWrapper>
+                                    <Component />
+                                </PageWrapper>
+                            }
+                        />
+                    ))}
+
+                    {/* Project pages */}
+                    {projectRoutes.map(({ slug, Component }) => (
+                        <Route
+                            key={slug}
+                            path={`/project/${slug}`}
+                            element={
+                                <PageWrapper>
+                                    <Component />
+                                </PageWrapper>
+                            }
+                        />
+                    ))}
+                </Routes>
+            </Suspense>
         </AnimatePresence>
     );
 }

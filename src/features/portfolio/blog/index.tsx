@@ -1,7 +1,8 @@
 import { useRef, useEffect } from "react";
 
-import { blogs } from "@/features/portfolio/blog/blogs.data";
-import Card from "@/shared/components/Card";
+import { blogs } from "./blogs.data";
+
+import Card from "@/shared/components/card";
 
 export default function Blog() {
     const blogRef = useRef<HTMLElement | null>(null);
