@@ -1,73 +1,138 @@
-# React + TypeScript + Vite
+# Karoly Hornyak – Full-Stack Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-grade React Single Page Application built with TypeScript and Vite. Designed to showcase projects, client work, and technical expertise using modern frontend architecture and performance-first engineering principles.
 
-Currently, two official plugins are available:
+🔗 Live: https://karolyhornyak.com  
+💻 Repository: https://github.com/Karoly-Git/karolyhornyak
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Core**
+- React
+- TypeScript
+- Vite
+- React Router
 
-## Expanding the ESLint configuration
+**Architecture**
+- Feature-driven folder structure
+- Dynamic routing via `import.meta.glob`
+- Route-level code splitting (lazy loading)
+- Metadata-driven project and blog system
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Performance**
+- Progressive Web App (Workbox)
+- Service Workers
+- Runtime caching strategies
+- Image optimisation
+- Lazy loading
+- Production bundle optimisation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**UI & UX**
+- Sass (SCSS)
+- Framer Motion animations
+- Responsive design
+- Accessible semantic structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Deployment**
+- Firebase Hosting
+- Global CDN delivery
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🏗 Architecture Overview
+
+The application follows a feature-driven architecture, separating domain logic into clearly defined layers:
+
+```
+app/
+features/
+shared/
+assets/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Projects and blog posts are automatically registered using:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```ts
+import.meta.glob()
 ```
+
+This enables automatic route generation, route-level code splitting, scalable content expansion, and clean separation between metadata and UI.
+
+Each project and blog entry includes:
+- `index.tsx` → Page component
+- `meta.ts` → SEO and structured metadata
+
+---
+
+## ⚡ Performance Strategy
+
+Performance is treated as a core requirement:
+
+- Route-based lazy loading
+- Code splitting per project and blog entry
+- Reduced initial bundle size
+- Service worker precaching
+- Runtime caching for images and fonts
+- Optimised production build via Vite
+
+---
+
+## 📱 Progressive Web App
+
+The application is configured as a Progressive Web App using `vite-plugin-pwa` and Workbox.
+
+Features include:
+- Installable experience
+- Offline support
+- Asset precaching
+- Runtime caching strategies
+- SPA-compatible navigation fallback for Firebase Hosting
+
+---
+
+## 🧠 What This Project Demonstrates
+
+- Scalable frontend architecture
+- Type-safe metadata-driven content system
+- Performance-first development
+- Real-world deployment configuration
+- Production-ready React engineering practices
+
+---
+
+## 🛠 Running Locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 🚀 Deployment
+
+The project is deployed via Firebase Hosting:
+
+```bash
+firebase deploy
+```
+
+---
+
+© Karoly Hornyak
