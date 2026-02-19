@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import "@/features/portfolio/blog/blogs.scss";
-import { meta } from "./meta";
 import PostNavigation from "@/features/navigation/post-navigation";
+import { meta } from "./meta";
 
 import "@/features/portfolio/blog/blogs.scss";
 
@@ -29,9 +28,7 @@ export default function ReactQandA() {
     return (
         <>
             <article className="blog-post">
-                <h1 className="title">
-                    20 Common React Theoretical Questions & Answers
-                </h1>
+                <h1 className="title">{meta.title}</h1>
 
                 <p className="meta">
                     A curated list of React theoretical questions with concise explanations
@@ -218,9 +215,9 @@ export default function ReactQandA() {
                         <li><strong>Vue:</strong> Framework, beginner-friendly</li>
                     </ul>
                 </section>
-
-                <PostNavigation />
             </article>
+
+            <PostNavigation />
         </>
     );
 }
