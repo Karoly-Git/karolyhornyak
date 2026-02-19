@@ -42,39 +42,37 @@ export default defineConfig({
       },
 
       workbox: {
-        // Precache build assets
         globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg}"],
 
-        // Offline fallback
-        navigateFallback: "/offline.html",
+        navigateFallback: "/index.html",
+
+        clientsClaim: true,
+        skipWaiting: true,
 
         runtimeCaching: [
           {
-            // Cache images with Cache First strategy
             urlPattern: ({ request }) => request.destination === "image",
             handler: "CacheFirst",
             options: {
               cacheName: "image-cache",
               expiration: {
                 maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+                maxAgeSeconds: 30 * 24 * 60 * 60
               }
             }
           },
           {
-            // Cache Google Fonts (if used)
             urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
             handler: "CacheFirst",
             options: {
               cacheName: "google-fonts-cache",
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 365 * 24 * 60 * 60 // 1 year
+                maxAgeSeconds: 365 * 24 * 60 * 60
               }
             }
           },
           {
-            // API calls (if you add backend later)
             urlPattern: /^https:\/\/.*\/api\/.*/i,
             handler: "NetworkFirst",
             options: {
@@ -82,7 +80,7 @@ export default defineConfig({
               networkTimeoutSeconds: 10,
               expiration: {
                 maxEntries: 50,
-                maxAgeSeconds: 24 * 60 * 60 // 1 day
+                maxAgeSeconds: 24 * 60 * 60
               }
             }
           }
