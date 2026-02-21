@@ -16,23 +16,21 @@ export default function Main() {
     useLayoutEffect(() => {
         const id = location.state?.scrollTo;
 
-        if (id) {
-            const el = document.getElementById(id);
+        if (!id) return;
 
-            if (el) {
-                // 🔥 INSTANT jump — no animation
-                el.scrollIntoView({
-                    behavior: "auto",
-                    block: "start",
-                });
-            }
+        const el = document.getElementById(id);
 
-            // Clear state so it doesn't trigger again
-            navigate(location.pathname, {
-                replace: true,
-                state: {},
+        if (el) {
+            el.scrollIntoView({
+                behavior: "auto",
+                block: "start",
             });
         }
+
+        navigate(location.pathname, {
+            replace: true,
+            state: {},
+        });
     }, [location, navigate]);
 
     return (

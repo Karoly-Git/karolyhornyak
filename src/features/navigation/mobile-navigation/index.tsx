@@ -9,7 +9,7 @@ export default function MobileNavigation() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // 🔒 Lock / unlock body scroll
+    // Lock / unlock body scroll
     useEffect(() => {
         if (isOpen) {
             document.body.classList.add("no-scroll");
@@ -26,17 +26,17 @@ export default function MobileNavigation() {
         setIsOpen(false);
 
         if (location.pathname !== "/") {
-            // 🔥 Pass scroll target via state
             navigate("/", { state: { scrollTo: id } });
-        } else {
-            // Already on main page
-            const el = document.getElementById(id);
-            if (el) {
-                el.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            }
+            return;
+        }
+
+        const el = document.getElementById(id);
+
+        if (el) {
+            el.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
         }
     };
 

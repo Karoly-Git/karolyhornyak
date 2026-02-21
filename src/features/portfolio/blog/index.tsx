@@ -16,9 +16,7 @@ export default function Blog() {
     return (
         <section id="blog" ref={blogRef}>
             <div className="container">
-                <h2>
-                    Blogs
-                </h2>
+                <h2>Blogs</h2>
 
                 <div className="content">
                     <h3 className="subtitle">
@@ -28,7 +26,10 @@ export default function Blog() {
                     <div className="grid">
                         {activePosts.map((post) => (
                             <div key={post.slug}>
-                                <Card variant="blog" data={post} />
+                                <Card
+                                    variant="blog"
+                                    data={post}
+                                />
                             </div>
                         ))}
                     </div>

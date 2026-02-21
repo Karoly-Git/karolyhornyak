@@ -9,14 +9,16 @@ export default function DesktopNavigation() {
     const scrollTo = (id: string) => {
         if (location.pathname !== "/") {
             navigate("/", { state: { scrollTo: id } });
-        } else {
-            const el = document.getElementById(id);
-            if (el) {
-                el.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            }
+            return;
+        }
+
+        const el = document.getElementById(id);
+
+        if (el) {
+            el.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
         }
     };
 

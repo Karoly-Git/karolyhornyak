@@ -1,19 +1,25 @@
 export type BlogPost = {
     title: string;
     slug: string;
+
     cover: string;
     alt: string;
+
     excerpt: string;
     info: string;
+
     labels: string[];
     isActive: boolean;
 };
 
 const modules = import.meta.glob<{
     meta: BlogPost;
-}>("@/features/portfolio/blog/posts/*/meta.ts", {
-    eager: true,
-});
+}>(
+    "@/features/portfolio/blog/posts/*/meta.ts",
+    {
+        eager: true,
+    }
+);
 
 const posts: BlogPost[] = Object.entries(modules).map(
     ([path, module]) => {

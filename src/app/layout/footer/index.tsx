@@ -6,7 +6,9 @@ export default function Footer() {
         <footer>
             <DesktopNavigation />
 
-            <p className="copyright">&copy; Karoly Hornyak</p>
+            <p className="copyright">
+                &copy; Karoly Hornyak
+            </p>
         </footer>
-    )
+    );
 }

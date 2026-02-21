@@ -9,8 +9,11 @@ export default function PostNavigation() {
 
     const currentUrl = `${window.location.origin}${location.pathname}`;
 
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
-    const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
+    const facebookShareUrl =
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+
+    const linkedinShareUrl =
+        `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
 
     return (
         <div className="post-navigation">

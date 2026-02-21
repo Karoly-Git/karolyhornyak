@@ -54,7 +54,9 @@ export default function EmailStatusModal({
                         {isSending ? (
                             <span>Sending Email...</span>
                         ) : isSuccess ? (
-                            <span className="success">Message sent successfully</span>
+                            <span className="success">
+                                Message sent successfully
+                            </span>
                         ) : (
                             <span className="error">Ooops...</span>
                         )}
@@ -65,6 +67,7 @@ export default function EmailStatusModal({
                             className="icon close-icon"
                             onClick={() => {
                                 handleCloseClick();
+
                                 if (isSuccess) {
                                     resetFormAndData();
                                 }
@@ -120,7 +123,8 @@ export default function EmailStatusModal({
                     ) : isSuccess ? (
                         <div>
                             <div style={{ marginBottom: "5px" }}>
-                                Thank you for your message, I will get back to you shortly!
+                                Thank you for your message, I will get back to you
+                                shortly!
                             </div>
                             <div>You can close this window now.</div>
                         </div>
@@ -129,7 +133,9 @@ export default function EmailStatusModal({
                             <div style={{ marginBottom: "5px" }}>
                                 Error occurred while sending message!
                             </div>
-                            <div>Please close this window, and try again.</div>
+                            <div>
+                                Please close this window, and try again.
+                            </div>
                         </div>
                     )}
                 </div>

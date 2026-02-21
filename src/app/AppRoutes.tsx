@@ -10,8 +10,10 @@ import Loader from "@/shared/components/loader";
 
 type LazyComponent = () => Promise<{ default: ComponentType }>;
 
+/* ----------------------------------------
+   Auto-import blog posts
+----------------------------------------- */
 
-// 🔥 Auto-import blog posts
 const blogModules = import.meta.glob(
     "@/features/portfolio/blog/posts/*/index.tsx"
 );
@@ -25,7 +27,10 @@ const blogRoutes = Object.entries(blogModules).map(([path, importer]) => {
     };
 });
 
-// 🔥 Auto-import project pages
+/* ----------------------------------------
+   Auto-import project pages
+----------------------------------------- */
+
 const projectModules = import.meta.glob(
     "@/features/portfolio/sections/projects/*/index.tsx"
 );
@@ -46,7 +51,6 @@ export default function AppRoutes() {
         <AnimatePresence mode="wait">
             <Suspense fallback={<Loader />}>
                 <Routes location={location} key={location.pathname}>
-
                     {/* Home */}
                     <Route
                         path="/"

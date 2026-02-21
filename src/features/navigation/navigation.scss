@@ -5,13 +5,15 @@ $hover-highlight: #ffc42e;
 
     ul {
         list-style: none;
-        padding: 0;
+
         margin: 0;
+        padding: 0;
 
         li {
             color: white;
-            cursor: pointer;
             letter-spacing: 1px;
+
+            cursor: pointer;
             transition: color 0.3s ease;
 
             &:hover {
@@ -20,6 +22,7 @@ $hover-highlight: #ffc42e;
 
             a {
                 text-decoration: none;
+
                 color: white;
                 transition: color 0.3s ease;
 
