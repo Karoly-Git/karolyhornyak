@@ -1,34 +1,11 @@
 import { useRef, useState } from "react";
 import type { ChangeEvent, SyntheticEvent } from "react";
-// import EmailStatusModal from "@/features/email/components/EmailStatusModal";
 
 import "../sections.scss";
 import "./contact.scss";
 
-/*
-type ModalStyle = {
-    modalIndex: number;
-    modalBgColor: React.CSSProperties["backgroundColor"];
-    contentOpacity: number;
-    contentTop: React.CSSProperties["top"];
-};
-*/
-
 export default function Contact() {
-    const h2Ref = useRef<HTMLHeadingElement | null>(null);
     const formRef = useRef<HTMLFormElement | null>(null);
-
-    /*
-    const [isSending, setIsSending] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
-
-    const [modalStyle, setModalStyle] = useState<ModalStyle>({
-        modalIndex: -20000,
-        modalBgColor: "transparent",
-        contentOpacity: 0,
-        contentTop: "3rem",
-    });
-    */
 
     const [formData, setFormData] = useState({
         name: "",
@@ -36,6 +13,9 @@ export default function Contact() {
         subject: "",
         message: "",
     });
+
+    const [isSending, setIsSending] = useState(false);
+    const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
     function handleChange(
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -58,27 +38,19 @@ export default function Contact() {
             return;
         }
 
-        /*
         setIsSending(true);
-        */
+        setStatusMessage(null);
 
         const isLocal =
             window.location.hostname === "localhost" ||
             window.location.hostname === "127.0.0.1";
 
         const baseUrl = isLocal
-            ? "http://localhost/karolyhornyak.com/"
-            : "http://karolyhornyak.com/";
+            ? "http://localhost:8000"
+            : "https://karoly-hornyak-8524fec94cd8.herokuapp.com";
 
         try {
-            // const response = await fetch(baseUrl + "backend/php/send-form.php", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(formData),
-            // });
-            await fetch(baseUrl + "backend/php/send-form.php", {
+            const response = await fetch(`${baseUrl}/api/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -86,132 +58,91 @@ export default function Contact() {
                 body: JSON.stringify(formData),
             });
 
+            if (!response.ok) {
+                throw new Error("Failed to send message");
+            }
 
-            /*
+            setStatusMessage("✅ Message sent successfully!");
+            setFormData({
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+            });
+
+            formRef.current.reset();
+        } catch (error) {
+            setStatusMessage("❌ Something went wrong. Please try again.");
+        } finally {
             setIsSending(false);
-            setIsSuccess(response.ok);
-            */
-        } catch {
-            /*
-            setIsSending(false);
-            setIsSuccess(false);
-            */
         }
     }
 
-    /*
-    function handleCloseClick() {
-        setIsSending(false);
-        setIsSuccess(false);
-
-        setModalStyle({
-            modalIndex: -20000,
-            modalBgColor: "transparent",
-            contentOpacity: 0,
-            contentTop: "3rem",
-        });
-    }
-
-    function resetFormAndData() {
-        setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-        });
-
-        formRef.current?.reset();
-    }
-    */
-
     return (
-        <>
-            <section id="contact">
-                <div className="container">
-                    <h2 ref={h2Ref}>Contact Me</h2>
+        <section id="contact">
+            <div className="container">
+                <h2>Contact Me</h2>
 
-                    <div className="content">
-                        <form
-                            className="contact-form"
-                            onSubmit={handleSubmit}
-                            ref={formRef}
-                            noValidate
+                <div className="content">
+                    <form
+                        className="contact-form"
+                        onSubmit={handleSubmit}
+                        ref={formRef}
+                        noValidate
+                    >
+                        <label htmlFor="name">Name:</label>
+                        <input
+                            required
+                            onChange={handleChange}
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                        />
+
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            required
+                            onChange={handleChange}
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                        />
+
+                        <label htmlFor="subject">Subject:</label>
+                        <input
+                            required
+                            onChange={handleChange}
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            value={formData.subject}
+                        />
+
+                        <label htmlFor="message">Message:</label>
+                        <textarea
+                            required
+                            onChange={handleChange}
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                        />
+
+                        <button
+                            type="submit"
+                            className="btn"
+                            disabled={isSending}
                         >
-                            <label htmlFor="name">Name:</label>
-                            <input
-                                required
-                                onChange={handleChange}
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                            />
+                            {isSending ? "Sending..." : "Get in touch"}
+                        </button>
+                    </form>
 
-                            <label htmlFor="email">Email:</label>
-                            <input
-                                required
-                                onChange={handleChange}
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                            />
-
-                            <label htmlFor="subject">Subject:</label>
-                            <input
-                                required
-                                onChange={handleChange}
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                value={formData.subject}
-                            />
-
-                            <label htmlFor="message">Message:</label>
-                            <textarea
-                                required
-                                onChange={handleChange}
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                            />
-
-                            <button
-                                type="submit"
-                                className="btn"
-                                onClick={() => {
-                                    if (!formRef.current) return;
-
-                                    if (formRef.current.checkValidity()) {
-                                        /*
-                                        setModalStyle({
-                                            modalIndex: 20000,
-                                            modalBgColor: "rgba(0, 0, 0, 0.8)",
-                                            contentOpacity: 1,
-                                            contentTop: "4rem",
-                                        });
-                                        */
-                                    } else {
-                                        formRef.current.reportValidity();
-                                    }
-                                }}
-                            >
-                                Get in touch
-                            </button>
-                        </form>
-                    </div>
+                    {statusMessage && (
+                        <p className="form-status">{statusMessage}</p>
+                    )}
                 </div>
-            </section>
-
-            {/*
-            <EmailStatusModal
-                isSending={isSending}
-                isSuccess={isSuccess}
-                modalStyle={modalStyle}
-                handleCloseClick={handleCloseClick}
-                resetFormAndData={resetFormAndData}
-            />
-            */}
-        </>
+            </div>
+        </section>
     );
 }
