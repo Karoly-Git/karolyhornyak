@@ -1,19 +1,23 @@
 import { useRef, useState } from "react";
 import type { ChangeEvent, SyntheticEvent } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import "../sections.scss";
 import "./contact.scss";
 
 export default function Contact() {
     const formRef = useRef<HTMLFormElement | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA | null>(null);
 
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         subject: "",
         message: "",
+        website: "", // honeypot
     });
 
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const [isSending, setIsSending] = useState(false);
     const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
@@ -38,6 +42,11 @@ export default function Contact() {
             return;
         }
 
+        if (!captchaToken) {
+            setStatusMessage("❌ Please complete the reCAPTCHA.");
+            return;
+        }
+
         setIsSending(true);
         setStatusMessage(null);
 
@@ -55,7 +64,10 @@ export default function Contact() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    captchaToken,
+                }),
             });
 
             if (!response.ok) {
@@ -68,8 +80,11 @@ export default function Contact() {
                 email: "",
                 subject: "",
                 message: "",
+                website: "",
             });
 
+            recaptchaRef.current?.reset();
+            setCaptchaToken(null);
             formRef.current.reset();
         } catch (error) {
             setStatusMessage("❌ Something went wrong. Please try again.");
@@ -90,44 +105,55 @@ export default function Contact() {
                         ref={formRef}
                         noValidate
                     >
-                        <label htmlFor="name">Name:</label>
+                        {/* Honeypot */}
+                        <input
+                            type="text"
+                            name="website"
+                            value={formData.website}
+                            onChange={handleChange}
+                            style={{ display: "none" }}
+                            autoComplete="off"
+                        />
+
+                        <label>Name:</label>
                         <input
                             required
-                            onChange={handleChange}
-                            type="text"
-                            id="name"
                             name="name"
                             value={formData.name}
+                            onChange={handleChange}
                         />
 
-                        <label htmlFor="email">Email:</label>
+                        <label>Email:</label>
                         <input
                             required
-                            onChange={handleChange}
                             type="email"
-                            id="email"
                             name="email"
                             value={formData.email}
+                            onChange={handleChange}
                         />
 
-                        <label htmlFor="subject">Subject:</label>
+                        <label>Subject:</label>
                         <input
                             required
-                            onChange={handleChange}
-                            type="text"
-                            id="subject"
                             name="subject"
                             value={formData.subject}
+                            onChange={handleChange}
                         />
 
-                        <label htmlFor="message">Message:</label>
+                        <label>Message:</label>
                         <textarea
                             required
-                            onChange={handleChange}
-                            id="message"
                             name="message"
                             value={formData.message}
+                            onChange={handleChange}
                         />
+
+                        <div style={{ margin: "20px 0" }}>
+                            <ReCAPTCHA
+                                sitekey="6LeafnQsAAAAAI4M4kh0wJJgmCPKn7PAl_CF2l_G"
+                                onChange={(token: string | null) => setCaptchaToken(token)} ref={recaptchaRef}
+                            />
+                        </div>
 
                         <button
                             type="submit"
