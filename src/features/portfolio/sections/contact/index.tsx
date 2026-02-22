@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import type { ChangeEvent, SyntheticEvent } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import toast from "react-hot-toast";
 
 import "../sections.scss";
 import "./contact.scss";
@@ -14,12 +15,11 @@ export default function Contact() {
         email: "",
         subject: "",
         message: "",
-        website: "", // honeypot
+        website: "", // honeypot field
     });
 
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const [isSending, setIsSending] = useState(false);
-    const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
     function handleChange(
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -43,12 +43,11 @@ export default function Contact() {
         }
 
         if (!captchaToken) {
-            setStatusMessage("❌ Please complete the reCAPTCHA.");
+            toast.error("Please complete the reCAPTCHA.");
             return;
         }
 
         setIsSending(true);
-        setStatusMessage(null);
 
         const isLocal =
             window.location.hostname === "localhost" ||
@@ -57,6 +56,8 @@ export default function Contact() {
         const baseUrl = isLocal
             ? "http://localhost:8000"
             : "https://karoly-hornyak-8524fec94cd8.herokuapp.com";
+
+        const loadingToast = toast.loading("Sending message...");
 
         try {
             const response = await fetch(`${baseUrl}/api/contact`, {
@@ -74,7 +75,10 @@ export default function Contact() {
                 throw new Error("Failed to send message");
             }
 
-            setStatusMessage("✅ Message sent successfully!");
+            toast.success("Message sent successfully! 🎉", {
+                id: loadingToast,
+            });
+
             setFormData({
                 name: "",
                 email: "",
@@ -87,7 +91,9 @@ export default function Contact() {
             setCaptchaToken(null);
             formRef.current.reset();
         } catch (error) {
-            setStatusMessage("❌ Something went wrong. Please try again.");
+            toast.error("Something went wrong. Please try again.", {
+                id: loadingToast,
+            });
         } finally {
             setIsSending(false);
         }
@@ -105,7 +111,7 @@ export default function Contact() {
                         ref={formRef}
                         noValidate
                     >
-                        {/* Honeypot */}
+                        {/* Honeypot field (hidden from users) */}
                         <input
                             type="text"
                             name="website"
@@ -115,34 +121,40 @@ export default function Contact() {
                             autoComplete="off"
                         />
 
-                        <label>Name:</label>
+                        <label htmlFor="name">Name:</label>
                         <input
                             required
+                            type="text"
+                            id="name"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
                         />
 
-                        <label>Email:</label>
+                        <label htmlFor="email">Email:</label>
                         <input
                             required
                             type="email"
+                            id="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
                         />
 
-                        <label>Subject:</label>
+                        <label htmlFor="subject">Subject:</label>
                         <input
                             required
+                            type="text"
+                            id="subject"
                             name="subject"
                             value={formData.subject}
                             onChange={handleChange}
                         />
 
-                        <label>Message:</label>
+                        <label htmlFor="message">Message:</label>
                         <textarea
                             required
+                            id="message"
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
@@ -151,7 +163,10 @@ export default function Contact() {
                         <div style={{ margin: "20px 0" }}>
                             <ReCAPTCHA
                                 sitekey="6LeafnQsAAAAAI4M4kh0wJJgmCPKn7PAl_CF2l_G"
-                                onChange={(token: string | null) => setCaptchaToken(token)} ref={recaptchaRef}
+                                onChange={(token: string | null) =>
+                                    setCaptchaToken(token)
+                                }
+                                ref={recaptchaRef}
                             />
                         </div>
 
@@ -163,10 +178,6 @@ export default function Contact() {
                             {isSending ? "Sending..." : "Get in touch"}
                         </button>
                     </form>
-
-                    {statusMessage && (
-                        <p className="form-status">{statusMessage}</p>
-                    )}
                 </div>
             </div>
         </section>
