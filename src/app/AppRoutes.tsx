@@ -6,7 +6,7 @@ import type { ComponentType } from "react";
 import Main from "@/app/layout/main";
 import Blog from "@/features/portfolio/blog";
 import Projects from "@/features/portfolio/sections/projects";
-import Loader from "@/shared/components/spinner";
+import Spinner from "@/shared/components/spinner";
 
 type LazyComponent = () => Promise<{ default: ComponentType }>;
 
@@ -49,7 +49,7 @@ export default function AppRoutes() {
 
     return (
         <AnimatePresence mode="wait">
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={<Spinner size={120} color="rgb(255, 0, 0)" />}>
                 <Routes location={location} key={location.pathname}>
                     {/* Home */}
                     <Route

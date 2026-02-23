@@ -5,7 +5,7 @@ export default function Spinner({ size = 50, color = "rgb(0, 0, 0)" }) {
     return (
         <div
             className="spinner"
-            style={{ width: dimension, height: dimension }}
+            style={{ width: dimension, height: dimension, margin: 'auto' }}
         >
             <svg
                 width="100%"
