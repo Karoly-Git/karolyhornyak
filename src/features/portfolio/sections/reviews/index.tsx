@@ -46,7 +46,6 @@ function NextArrow({ onClick }: ArrowProps) {
 
 export default function Reviews() {
     const sectionRef = useRef<HTMLHeadingElement>(null);
-
     const [hasAnimated, setHasAnimated] = useState(false);
 
     const sectionInView = useInView(sectionRef, {
@@ -82,7 +81,10 @@ export default function Reviews() {
                 <Slider {...settings}>
                     {activeReviews.map(
                         (slide: Review, index: number) => (
-                            <div key={index} className="content">
+                            <div
+                                key={index}
+                                className="content"
+                            >
                                 <p>
                                     <i>
                                         <QIconL className="icon icon-1" />
@@ -90,8 +92,14 @@ export default function Reviews() {
                                         <QIconR className="icon icon-2" />
                                     </i>
                                 </p>
-                                <h3 className="name">{slide.name}</h3>
-                                <h5 className="name">{slide.company}</h5>
+
+                                <h3 className="name">
+                                    {slide.name}
+                                </h3>
+
+                                <h5 className="name">
+                                    {slide.company}
+                                </h5>
                             </div>
                         )
                     )}

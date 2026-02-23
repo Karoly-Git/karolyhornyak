@@ -4,17 +4,20 @@
             display: flex;
             flex-direction: column;
             gap: 3rem;
+
             margin-top: 2rem;
         }
 
         .skill-group {
-            text-align: center;
             max-width: 800px;
 
+            text-align: center;
+
             .group-title {
+                margin-bottom: 1.5rem;
+
                 font-size: 1.2rem;
                 font-weight: 600;
-                margin-bottom: 1.5rem;
                 color: #1f2937;
             }
 
@@ -23,6 +26,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 2rem;
+
                 max-width: 900px;
                 margin: 0 auto;
             }
@@ -33,7 +37,9 @@
             flex-direction: column;
             align-items: center;
             gap: 0.6rem;
+
             width: 90px;
+
             transition: transform 0.2s ease;
 
             .icon {
@@ -52,8 +58,8 @@
 
             &.primary {
                 .icon {
-                    color: #111827;
                     transform: scale(1.1);
+                    color: #111827;
                 }
 
                 .skill-name {

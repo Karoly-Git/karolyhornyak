@@ -45,8 +45,9 @@ const SOCIAL_LINKS: SocialLink[] = [
 export default function SocialLinks() {
     return (
         <div className="social-links">
-            {SOCIAL_LINKS.filter((link) => link.isActive).map(
-                ({ name, href, icon: Icon }) => (
+            {SOCIAL_LINKS
+                .filter((link) => link.isActive)
+                .map(({ name, href, icon: Icon }) => (
                     <a
                         key={name}
                         href={href}
@@ -56,8 +57,7 @@ export default function SocialLinks() {
                     >
                         <Icon className="icon" />
                     </a>
-                )
-            )}
+                ))}
         </div>
     );
 }

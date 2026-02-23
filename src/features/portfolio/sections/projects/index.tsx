@@ -14,13 +14,17 @@ export default function Projects() {
 
                 <div className="content">
                     <h3 className="subtitle">
-                        Side projects and practical applications built with modern web tools
+                        Side projects and practical applications built with
+                        modern web tools
                     </h3>
 
                     <div className="grid">
                         {activeProjects.map((project) => (
                             <div key={project.slug}>
-                                <Card variant="project" data={project} />
+                                <Card
+                                    variant="project"
+                                    data={project}
+                                />
                             </div>
                         ))}
                     </div>

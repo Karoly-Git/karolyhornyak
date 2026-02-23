@@ -1,95 +1,114 @@
-    #reviews {
-        background-color: rgba(0, 0, 0, 0.05);
-        justify-content: center;
+#reviews {
+    justify-content: center;
 
-        .container {
+    background-color: rgba(0, 0, 0, 0.05);
+
+    .container {
+        width: 100%;
+        max-width: 1000px;
+
+        /* ======================
+           Slick Wrapper
+        ====================== */
+
+        .slick-slider {
             width: 100%;
-            max-width: 1000px;
+        }
 
-            /* SLICK WRAPPER */
-            .slick-slider {
-                width: 100%;
-            }
+        /* Make slides center properly */
+        .slick-slide {
+            display: flex !important;
+            justify-content: center;
+        }
 
-            /* Make slides center properly */
-            .slick-slide {
-                display: flex !important;
-                justify-content: center;
-            }
+        /* Inner wrapper slick adds */
+        .slick-slide>div {
+            width: 100%;
+        }
 
-            /* Inner wrapper slick adds */
-            .slick-slide>div {
-                width: 100%;
-            }
+        /* ======================
+           Slide Content
+        ====================== */
 
-            /* Slide content */
-            .content {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
+        .content {
+            width: 100%;
 
-                p {
-                    margin: 0 auto 1rem;
-                    letter-spacing: 0.5px;
-                    line-height: 1.75rem;
-                    font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-                    i {
-                        font-style: italic;
+            text-align: center;
 
-                        .icon {
-                            margin: 0 1.5rem;
-                            font-size: 1.35rem;
-                            color: darkblue;
-                        }
+            p {
+                margin: 0 auto 1rem;
+
+                font-size: 0.85rem;
+                letter-spacing: 0.5px;
+                line-height: 1.75rem;
+
+                i {
+                    font-style: italic;
+
+                    .icon {
+                        margin: 0 1.5rem;
+
+                        font-size: 1.35rem;
+                        color: darkblue;
                     }
                 }
-
-                h3 {
-                    margin-bottom: 0.5rem;
-                }
-
-                h5 {
-                    font-weight: 500;
-                }
             }
 
-            /* Custom arrows */
-            .slide-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 1rem;
-                display: none;
-
-                .icon {
-                    font-size: 2.5rem;
-                    border: 2px solid rgb(180, 180, 180);
-                    border-radius: 50%;
-                    cursor: pointer;
-                    transition: all 150ms ease-in-out;
-                }
-
-                .icon:hover {
-                    background-color: rgb(120, 120, 120);
-                    color: white;
-                }
+            h3 {
+                margin-bottom: 0.5rem;
             }
 
-            #previous-button {
-                .icon {
-                    transform: rotate(180deg);
-                }
+            h5 {
+                font-weight: 500;
+            }
+        }
+
+        /* ======================
+           Custom Arrows
+        ====================== */
+
+        .slide-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 1rem;
+
+            .icon {
+                font-size: 2.5rem;
+
+                border: 2px solid rgb(180, 180, 180);
+                border-radius: 50%;
+
+                cursor: pointer;
+                transition: all 150ms ease-in-out;
             }
 
-            /* Responsive */
-            @media screen and (max-width: 600px) {
-                .content p {
-                    padding: 0 1rem;
-                }
+            .icon:hover {
+                background-color: rgb(120, 120, 120);
+                color: white;
+            }
+        }
+
+        #previous-button {
+            .icon {
+                transform: rotate(180deg);
+            }
+        }
+
+        /* ======================
+           Responsive
+        ====================== */
+
+        @media screen and (max-width: 600px) {
+            .content p {
+                padding: 0 1rem;
             }
         }
     }
+}

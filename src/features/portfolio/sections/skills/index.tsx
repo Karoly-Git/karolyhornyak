@@ -4,12 +4,19 @@ import { AiOutlineHtml5, AiOutlinePython } from "react-icons/ai";
 import { BiLogoCss3, BiLogoSass } from "react-icons/bi";
 import { TbBrandJavascript } from "react-icons/tb";
 import { FaReact, FaNodeJs, FaGitSquare, FaGithub } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiPostgresql, SiRedux } from "react-icons/si";
+import {
+    SiExpress,
+    SiMongodb,
+    SiPostgresql,
+    SiRedux,
+    SiTypescript,
+    SiNextdotjs,
+    SiGithubactions,
+} from "react-icons/si";
 import { PiFileSqlThin } from "react-icons/pi";
 import { FaPhp, FaBootstrap } from "react-icons/fa6";
 import { DiJqueryLogo } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
-import { SiTypescript, SiNextdotjs, SiGithubactions, } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { MdOutlineAutoAwesome } from "react-icons/md";
 
@@ -89,33 +96,40 @@ export default function Skills() {
     return (
         <section id="skills">
             <div className="container">
-                <h2>
-                    Skills
-                </h2>
+                <h2>Skills</h2>
 
                 <div className="content" ref={ref}>
                     {categories.map((category) => {
                         const filtered = skills.filter(
                             (skill) =>
-                                skill.category === category && skill.isActive
+                                skill.category === category &&
+                                skill.isActive
                         );
 
                         if (!filtered.length) return null;
 
                         return (
-                            <div key={category} className="skill-group">
-                                <h3 className="group-title">{category}</h3>
+                            <div
+                                key={category}
+                                className="skill-group"
+                            >
+                                <h3 className="group-title">
+                                    {category}
+                                </h3>
 
                                 <div className="tools">
                                     {filtered.map((skill) => (
                                         <div
                                             key={skill.name}
-                                            className={`skill-item ${skill.isPrimary ? "primary" : ""
+                                            className={`skill-item ${skill.isPrimary
+                                                    ? "primary"
+                                                    : ""
                                                 }`}
                                         >
                                             <div className="icon">
                                                 {skill.icon}
                                             </div>
+
                                             <span className="skill-name">
                                                 {skill.name}
                                             </span>

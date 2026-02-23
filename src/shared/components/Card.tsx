@@ -29,21 +29,32 @@ export default function Card(props: CardProps) {
                 </div>
 
                 <div className="card-content">
-                    {info && <span className="card-info">{info}</span>}
+                    {info && (
+                        <span className="card-info">
+                            {info}
+                        </span>
+                    )}
 
                     {labels?.length > 0 && (
                         <div className="card-labels">
                             {labels.map((label) => (
-                                <span key={label} className="card-badge">
+                                <span
+                                    key={label}
+                                    className="card-badge"
+                                >
                                     {label}
                                 </span>
                             ))}
                         </div>
                     )}
 
-                    <h3 className="card-title">{title}</h3>
+                    <h3 className="card-title">
+                        {title}
+                    </h3>
 
-                    <p className="card-excerpt">{excerpt}</p>
+                    <p className="card-excerpt">
+                        {excerpt}
+                    </p>
                 </div>
             </Link>
 
