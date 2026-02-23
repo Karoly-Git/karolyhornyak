@@ -176,7 +176,7 @@ export default function Contact() {
                             className="btn"
                             disabled={isSending}
                         >
-                            {isSending ? <><Spinner size={25} color="rgb(255,255,255)" /> Loading...</> : "Get in touch"}
+                            {isSending ? <><Spinner size={25} color="rgb(255,255,255)" /> Sending...</> : "Get in touch"}
                         </button>
                     </form>
                 </div>
