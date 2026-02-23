@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import type { ChangeEvent, SyntheticEvent } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import toast from "react-hot-toast";
+import Spinner from "@/shared/components/spinner";
 
 import "../sections.scss";
 import "./contact.scss";
@@ -175,7 +176,7 @@ export default function Contact() {
                             className="btn"
                             disabled={isSending}
                         >
-                            {isSending ? "Sending..." : "Get in touch"}
+                            {isSending ? <><Spinner size={25} color="rgb(255,255,255)" /> Loading...</> : "Get in touch"}
                         </button>
                     </form>
                 </div>

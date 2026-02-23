@@ -47,6 +47,11 @@
                             background-color: rgb(30, 102, 214);
                             transform: translateY(-2px);
                         }
+
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        height: 50px;
                     }
                 }
 

@@ -6,7 +6,7 @@ import type { ComponentType } from "react";
 import Main from "@/app/layout/main";
 import Blog from "@/features/portfolio/blog";
 import Projects from "@/features/portfolio/sections/projects";
-import Loader from "@/shared/components/loader";
+import Loader from "@/shared/components/spinner";
 
 type LazyComponent = () => Promise<{ default: ComponentType }>;
 
