@@ -1,5 +1,5 @@
 import { projects } from "@/features/portfolio/sections/projects/projects.data";
-import Card from "@/shared/components/card.tsx";
+import Card from "@/shared/components/card";
 
 import "../sections.scss";
 import "./projects.scss";
