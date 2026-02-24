@@ -11,7 +11,12 @@ export default function Blog() {
         window.scrollTo(0, 0);
     }, []);
 
-    const activePosts = blogs.filter((b) => b.isActive);
+    const activePosts = blogs
+        .filter((b) => b.isActive)
+        .sort((a, b) =>
+            new Date(b.info.replace(/(\d+)(st|nd|rd|th)/, "$1")).getTime() -
+            new Date(a.info.replace(/(\d+)(st|nd|rd|th)/, "$1")).getTime()
+        );
 
     return (
         <section id="blog" ref={blogRef}>
