@@ -50,7 +50,7 @@ export default function Resume() {
 
                                 <ul>
                                     <li>
-                                        <strong>Frontend:</strong> Redux,
+                                        <strong>Frontend:</strong> React, Redux,
                                         Next.js, TypeScript, JavaScript, HTML,
                                         CSS, Sass
                                     </li>
@@ -73,7 +73,7 @@ export default function Resume() {
                                         <strong>Tools:</strong> Git, GitHub
                                     </li>
                                     <li>
-                                        <strong>Workflow:</strong>
+                                        <strong>Workflow: </strong>
                                         AI-Assisted Development
                                     </li>
                                 </ul>
