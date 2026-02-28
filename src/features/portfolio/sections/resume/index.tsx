@@ -56,7 +56,7 @@ export default function Resume() {
                                     </li>
                                     <li>
                                         <strong>Backend:</strong> Node.js,
-                                        Express, Python
+                                        Express.js, Python
                                     </li>
                                     <li>
                                         <strong>Databases:</strong> PostgreSQL,

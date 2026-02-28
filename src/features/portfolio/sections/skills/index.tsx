@@ -55,7 +55,7 @@ const skills: Skill[] = [
 
     // ===== BACKEND =====
     { name: "Node.js", icon: <FaNodeJs />, category: "Backend", isPrimary: true, isActive: true },
-    { name: "Express", icon: <SiExpress />, category: "Backend", isActive: true },
+    { name: "Express.js", icon: <SiExpress />, category: "Backend", isActive: true },
     { name: "PHP", icon: <FaPhp />, category: "Backend", isActive: false },
     { name: "Python", icon: <AiOutlinePython />, category: "Backend", isActive: true },
 
@@ -122,8 +122,8 @@ export default function Skills() {
                                         <div
                                             key={skill.name}
                                             className={`skill-item ${skill.isPrimary
-                                                    ? "primary"
-                                                    : ""
+                                                ? "primary"
+                                                : ""
                                                 }`}
                                         >
                                             <div className="icon">
