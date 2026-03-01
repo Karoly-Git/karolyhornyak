@@ -4,7 +4,7 @@ section {
 
     padding: 2rem;
 
-    scroll-margin-top: 50px;
+    scroll-margin-top: 63px;
 
     .container {
         padding: 0 0.5rem;
@@ -65,7 +65,7 @@ section {
     }
 
     @media (max-width: 600px) {
-        scroll-margin-top: 0;
+        //scroll-margin-top: 0;
         padding: 2rem 0;
     }
 }
