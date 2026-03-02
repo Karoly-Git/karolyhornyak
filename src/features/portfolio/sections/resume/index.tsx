@@ -23,15 +23,15 @@ export default function Resume() {
                                 <h3>Professional Summary</h3>
 
                                 <p>
-                                    Full-Stack Developer with 3+ years of
-                                    experience in application development,
+                                    Full-Stack Developer,
+                                    experienced in application development,
                                     building scalable, mobile-first web
                                     applications and API-driven systems.
                                 </p>
 
                                 <p>
                                     Strong expertise in JavaScript, React,
-                                    Node.js, and SQL, with hands-on experience
+                                    Node.js, with hands-on experience
                                     delivering maintainable code from concept
                                     to deployment.
                                 </p>
