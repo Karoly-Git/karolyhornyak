@@ -51,8 +51,7 @@ export default function CiCdFirebaseCaseStudy() {
                         <li>Firebase Hosting</li>
                     </ul>
                     <p>
-                        Push → Build → Deploy.
-                        Simple in theory.
+                        Push → Build → Deploy
                     </p>
                 </section>
 
