@@ -1,10 +1,8 @@
     #hero {
         background: url("@/assets/images/sections/hero/hero.jpg") no-repeat top right / cover;
-        //height: 530px;
         align-items: flex-end;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0;
+        margin-top: -65px;
+        padding: 65px 0 0;
 
         /*@media (max-width: 800px) {
             background: url("@/assets/images/sections/hero/me4.webp") no-repeat top center / cover;
@@ -23,6 +21,8 @@
             width: 100%;
             color: #fff;
             padding: 0;
+            background-color: rgba(0, 0, 50, 0.5);
+
 
             * {
                 font-weight: 500;
@@ -30,17 +30,17 @@
             }
 
             .content {
+                max-width: 1200px;
+                margin: auto;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 1rem 2rem;
-                background-color: rgba(0, 0, 50, 0.5);
                 gap: unset;
-                //min-height: 255px;
 
 
                 @media (max-width: 800px) {
-                    padding-top: 4rem;
+                    padding-top: 4.5rem;
                     margin-top: -63px;
                 }
 
