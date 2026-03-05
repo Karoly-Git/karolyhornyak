@@ -61,7 +61,7 @@ export default function Card(props: CardProps) {
             {/* ACTION BUTTONS (NOT INSIDE LINK) */}
             {variant === "project" && (
                 <div className="card-actions">
-                    <button
+                    {data.liveDemoUrl && <button
                         type="button"
                         className="btn secondary"
                         onClick={() =>
@@ -73,7 +73,7 @@ export default function Card(props: CardProps) {
                         }
                     >
                         Live Demo
-                    </button>
+                    </button>}
 
                     {!data.isGitHubRepoPrivate && (
                         <button
