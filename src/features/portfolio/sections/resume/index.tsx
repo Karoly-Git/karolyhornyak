@@ -23,25 +23,20 @@ export default function Resume() {
                                 <h3>Professional Summary</h3>
 
                                 <p>
-                                    Full-Stack Developer,
-                                    experienced in application development,
-                                    building scalable, mobile-first web
-                                    applications and API-driven systems.
+                                    Full-Stack Developer with experience building scalable,
+                                    mobile-first web applications and API-driven systems.
                                 </p>
 
                                 <p>
-                                    Strong expertise in JavaScript, React,
-                                    Node.js, with hands-on experience
-                                    delivering maintainable code from concept
-                                    to deployment.
+                                    Proficient in JavaScript, TypeScript, React, and Node.js,
+                                    with a strong focus on writing clean, maintainable code
+                                    and delivering end-to-end solutions.
                                 </p>
 
                                 <p>
-                                    Experienced in collaborating,
-                                    participating in code reviews,
-                                    troubleshooting issues, and continuously
-                                    learning new technologies in fast-paced
-                                    environments.
+                                    Experienced in collaborating with clients, contributing
+                                    to code reviews, and resolving technical issues in
+                                    fast-paced environments.
                                 </p>
                             </article>
 
@@ -63,14 +58,8 @@ export default function Resume() {
                                         MongoDB
                                     </li>
                                     <li>
-                                        <strong>Cloud:</strong> AWS
-                                    </li>
-                                    <li>
-                                        <strong>DevOps:</strong> CI/CD,
-                                        GitHub Actions
-                                    </li>
-                                    <li>
-                                        <strong>Tools:</strong> Git, GitHub
+                                        <strong>DevOps & Tools:</strong> CI/CD,
+                                        GitHub Actions, Git, GitHub
                                     </li>
                                     <li>
                                         <strong>Workflow: </strong>
@@ -98,41 +87,46 @@ export default function Resume() {
                                         <li>
                                             Designed, developed, and deployed
                                             scalable full-stack web applications
-                                            using React, Node.js, PHP, and
-                                            SQL-based databases.
+                                            using React, Next.js, TypeScript,
+                                            Node.js, and Express.js.
                                         </li>
                                         <li>
-                                            Built mobile-first, responsive user
-                                            interfaces with HTML, CSS, Sass,
-                                            and Bootstrap, ensuring
-                                            cross-browser compatibility.
+                                            Built responsive, mobile-first user
+                                            interfaces using HTML, CSS, and Sass,
+                                            ensuring cross-browser compatibility
+                                            and performance.
                                         </li>
                                         <li>
-                                            Developed RESTful APIs and
-                                            integrated third-party services to
-                                            enhance application functionality
-                                            and automate workflows.
+                                            Managed global state and complex UI
+                                            interactions using Redux in
+                                            data-driven applications.
                                         </li>
                                         <li>
-                                            Translated client and stakeholder
-                                            requirements into secure,
-                                            maintainable, and high-performance
-                                            solutions.
+                                            Developed RESTful APIs and backend
+                                            services, integrating PostgreSQL and
+                                            MongoDB for efficient data storage
+                                            and retrieval.
+                                        </li>
+                                        <li>
+                                            Implemented backend features and
+                                            scripting using Node.js and Python
+                                            where appropriate.
+                                        </li>
+                                        <li>
+                                            Set up version control and automated
+                                            workflows using Git, GitHub, and
+                                            GitHub Actions (CI/CD).
+                                        </li>
+                                        <li>
+                                            Translated client requirements into
+                                            secure, maintainable, and
+                                            high-performance solutions through
+                                            iterative development.
                                         </li>
                                         <li>
                                             Managed projects end-to-end, from
-                                            architecture and development to
-                                            deployment and maintenance.
-                                        </li>
-                                        <li>
-                                            Delivered multiple projects on time
-                                            and within budget while maintaining
-                                            high client satisfaction.
-                                        </li>
-                                        <li>
-                                            Collaborated with clients
-                                            incorporating feedback through
-                                            iterative development.
+                                            system design and development to
+                                            deployment and ongoing maintenance.
                                         </li>
                                     </ul>
                                 </div>
@@ -145,62 +139,40 @@ export default function Resume() {
 
                                 <div className="job">
                                     <h4>
-                                        SPW Photography Studio -
-                                        Progressive Web App
+                                        Real-Time Collection Tracking System
+                                    </h4>
+                                    <p>
+                                        React, TypeScript, Node.js, Express,
+                                        PostgreSQL
+                                    </p>
+                                </div>
+
+                                <div className="job">
+                                    <h4>
+                                        SPW Photography Studio - Progressive Web App
                                     </h4>
                                     <p>React, Node.js, Sass</p>
                                 </div>
 
                                 <div className="job">
                                     <h4>
-                                        DMF Plumbing & Heating -
-                                        Service Web Application
+                                        Mary Sewing Workshop - Multilingual Web App
                                     </h4>
-                                    <p>React, Node.js, Sass</p>
+                                    <p>React, Vite, Node.js, Sass</p>
                                 </div>
 
                                 <div className="job">
                                     <h4>
-                                        Mary Sewing Workshop -
-                                        Multilingual Web App
+                                        Name Day API - REST API Service
                                     </h4>
-                                    <p>React, Vite, Node.js</p>
+                                    <p>Node.js, Express</p>
                                 </div>
 
                                 <div className="job">
                                     <h4>
-                                        Name Day API -
-                                        REST API Service
+                                        Company Directory - Study Project
                                     </h4>
-                                    <p>Node.js, REST API</p>
-                                </div>
-
-                                <div className="job">
-                                    <h4>FSN - Form Submit Now</h4>
-                                    <p>
-                                        HTML, CSS, JavaScript, Node.js
-                                    </p>
-                                </div>
-
-                                <div className="job">
-                                    <h4>
-                                        Company Directory -
-                                        Study Project
-                                    </h4>
-                                    <p>
-                                        Mobile-first CRUD Application
-                                    </p>
-                                </div>
-
-                                <div className="job">
-                                    <h4>
-                                        Gazetteer -
-                                        Study Project
-                                    </h4>
-                                    <p>
-                                        Integrated Geonames,
-                                        OpenWeather & API Ninjas
-                                    </p>
+                                    <p>JavaScript, HTML, CSS, PHP</p>
                                 </div>
                             </article>
 
@@ -211,17 +183,16 @@ export default function Resume() {
                                 <h3>Education</h3>
 
                                 <div className="degree">
-                                    <h4>Udemy Courses (2025)</h4>
+                                    <h4>Udemy (2025)</h4>
                                     <p>
-                                        Modern PHP · React & Next.js · Redux
+                                        Modern PHP · React · Next.js · Redux
                                     </p>
                                 </div>
 
                                 <div className="degree">
                                     <h4>IT Career Switch Ltd (2024)</h4>
                                     <p>
-                                        500+ hours full-stack development
-                                        training
+                                        500+ hours full-stack development training
                                     </p>
                                 </div>
 
