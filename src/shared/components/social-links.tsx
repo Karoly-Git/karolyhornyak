@@ -20,7 +20,7 @@ const SOCIAL_LINKS: SocialLink[] = [
         name: "LinkedIn",
         href: "https://www.linkedin.com/in/karoly-hornyak/",
         icon: FaLinkedin,
-        isActive: true,
+        isActive: false,
     },
     {
         name: "GitHub",
