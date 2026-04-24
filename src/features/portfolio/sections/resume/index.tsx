@@ -76,14 +76,18 @@ export default function Resume() {
 
                                 <div className="job">
                                     <h4>
-                                        Full-Stack Web Developer ·
-                                        Self-Employed / Contract
+                                        Freelance Full-Stack Developer (Project-Based)
                                     </h4>
                                     <h5>
                                         2022 - 2025 · London
                                     </h5>
 
                                     <ul>
+                                        <li>
+                                            Working on independent and client 
+                                            projects alongside ongoing professional 
+                                            development.
+                                        </li>
                                         <li>
                                             Designed, developed, and deployed
                                             scalable full-stack web applications
